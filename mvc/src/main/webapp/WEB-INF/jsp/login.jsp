@@ -1,8 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:import url="/WEB-INF/jsp/header.jsp" />
-
-<script type="text/javascript">
+<c:import url="/WEB-INF/jsp/common/header.jsp" />
+<div>Login</div>
+<%-- <script type="text/javascript">
 	$(document).ready(function () {
 	
 		$("form").validate({
@@ -24,7 +24,7 @@
 		});
 	});
 </script>
-
+--%>
 <div class="row">
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">

@@ -1,8 +1,22 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 <!DOCTYPE html>
 <html>
 <head>
+
+ <div class="nav-links">
+            <a href="/capstone/"><button>Home</button></a>
+            <a href="/capstone/StudentLogin"><button>Student Login</button></a>
+            <a href="/capstone/TeacherLogin"><button>Teacher Login</button></a>
+            <a href="/capstone/Register"><button>Register</button></a>
+            <a href="/capstone/Sign-out"><button>Sign-Out</button></a>
+            </div>
+</head>
+</html>
+
+<%-- 
 <title>Critter</title>
 <c:url var="bootstrapCss" value="/css/bootstrap.min.css" />
 <c:url var="siteCss" value="/css/site.css" />
@@ -95,4 +109,4 @@
 	<c:if test="${not empty currentUser}">
 		<p id="currentUser">Current User: ${currentUser}</p>
 	</c:if>
-	<div class="container">
+	<div class="container"> --%>
