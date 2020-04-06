@@ -37,7 +37,7 @@ public class UserController {
 		public String dispalyTeacherLogin() {
 			return "teacherLogin";
 		}
-	@RequestMapping("/Register") 
+	@RequestMapping("/users") 
 		public String dispalyRegister() {
 			return "register";
 		}
