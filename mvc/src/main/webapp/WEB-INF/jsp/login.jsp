@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 <div>Login</div>
-<%-- <script type="text/javascript">
+ <script type="text/javascript">
 	$(document).ready(function () {
 	
 		$("form").validate({
@@ -24,7 +24,7 @@
 		});
 	});
 </script>
---%>
+
 <div class="row">
 	<div class="col-sm-4"></div>
 	<div class="col-sm-4">
@@ -45,4 +45,4 @@
 	</div>
 	<div class="col-sm-4"></div>
 </div>
-<c:import url="/WEB-INF/jsp/footer.jsp" />
+<c:import url="/WEB-INF/jsp/common/footer.jsp" />

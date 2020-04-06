@@ -37,29 +37,32 @@ public class UserController {
 		public String dispalyTeacherLogin() {
 			return "teacherLogin";
 		}
-	@RequestMapping("/Register") 
-		public String dispalyRegister() {
-			return "register";
+	@RequestMapping(path="/Register", method=RequestMethod.GET) 
+		public String dispalyNewUserForm(ModelMap modelHolder) {
+		if (!modelHolder.containsAttribute("user")) {
+			modelHolder.addAttribute("user", new User());
+		}
+		return "register";
 		}
 	
 	
 	
 	
 
-	@RequestMapping(path="/users/new", method=RequestMethod.GET)
-	public String displayNewUserForm(ModelMap modelHolder) {
-		if( ! modelHolder.containsAttribute("user")) {
-			modelHolder.addAttribute("user", new User());
-		}
-		return "newUser";
-	}
+//	@RequestMapping(path="/users/new", method=RequestMethod.GET)
+//	public String displayNewUserForm(ModelMap modelHolder) {
+//		if( ! modelHolder.containsAttribute("user")) {
+//			modelHolder.addAttribute("user", new User());
+//		}
+//		return "newUser";
+//	}
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)
 	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash) {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
-			return "redirect:/users/new";
+			return "redirect:/";
 		}
 		
 		userDAO.saveUser(user.getUserName(), user.getPassword());
