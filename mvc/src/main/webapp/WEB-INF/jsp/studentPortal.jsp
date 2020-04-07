@@ -10,7 +10,7 @@
 <th>Description</th>
 <th>Duration</th>
 </tr>
-<c:forEach items="${curriculum}" var="curriculum">
+<c:forEach items="${curriculums}" var="curriculum">
 <tr>
 <td><c:out value="${curriculum.curriculumName}" /></td>
 <td><c:out value="${curriculum.curriculumDescription}" /></td>

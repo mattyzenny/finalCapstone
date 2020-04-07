@@ -2,23 +2,49 @@ package com.techelevator.model;
 
 public class Curriculum {
 
-	private String curriculumname;
+	private String curriculumName;
 	private String curriculumDescription;
 	private int curriculumDuration;
+	private int curriculumId;
+	private int teacherId;
+	private String curriculumCategory;
 	
 	
+	public int getCurriculumId() {
+		return curriculumId;
+	}
+
+	public void setCurriculumId(int curriculumId) {
+		this.curriculumId = curriculumId;
+	}
+
+	public int getTeacherId() {
+		return teacherId;
+	}
+
+	public void setTeacherId(int teacherId) {
+		this.teacherId = teacherId;
+	}
+
+	public String getCurriculumCategory() {
+		return curriculumCategory;
+	}
+
+	public void setCurriculumCategory(String curriculumCategory) {
+		this.curriculumCategory = curriculumCategory;
+	}
+
 	public String getCurriculumName() {
-		return curriculumname;
+		return curriculumName;
 	}
 
 	public void setCurriculumName(String curriculumName) {
-		this.curriculumname = curriculumName;
+		this.curriculumName = curriculumName;
 	}
 
-	public String getCurriculumDetails() {
+	public String getCurriculumDescription() {
 		return curriculumDescription;
 	}
-
 	public void setCurriculumDescription(String curriculumDescription) {
 		this.curriculumDescription = curriculumDescription;
 	}
