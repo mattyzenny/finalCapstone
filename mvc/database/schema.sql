@@ -5,11 +5,11 @@
 BEGIN;
 
 -- CREATE statements go here
-DROP TABLE IF EXISTS teacher;
-DROP TABLE IF EXISTS app_user_curriculum;
-DROP TABLE IF EXISTS curriculum;
-DROP TABLE IF EXISTS category;
-DROP TABLE IF EXISTS app_user;
+--  DROP TABLE IF EXISTS teacher;
+--  DROP TABLE IF EXISTS app_user_curriculum;
+--  DROP TABLE IF EXISTS curriculum;
+--  DROP TABLE IF EXISTS category;
+--  DROP TABLE IF EXISTS app_user;
 
 
 CREATE TABLE app_user (
@@ -18,6 +18,15 @@ CREATE TABLE app_user (
   password varchar(32) NOT NULL,
   role varchar(32),
   salt varchar(255) NOT NULL
+);
+
+CREATE TABLE teacher (
+  id SERIAL PRIMARY KEY,
+  first_name char (32),
+  last_name char (32)
+  --curriculum_id integer,
+
+  --constraint fk_curriculum foreign key (curriculum_id) references curriculum (id)
 );
 
 CREATE TABLE category (
@@ -29,13 +38,14 @@ CREATE TABLE category (
 
 CREATE TABLE curriculum (
   id SERIAL PRIMARY KEY,
-  name char (32),
+  curriculumName char (32),
   description char(100),
-  teacher char(32),
+  teacher_id integer,
   duration integer,
   category_id integer,
 
-  constraint fk_category foreign key (category_id) references category (id)
+  constraint fk_category foreign key (category_id) references category (id),
+  constraint fk_teacher foreign key (teacher_id) references teacher (id)
 );
 
 CREATE TABLE app_user_curriculum (
@@ -45,15 +55,6 @@ CREATE TABLE app_user_curriculum (
 
 constraint fk_app_user foreign key (app_user_id) references app_user (id),
 constraint fk_curriculum foreign key (curriculum_id) references curriculum (id)
-);
-
-CREATE TABLE teacher (
-  id SERIAL PRIMARY KEY,
-  first_name char (32),
-  last_name char (32),
-  curriculum_id integer,
-
-  constraint fk_curriculum foreign key (curriculum_id) references curriculum (id)
 );
 
 
