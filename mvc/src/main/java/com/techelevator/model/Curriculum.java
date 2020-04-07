@@ -31,4 +31,7 @@ public class Curriculum {
 	
 	
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 1eb88879d8d0e0709315028846a2275e7b4b9858
