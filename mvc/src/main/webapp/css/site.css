@@ -32,23 +32,24 @@ color: #505355;
 
 .table {
 display: grid;
-grid-template-columns:  2fr 6fr 2fr;
+grid-template-columns:  1fr 3fr 1fr;
 grid-template-areas:
 "thName thDescription thDuration"
 "name description duration";
-grid-gap: 50px;
+grid-gap: 10px;
 
 }
 .thName{
 	text-align:center;
 	padding-top: 60px;
 	font-size: 25px;
-	
+	display: inline-block;
 }
 .thDescription{
 	text-align:center;
 	padding-top: 60px;
 	font-size: 25px;
+	display: inline-block;
 }
 /* .Description:hover{
 	
@@ -57,19 +58,19 @@ grid-gap: 50px;
 } */
 
  .name {
-display: block;
+display:inline-block;
 }
 .name:hover + .description {
-display: block;
+display: inline-block;
 }
 .name:hover ~.duration {
-display: block;
+display: inline-block;
 }
 .duration {
-display: none;
+display: inline-block;
 }
 .description {
-display: none;
+display: inline-block;
 font-size: 12px;
 
 } 
@@ -85,11 +86,11 @@ font-size: 12px;
 	font-size: 20px;
 }
 .name:hover + .description {
-	display:block;
+	display: inline-block;
 }
 
 .name:hover ~.duration{
-	display: block;
+	display: inline-block;
 }
 
 .description{
