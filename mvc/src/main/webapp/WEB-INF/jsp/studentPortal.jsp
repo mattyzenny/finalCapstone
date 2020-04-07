@@ -3,18 +3,22 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
             </header>
-            
-        <table class="table">
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Duration</th>
-</tr>
+
+   <body>       
+        <div class="table">
+
+
+<div class="thName">Name</div>
+<div class="thDescription">Description</div>
+<div class="thDuration">Duration</div>
+
+
 <c:forEach items="${curriculum}" var="curriculum">
-<tr>
-<td><c:out value="${curriculum.curriculumName}" /></td>
-<td><c:out value="${curriculum.curriculumDescription}" /></td>
-<td><c:out value="${curriculum.curriculumDuration}" /></td>
-</tr>
+
+<div class="name"><c:out value="${curriculum.curriculumName}" /></div>
+<div class="description"><c:out value="${curriculum.curriculumDescription}" /></div>
+<div class="duration"><c:out value="${curriculum.curriculumDuration}" /> weeks</div>
+
 </c:forEach>
-</table>
+</div>
+</body> 

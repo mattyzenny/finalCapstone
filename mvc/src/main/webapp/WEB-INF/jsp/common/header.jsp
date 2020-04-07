@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="<c:url value="/css/site.css"/>" rel="stylesheet" type="text/css"/>
 
  <div class="nav-links">
             <a href="/capstone/"><button>Home</button></a>
