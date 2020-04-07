@@ -12,8 +12,8 @@ BEGIN;
  
  DROP TABLE IF EXISTS app_user_curriculum;
  DROP TABLE IF EXISTS curriculum;
- DROP TABLE IF EXISTS category;
  DROP TABLE IF EXISTS teacher;
+ DROP TABLE IF EXISTS category;
  DROP TABLE IF EXISTS app_user;
  
 
@@ -26,26 +26,23 @@ CREATE TABLE app_user (
   salt varchar(255) NOT NULL
 );
 
+CREATE TABLE category (
+  id SERIAL PRIMARY KEY,
+  name char (32)
+
+);
+
 CREATE TABLE teacher (
   id SERIAL PRIMARY KEY,
   first_name char (32),
   last_name char (32)
-  --curriculum_id integer,
-
-  --constraint fk_curriculum foreign key (curriculum_id) references curriculum (id)
-);
-
-CREATE TABLE category (
-  id SERIAL,
-  name char (32),
-
-  constraint pk_category primary key (id)
+  
 );
 
 CREATE TABLE curriculum (
   id SERIAL PRIMARY KEY,
   name char (32),
-  description char(1000),
+  description char(2000),
   teacher_id integer,
   duration integer,
   category_id integer,
@@ -53,6 +50,7 @@ CREATE TABLE curriculum (
   constraint fk_category foreign key (category_id) references category (id),
   constraint fk_teacher foreign key (teacher_id) references teacher (id)
 );
+
 
 CREATE TABLE app_user_curriculum (
   id SERIAL PRIMARY KEY,
