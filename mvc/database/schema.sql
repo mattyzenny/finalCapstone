@@ -9,11 +9,13 @@
 BEGIN;
 
 -- CREATE statements go here
---  DROP TABLE IF EXISTS teacher;
---  DROP TABLE IF EXISTS app_user_curriculum;
---  DROP TABLE IF EXISTS curriculum;
---  DROP TABLE IF EXISTS category;
---  DROP TABLE IF EXISTS app_user;
+ 
+ DROP TABLE IF EXISTS app_user_curriculum;
+ DROP TABLE IF EXISTS curriculum;
+ DROP TABLE IF EXISTS category;
+ DROP TABLE IF EXISTS teacher;
+ DROP TABLE IF EXISTS app_user;
+ 
 
 
 CREATE TABLE app_user (
@@ -42,8 +44,8 @@ CREATE TABLE category (
 
 CREATE TABLE curriculum (
   id SERIAL PRIMARY KEY,
-  curriculumName char (32),
-  description char(100),
+  name char (32),
+  description char(1000),
   teacher_id integer,
   duration integer,
   category_id integer,
