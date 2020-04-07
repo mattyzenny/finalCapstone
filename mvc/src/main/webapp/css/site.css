@@ -1,0 +1,39 @@
+
+
+
+
+.home {
+color: red;
+}
+
+:root {
+--blue: #00adee;
+--grey: #505355;
+}
+
+{
+font-family: Tahoma, Verdana, Segoe, sans-serif;
+box-sizing: border-box;
+}
+body {
+margin: 8%;
+background-color: CCFFE5;
+
+}
+html {
+font-size: 16px;
+color: #505355;
+
+}
+
+
+
+.table {
+display: grid;
+grid-template-columns:  2fr 2fr 2fr;
+grid-template-areas:
+"thName thDescription thDuration"
+"name description duration";
+grid-gap: 50px;
+
+}
