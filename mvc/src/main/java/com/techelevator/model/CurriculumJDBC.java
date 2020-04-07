@@ -25,7 +25,7 @@ public class CurriculumJDBC implements CurriculumDAO {
 	public List<Curriculum> getAllCurriculum() {
 		
 		List<Curriculum> allCurriculum = new ArrayList<>();
-		String sqlSelectAllCurriculum = "SELECT * FROM curriculum ORDER BY curriculumname ";
+		String sqlSelectAllCurriculum = "SELECT * FROM curriculum ORDER BY name ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllCurriculum);
 		while (results.next()) {
 			Curriculum curriculum = mapRowSetToCurriculum(results);
@@ -47,9 +47,9 @@ public class CurriculumJDBC implements CurriculumDAO {
 	
 	private Curriculum mapRowSetToCurriculum(SqlRowSet results) {
 		Curriculum curriculum = new Curriculum();
-		curriculum.setCurriculumDescription(results.getString("curriculumDescription"));
-		curriculum.setCurriculumDuration(results.getInt("curriculumDuration"));
-		curriculum.setCurriculumName(results.getString("curriculumName"));
+		curriculum.setCurriculumDescription(results.getString("description"));
+		curriculum.setCurriculumDuration(results.getInt("duration"));
+		curriculum.setCurriculumName(results.getString("name"));
 		return curriculum;
 	}
 }
