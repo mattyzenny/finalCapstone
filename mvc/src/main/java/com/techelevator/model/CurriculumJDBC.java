@@ -11,7 +11,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CurriculumJDBC implements CurriculumDao {
+public class CurriculumJDBC implements CurriculumDAO {
 
 	
 	private JdbcTemplate jdbcTemplate;
