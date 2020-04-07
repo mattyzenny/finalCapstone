@@ -3,7 +3,9 @@
 
 
 .home {
-color: red;
+color: dark-grey;
+font-size: 30px;
+margin-top:20px;
 }
 
 :root {
@@ -30,10 +32,109 @@ color: #505355;
 
 .table {
 display: grid;
-grid-template-columns:  2fr 2fr 2fr;
+grid-template-columns:  2fr 6fr 2fr;
 grid-template-areas:
 "thName thDescription thDuration"
 "name description duration";
 grid-gap: 50px;
 
+}
+.thName{
+	text-align:center;
+	padding-top: 60px;
+	font-size: 25px;
+	
+}
+.thDescription{
+	text-align:center;
+	padding-top: 60px;
+	font-size: 25px;
+}
+/* .Description:hover{
+	
+	filter: brightness(150%);
+	
+} */
+
+ .name {
+display: block;
+}
+.name:hover + .description {
+display: block;
+}
+.name:hover ~.duration {
+display: block;
+}
+.duration {
+display: none;
+}
+.description {
+display: none;
+font-size: 12px;
+
+} 
+
+.thDuration{
+	text-align:center;
+	padding-top: 60px;
+	font-size: 25px;
+}
+
+.name{
+	text-align:center;
+	font-size: 20px;
+}
+.name:hover + .description {
+	display:block;
+}
+
+.name:hover ~.duration{
+	display: block;
+}
+
+.description{
+	text-align:justify;
+	font-size: 12px;
+	
+}
+.duration{
+	text-align:center;
+	font-size: 20px;
+}
+
+.nav-links{
+	display: block;
+	padding: .25em;
+	text-decoration: none;
+	font-color: #333652;
+ 	background-color:#333652 ;
+ 	color: white;
+ 	border: solid white 1px;
+ 	border-radius: 25%;
+ 	
+ 	
+}
+
+a:link:hover{
+	background-color: clear;
+	color: clear;
+	border: solid black 1px;
+	font-weight: bold;
+}
+a:link, a:visited {
+  background-color: clear;
+  color: white;
+  padding: 60px 70px;
+  text-align: center;
+  text-decoration: none;
+  display: justify;
+}
+
+.form-group{
+	padding-top: 50px;
+	font-size: 20px;
+}
+
+.btn-primary{
+	margin-top: 10px;
 }
