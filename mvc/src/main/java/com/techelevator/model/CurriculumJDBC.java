@@ -25,7 +25,7 @@ public class CurriculumJDBC implements CurriculumDAO {
 	public List<Curriculum> getAllCurriculum() {
 		
 		List<Curriculum> allCurriculum = new ArrayList<>();
-		String sqlSelectAllCurriculum = "SELECT * FROM app_user ORDER BY curriculumName";
+		String sqlSelectAllCurriculum = "SELECT * FROM curriculum ";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllCurriculum);
 		while (results.next()) {
 			Curriculum curriculum = mapRowSetToCurriculum(results);
@@ -35,8 +35,8 @@ public class CurriculumJDBC implements CurriculumDAO {
 	}
 
 	@Override
-	public Curriculum getCurriculumByCode(String curriculumCode) {
-		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM app_user WHERE curriculumCode = ?", curriculumCode);
+	public Curriculum getCurriculumByCode(int id, String name, String description, int duration, int category_id) {
+		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM curriculum WHERE id = ?", id);
 		if(result.next()) {
 			return mapRowSetToCurriculum(result);
 			
@@ -47,9 +47,9 @@ public class CurriculumJDBC implements CurriculumDAO {
 	
 	private Curriculum mapRowSetToCurriculum(SqlRowSet results) {
 		Curriculum curriculum = new Curriculum();
-		curriculum.setCurriculumDetails(results.getString("curriculumDetails"));
+		curriculum.setCurriculumDescription(results.getString("curriculumDescription"));
 		curriculum.setCurriculumDuration(results.getInt("curriculumDuration"));
-		curriculum.setCurriculumName(results.getString("curriculumName"));
+		curriculum.setCurriculumName(results.getString("name"));
 		return curriculum;
 	}
 }

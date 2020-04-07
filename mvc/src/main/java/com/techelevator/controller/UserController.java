@@ -1,5 +1,7 @@
 package com.techelevator.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techelevator.model.Curriculum;
+import com.techelevator.model.CurriculumDAO;
 import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
 
@@ -18,6 +22,9 @@ import com.techelevator.model.UserDAO;
 public class UserController {
 
 	private UserDAO userDAO;
+	
+	@Autowired
+	CurriculumDAO curriculumDao;
 
 	@Autowired
 	public UserController(UserDAO userDAO) {
@@ -45,7 +52,12 @@ public class UserController {
 		return "register";
 		}
 	
-	
+	@RequestMapping("/StudentPortal") 
+	public String displayStudentPortal(ModelMap map) {
+		List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
+		map.put("curriculum", curriculumList);
+		return "studentPortal";
+	}
 	
 	
 

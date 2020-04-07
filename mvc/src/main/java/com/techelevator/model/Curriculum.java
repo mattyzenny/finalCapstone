@@ -2,24 +2,25 @@ package com.techelevator.model;
 
 public class Curriculum {
 
-	private String curriculumName;
-	private String curriculumDetails;
+	private String curriculumname;
+	private String curriculumDescription;
 	private int curriculumDuration;
-
+	
+	
 	public String getCurriculumName() {
-		return curriculumName;
+		return curriculumname;
 	}
 
 	public void setCurriculumName(String curriculumName) {
-		this.curriculumName = curriculumName;
+		this.curriculumname = curriculumName;
 	}
 
 	public String getCurriculumDetails() {
-		return curriculumDetails;
+		return curriculumDescription;
 	}
 
-	public void setCurriculumDetails(String curriculumDetails) {
-		this.curriculumDetails = curriculumDetails;
+	public void setCurriculumDescription(String curriculumDescription) {
+		this.curriculumDescription = curriculumDescription;
 	}
 
 	public int getCurriculumDuration() {

@@ -4,6 +4,17 @@
 
             </header>
             
-            <c:forEach var="curriculum" items="${curriculum}">
-            <c:set var="curriculumList" value="${curriculum.curriculumName}"/>
-            </c:forEach>
+        <table class="table">
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Duration</th>
+</tr>
+<c:forEach items="${curriculum}" var="curriculum">
+<tr>
+<td><c:out value="${curriculum.curriculumName}" /></td>
+<td><c:out value="${curriculum.curriculumDescription}" /></td>
+<td><c:out value="${curriculum.curriculumDuration}" /></td>
+</tr>
+</c:forEach>
+</table>
