@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function () {
 		$.validator.addMethod('capitals', function(thing){
 			return thing.match(/[A-Z]/);
@@ -35,9 +35,9 @@
 			errorClass : "error"
 		});
 	});
-</script> -->
+</script>
 
-<c:url var="formAction" value="/Users" />
+<c:url var="formAction" value="/users" />
 <form method="POST" action="${formAction}">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 	<div class="row">
@@ -55,14 +55,10 @@
 				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
 			</div>
-			<div class="form-group">
-			<label for="role"> Role: </label>
-			<input type="text" id="role" name="role" placeHolder="Role" class="form-control"/>
-			</div>
 			<button type="submit" class="btn btn-primary">Create User</button>
 		</div>
 		<div class="col-sm-4"></div>
 	</div>
 </form>
 		
-<c:import url="/WEB-INF/jsp/common/footer.jsp" />
+<c:import url="/WEB-INF/jsp/footer.jsp" />
