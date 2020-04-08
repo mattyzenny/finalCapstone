@@ -4,17 +4,72 @@
 
 BEGIN;
 
-INSERT INTO teacher(first_name, last_name)
-VALUES ('Steve', 'Carmichael');
 
 INSERT INTO category (name)
 VALUES ('Math');
 
-INSERT INTO teacher(first_name, last_name)
-VALUES ('Steve', 'Carmichael');
+INSERT INTO category (name)
+VALUES ('Science');
 
 INSERT INTO category (name)
-VALUES ('Math');
+VALUES ('Language Arts');
+
+INSERT INTO category (name)
+VALUES ('Social Studies');
+
+INSERT INTO category (name)
+VALUES ('Foriegn Languages');
+
+INSERT INTO category (name)
+VALUES ('Art');
+
+INSERT INTO category (name)
+VALUES ('Health & Activity');
+
+INSERT INTO category (name)
+VALUES ('Music');
+
+INSERT INTO app_user (user_name, password, role, salt)
+VALUES ('johnsmith', '123', 'student', '123abc');
+
+INSERT INTO app_user (user_name, password, role, salt)
+VALUES ('steveC', 'techgeek', 'teacher', 'techgeekabc');
+
+INSERT INTO student(appuser_id, first_name, last_name)
+VALUES (1, 'john', 'smith');
+
+INSERT INTO teacher (first_name, last_name, appuser_id)
+VALUES ('steve', 'carmichael', 2);
+
+--INSERT INTO teacher(first_name, last_name)
+--VALUES ('Steve', 'Carmichael');
+--
+--INSERT INTO teacher(first_name, last_name)
+--VALUES ('Brian', 'Lauvray');
+--
+--INSERT INTO teacher(first_name, last_name)
+--VALUES ('Andrew', 'Frank');
+--
+--INSERT INTO teacher(first_name, last_name)
+--VALUES ('John', 'Fulton');
+--
+--INSERT INTO teacher(first_name, last_name)
+--VALUES ('Matt', 'Eland');
+--
+--INSERT INTO student(first_name, last_name)
+--VALUES ('Bryan', 'Wright');
+--
+--INSERT INTO student(first_name, last_name)
+--VALUES ('Ahmed', 'Ali');
+--
+--INSERT INTO student(first_name, last_name)
+--VALUES ('Jennifer', 'Linn');
+--
+--INSERT INTO student(first_name, last_name)
+--VALUES ('Matt', 'Zendejas');
+--
+--INSERT INTO homework(title, due_date, complete, question_id, answer_id, course_id)
+--VALUES()
 
 INSERT INTO course (name, description, duration, category_id)
 VALUES ('1st Grade Math', 'First grade math continues to build math skills through various question formats, multiple exercise techniques, and learning games. Colorful, 
