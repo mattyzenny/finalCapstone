@@ -20,7 +20,7 @@ public class CurriculumJDBC implements CurriculumDAO {
 	public CurriculumJDBC(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
-	
+
 	@Override
 	public List<Curriculum> getAllCurriculum() {
 		
