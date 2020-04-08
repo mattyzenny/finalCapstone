@@ -1,6 +1,7 @@
 
 
-
+background: #000000 url(https://www.crecso.com/wp-content/uploads/e-learning-for-kids.jpg) no-repeat left top;
+background-size: cover;
 
 .home {
 color: dark-grey;
@@ -18,12 +19,12 @@ font-family: Tahoma, Verdana, Segoe, sans-serif;
 box-sizing: border-box;
 }
 body {
-margin: 8%;
-background-color: CCFFE5;
+ margin: 8%;
+background-color:rgba(192, 192, 192, 0.1);
 
 }
 html {
-font-size: 16px;
+font-size: 30px;
 color: #505355;
 
 }
@@ -41,27 +42,62 @@ grid-gap: 50px;
 }
 .thName{
 	text-align:center;
-	padding-top: 60px;
+	padding-top: 40px;
 	font-size: 25px;
+<<<<<<< HEAD
 	
+=======
+	display: inline-block;
+	color: #00adee;
+>>>>>>> 3cb2fa4b0571e7ec75cd99cad2ba9bf4c7a0fc52
 }
 .thDescription{
 	text-align:center;
-	padding-top: 60px;
+	padding-top: 40px;
 	font-size: 25px;
+<<<<<<< HEAD
+=======
+	display: inline-block;
+	color: #00adee;
+>>>>>>> 3cb2fa4b0571e7ec75cd99cad2ba9bf4c7a0fc52
 }
 /* .Description:hover{
 	
 	filter: brightness(150%);
 	
 } */
+<<<<<<< HEAD
 
 http://localhost:8080/capstone/
+=======
+ .name {
+display:inline-block;
+color:#505355;
+}
+.name:hover + .description {
+display: inline-block;
+}
+.name:hover ~.duration {
+display: inline-block;
+}
+.duration {
+display: inline-block;
+color:#505355;
+}
+.description {
+display: inline-block;
+color:#505355;
+
+
+} 
+>>>>>>> 3cb2fa4b0571e7ec75cd99cad2ba9bf4c7a0fc52
 
 .thDuration{
 	text-align:center;
-	padding-top: 60px;
+	padding-top: 40px;
 	font-size: 25px;
+	
+	color: #00adee;
 }
 
 .name{
@@ -78,7 +114,7 @@ http://localhost:8080/capstone/
 
 .description{
 	text-align:justify;
-	font-size: 12px;
+	font-size: 20px;
 	
 }
 .duration{
@@ -91,20 +127,13 @@ http://localhost:8080/capstone/
 	padding: .25em;
 	text-decoration: none;
 	font-color: #333652;
- 	background-color:#333652 ;
+ 	background-color:#00adee; ;
  	color: white;
  	border: solid white 1px;
- 	border-radius: 25%;
- 	
- 	
+ 
 }
 
-a:link:hover{
-	background-color: clear;
-	color: clear;
-	border: solid black 1px;
-	font-weight: bold;
-}
+
 a:link, a:visited {
   background-color: clear;
   color: white;
