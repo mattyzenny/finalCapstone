@@ -4,7 +4,7 @@
 
             </header>
 
-<<<<<<< HEAD
+
    	<body>
 	
 
@@ -38,9 +38,9 @@
         <br/><br/>
         <input type="submit" value="Selection" />
     </form>
-=======
+
    <body>       
-        <div class="table">
+ <%--        <div class="table">
 
 
 <div class="thName">Curriculum Name</div>
@@ -54,8 +54,8 @@
 <div class="description"><c:out value="${curriculum.curriculumDescription}" /></div>
 <div class="duration"><c:out value="${curriculum.curriculumDuration}" /> weeks</div>
 
-</c:forEach>
->>>>>>> 3cb2fa4b0571e7ec75cd99cad2ba9bf4c7a0fc52
+</c:forEach> --%>
+
 </div>
 	
 
