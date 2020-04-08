@@ -8,7 +8,7 @@
         <div class="table">
 
 
-<div class="thName">Name</div>
+<div class="thName">Curriculum Name</div>
 <div class="thDescription">Description</div>
 <div class="thDuration">Duration</div>
 
