@@ -11,9 +11,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.techelevator.model.Curriculum;
+import com.techelevator.model.Course;
+import com.techelevator.model.CourseDAO;
 import com.techelevator.model.CurriculumDAO;
 import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
@@ -25,6 +27,9 @@ public class UserController {
 	
 	@Autowired
 	CurriculumDAO curriculumDao;
+	
+	@Autowired
+	CourseDAO courseDao;
 
 	@Autowired
 	public UserController(UserDAO userDAO) {
@@ -53,11 +58,15 @@ public class UserController {
 		}
 	
 	@RequestMapping("/StudentPortal") 
-	public String displayStudentPortal(ModelMap map) {
-		List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
-		map.put("curriculum", curriculumList);
+	public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {
+		List<Course> studentCourseList = courseDao.getAllCoursesByStudentId(studentId);
+		map.addAttribute("course", studentCourseList);
 		return "studentPortal";
+//		List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
+//		map.put("curriculum", curriculumList);
+//		return "studentPortal";
 	}
+	
 	
 	
 
