@@ -4,6 +4,25 @@
 
 BEGIN;
 
+SELECT name FROM course
+JOIN app_user_course ON course.id = app_user_course.id
+JOIN app_user ON app_user.id = app_user_course.app_user_id
+JOIN student ON app_user.id = student.app_user_id
+
+SELECT course.name FROM course
+JOIN category ON course.category_id = category.id
+
+UPDATE course
+SET category_id = 1 
+WHERE course.name LIKE '%Math%'
+
+UPDATE course
+SET category_id = 5 
+WHERE course.name LIKE '%Language Arts%'
+
+UPDATE course
+SET category_id = 4 
+WHERE course.name LIKE '%Science%'
 
 INSERT INTO category (name)
 VALUES ('Math');
