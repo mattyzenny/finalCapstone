@@ -87,8 +87,6 @@ VALUES ('steve', 'carmichael', 2);
 --INSERT INTO student(first_name, last_name)
 --VALUES ('Matt', 'Zendejas');
 --
---INSERT INTO homework(title, due_date, complete, question_id, answer_id, course_id)
---VALUES()
 
 INSERT INTO course (name, description, duration, category_id)
 VALUES ('1st Grade Math', 'First grade math continues to build math skills through various question formats, multiple exercise techniques, and learning games. Colorful, 
@@ -137,4 +135,35 @@ conduct a simple scientific investigation. In Life Science, students will show k
 environments. In the Weather unit, students will understand different weather elements and how weather can be observed and measured using tools. From the Magnets unit, students will learn 
 about force and motion through the properties of magnetism.', '1', null);
 
+INSERT INTO app_user_course (app_user_id, course_id)
+VALUES (1, 1);
+
+INSERT INTO curriculum (name, course_id)
+VALUES('Week1: Addition', 1);
+
+INSERT INTO curriculum (name, course_id)
+VALUES ('Week2: Subtraction', 1);
+
+INSERT INTO curriculum (name, course_id)
+VALUES('Week3: Negative Numbers', 1);
+
+INSERT INTO homework (name, due_date, complete, question_id, answer_id, course_id)
+VALUES ('MadMath', '10/10/19', true, 1, 1, 1);
+
+INSERT INTO syllabus (curriculum_id, instruction, attachments, homework_id)
+VALUES (1, 'This is the first lesson in a series of lesson on addition. It will begin with this lesson teaching addition vocabulary and moving forward with lessons on part-part-whole, counting on, Commutative Property, etc. Students will use these terms while studying and learning addition. There are multiple strategies I want my students to use to add numbers, such as drawing pictures or using their fingers. No matter which strategy is used, our students need the same common vocabulary to know what the different parts of the problem are called and to describe what they are doing to complete a task. Another important concept is for my students to develop an understanding of the equals sign and how and why we use it. This lesson incorporates labeling the different parts of an addition equation and a discussing the meanings of the different parts, including the equals sign','https://www.mathpyramid.com/worksheets/summertime-math.pdf',1);
+
+INSERT INTO instruction (title, content, syllabus_id)
+VALUES ('ADDITION CAN BE FUN!!!', 'https://www.mathpyramid.com/worksheets/summertime-math.pdf' , 1);
+
+INSERT INTO homework_submission (student_id, curriculum_id)
+VALUES (1, 1);
+
+INSERT INTO grades (grade, homework_id, app_user_id)
+VALUES (100, 1, 1);
+
+BEGIN TRANSACTION;
+
+INSERT INTO attachments (link, attachments_description, syllabus_id)
+VALUES ('https://www.mathpyramid.com/worksheets/summertime-math.pdf', 'week 1 math addition homework', 1);
 COMMIT;
