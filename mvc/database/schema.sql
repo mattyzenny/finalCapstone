@@ -11,6 +11,8 @@
 BEGIN Transaction;
 
 -- CREATE statements go here
+ DROP TABLE IF EXISTS instruction;
+ DROP TABLE IF EXISTS attachments;
  DROP TABLE IF EXISTS grades;
  DROP TABLE IF EXISTS syllabus;
  DROP TABLE IF EXISTS homework_submission;
@@ -87,7 +89,7 @@ constraint fk_course foreign key (course_id) references course (id)
 
 CREATE TABLE homework (
 id SERIAL PRIMARY KEY,
-title varchar(100),
+name varchar(100),
 due_date date,
 complete boolean,
 question_id integer,
@@ -130,6 +132,24 @@ app_user_id integer,
 
 constraint fk_app_user foreign key (app_user_id) references app_user (id),
 constraint fk_homework foreign key (homework_id) references homework (id)
+);
+
+CREATE TABLE attachments (
+id SERIAL PRIMARY KEY,
+link varchar(200),
+attachments_description varchar(500),
+syllabus_id integer,
+
+constraint fk_syllabus foreign key (syllabus_id) references syllabus (id)
+);
+
+CREATE TABLE instruction (
+  id SERIAL PRIMARY KEY,
+  title varchar (100),
+  content varchar(10000),
+  syllabus_id integer,
+
+constraint fk_syllabus foreign key (syllabus_id) references syllabus (id)
 );
 
 --ROLLBACK;

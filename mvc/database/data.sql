@@ -4,25 +4,25 @@
 
 BEGIN;
 
-SELECT name FROM course
-JOIN app_user_course ON course.id = app_user_course.id
-JOIN app_user ON app_user.id = app_user_course.app_user_id
-JOIN student ON app_user.id = student.app_user_id
+-- SELECT name FROM course
+-- JOIN app_user_course ON course.id = app_user_course.id
+-- JOIN app_user ON app_user.id = app_user_course.app_user_id
+-- JOIN student ON app_user.id = student.appuser_id;
 
-SELECT course.name FROM course
-JOIN category ON course.category_id = category.id
+-- SELECT name FROM course
+-- JOIN category ON course.category_id = category.id;
 
 UPDATE course
 SET category_id = 1 
-WHERE course.name LIKE '%Math%'
+WHERE course.name LIKE '%Math%';
 
 UPDATE course
 SET category_id = 5 
-WHERE course.name LIKE '%Language Arts%'
+WHERE course.name LIKE '%Language Arts%';
 
 UPDATE course
 SET category_id = 4 
-WHERE course.name LIKE '%Science%'
+WHERE course.name LIKE '%Science%';
 
 INSERT INTO category (name)
 VALUES ('Math');
@@ -136,7 +136,5 @@ VALUES ('2nd Grade Science', 'In our second grade curriculum, students will demo
 conduct a simple scientific investigation. In Life Science, students will show knowledge of the needs and characteristics of animals and the way they interact with their own distinct 
 environments. In the Weather unit, students will understand different weather elements and how weather can be observed and measured using tools. From the Magnets unit, students will learn 
 about force and motion through the properties of magnetism.', '1', null);
-
-
 
 COMMIT;

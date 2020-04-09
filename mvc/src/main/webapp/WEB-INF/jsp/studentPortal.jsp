@@ -13,7 +13,7 @@
 <div class="thDuration">Duration</div>
 
 
-<c:forEach items="${curriculum}" var="curriculum">
+<c:forEach items="${course}" var="curriculum">
 
 <div class="name"><c:out value="${curriculum.curriculumName}" /></div>
 <div class="description"><c:out value="${curriculum.curriculumDescription}" /></div>

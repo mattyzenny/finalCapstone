@@ -47,11 +47,11 @@ public class UserController {
 		return "studentLogin";
 	}
 	@RequestMapping("/TeacherLogin") 
-		public String dispalyTeacherLogin() {
+		public String displayTeacherLogin() {
 			return "teacherLogin";
 		}
 	@RequestMapping(path="/Register", method=RequestMethod.GET) 
-		public String dispalyNewUserForm(ModelMap modelHolder) {
+		public String displayNewUserForm(ModelMap modelHolder) {
 		if (!modelHolder.containsAttribute("user")) {
 			modelHolder.addAttribute("user", new User());
 		}
