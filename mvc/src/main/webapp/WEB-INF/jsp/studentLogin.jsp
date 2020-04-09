@@ -21,7 +21,7 @@
 			</div>
 			
 			
-			<button type="submit" class="btn btn-primary">Create User</button>
+			<button type="submit" class="btn btn-primary">Log In</button>
 		</div>
 		<div class="col-sm-4"></div>
 	</div>
