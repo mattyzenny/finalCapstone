@@ -24,7 +24,7 @@ public class CourseJDBC implements CourseDAO {
 	public List<Course> getAllCoursesByStudentId(int studentId) {
 
 		List<Course> coursesById = new ArrayList<>();
-		String sqlSelectCourseById = "SELECT name FROM course" + 
+		String sqlSelectCourseById = "SELECT course.name FROM course" + 
 				" JOIN app_user_course ON course.id = app_user_course.id" + 
 				" JOIN app_user ON app_user.id = app_user_course.app_user_id\n" + 
 				" JOIN student ON app_user.id = student.appuser_id\n" + 
@@ -41,7 +41,7 @@ public class CourseJDBC implements CourseDAO {
 	@Override
 	public List<Course> getAllCoursesByCategory() {
 		List<Course> courseByCategory = new ArrayList<>();
-		String sqlSelectCourseByCategory = "SELECT name FROM course" + " JOIN category ON category.id = course.category_id" 
+		String sqlSelectCourseByCategory = "SELECT course.name FROM course" + " JOIN category ON category.id = course.category_id" 
 		+ " ORDER BY category_id";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectCourseByCategory);
 		while(results.next()) {
@@ -50,13 +50,37 @@ public class CourseJDBC implements CourseDAO {
 	}
 		return null;
 	}
+//
+//	private Course mapRowSetToCourse(SqlRowSet results) {
+//		Course course = new Course();
+//		course.setCourseName(results.getString("name"));
+//		course.setCourseDescription(results.getString("description"));
+//		course.setCourseDuration(results.getString("duration"));
+//		course.setCategoryId(results.getInt("categoryId"));
+//		return course;
+//	}
 
+
+
+	@Override
+	public List<Course> getAllCourses() {
+		List<Course> allCourses = new ArrayList<>();
+		String sqlSelectAllCourses = "SELECT * FROM course";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllCourses);
+		while (results.next()) {
+			Course course = mapRowSetToCourse(results);
+			allCourses.add(course);
+		}
+		return allCourses;
+	}
 	private Course mapRowSetToCourse(SqlRowSet results) {
 		Course course = new Course();
+		course.setCategoryId(results.getInt("id"));
 		course.setCourseName(results.getString("name"));
 		course.setCourseDescription(results.getString("description"));
 		course.setCourseDuration(results.getString("duration"));
-		course.setCategoryId(results.getInt("categoryId"));
+		course.setCourseId(results.getInt("category_id"));
+
 		return course;
 	}
 

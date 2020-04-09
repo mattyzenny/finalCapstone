@@ -5,9 +5,22 @@
 </header>
 
 <body>
+<p> hello </p>
 
-	<!-- 
-    <nav id="menu">
+ 
+<c:forEach var="course" items="${courses }">
+<%-- <c:set var="courseName" value="${course.courseName }"/>
+<c:url var="courseDetailHREF" value ="/StudentPortal">
+<c:param name="courseName">${course.courseName }</c:param>  --%>
+ 
+<%-- </c:url> --%>
+ <c:out value="${course.courseName }"/>
+<c:out value="${course.courseDescription }"/>
+<c:out value="${course.courseDuration }"/> Week
+</c:forEach>
+
+<%-- 			<c:forEach var="X" items="${map.put(controllername)} -->
+     <nav id="menu">
         <ul class="parent-menu">
             <li><a href="#">1st Grade Math</a>
                 <ul>
@@ -33,7 +46,7 @@
         </ul>
     </nav> -->
 
-	<div class='cssmenu'>
+<!-- 	<div class='cssmenu'>
 		<ul>
 			<li><a href='#'><span>Courses</span></a></li>
 			<li><a href='#'><span>Math</span></a>
@@ -69,9 +82,8 @@
 		<h2>1st Grade Math</h2>
 		<p>Course Category: Math</p>
 		<p>Teacher Mr. Steve Carmichael</p>
-		<p>Duration: 1 week</p>
-
-
+		<p>Duration: 1 week</p> 
+ --%>
 
 </body>
 </html>
