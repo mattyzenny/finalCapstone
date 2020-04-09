@@ -5,6 +5,13 @@
 </header>
 
 <body>
+	<c:forEach var="course" items="${courses }">
+		<c:out value="${course.courseName }"/>
+		<c:out value="${course.courseDescription }"/>
+		<c:out value="${course.courseDuration }"/>
+	</c:forEach>
+
+
 
 	<!-- 
     <nav id="menu">
