@@ -5,19 +5,21 @@
 </header>
 
 <body>
-<p> hello </p>
+
+	<c:forEach var="course" items="${courses }">
+		<c:out value="${course.courseName }"/>
+		<c:out value="${course.courseDescription }"/>
+		<c:out value="${course.courseDuration }"/>
+	</c:forEach>
+
 
  
-<c:forEach var="course" items="${courses }">
 <%-- <c:set var="courseName" value="${course.courseName }"/>
 <c:url var="courseDetailHREF" value ="/StudentPortal">
 <c:param name="courseName">${course.courseName }</c:param>  --%>
  
 <%-- </c:url> --%>
- <c:out value="${course.courseName }"/>
-<c:out value="${course.courseDescription }"/>
-<c:out value="${course.courseDuration }"/> Week
-</c:forEach>
+
 
 <%-- 			<c:forEach var="X" items="${map.put(controllername)} -->
      <nav id="menu">
