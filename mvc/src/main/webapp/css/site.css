@@ -33,32 +33,43 @@ color: #505355;
 
 .table {
 display: grid;
-grid-template-columns:  1fr 3fr 1fr;
+grid-template-columns:  2fr 6fr 2fr;
 grid-template-areas:
 "thName thDescription thDuration"
 "name description duration";
-grid-gap: 10px;
+grid-gap: 50px;
 
 }
 .thName{
 	text-align:center;
 	padding-top: 40px;
 	font-size: 25px;
+<<<<<<< HEAD
+	
+=======
 	display: inline-block;
 	color: #00adee;
+>>>>>>> 3cb2fa4b0571e7ec75cd99cad2ba9bf4c7a0fc52
 }
 .thDescription{
 	text-align:center;
 	padding-top: 40px;
 	font-size: 25px;
+<<<<<<< HEAD
+=======
 	display: inline-block;
 	color: #00adee;
+>>>>>>> 3cb2fa4b0571e7ec75cd99cad2ba9bf4c7a0fc52
 }
 /* .Description:hover{
 	
 	filter: brightness(150%);
 	
 } */
+<<<<<<< HEAD
+
+http://localhost:8080/capstone/
+=======
  .name {
 display:inline-block;
 color:#505355;
@@ -79,6 +90,7 @@ color:#505355;
 
 
 } 
+>>>>>>> 3cb2fa4b0571e7ec75cd99cad2ba9bf4c7a0fc52
 
 .thDuration{
 	text-align:center;
@@ -93,11 +105,11 @@ color:#505355;
 	font-size: 20px;
 }
 .name:hover + .description {
-	display: inline-block;
+	display:block;
 }
 
 .name:hover ~.duration{
-	display: inline-block;
+	display: block;
 }
 
 .description{

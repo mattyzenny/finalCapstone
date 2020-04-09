@@ -41,7 +41,7 @@ public class CSRFFilter implements Filter {
 
 	private void handlePOST(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws IOException {
 		String sessionToken = (String)httpRequest.getSession().getAttribute(CSRF_TOKEN);
-		String requestToken = (String)httpRequest.getParameter(CSRF_TOKEN);
+		String requestToken = httpRequest.getParameter(CSRF_TOKEN);
 		if(sessionToken == null || sessionToken.equals(requestToken) == false) {
 			httpResponse.sendError(400);
 		}
