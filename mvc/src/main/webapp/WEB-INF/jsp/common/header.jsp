@@ -14,6 +14,7 @@
             <a href="/capstone/Register"><button>Register</button></a>
             <a href="/capstone/Sign-out"><button>Sign-Out</button></a>
             </div>
+            
 </head>
 </html>
 

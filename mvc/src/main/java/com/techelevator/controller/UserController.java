@@ -57,6 +57,11 @@ public class UserController {
 		}
 		return "register";
 		}
+	@RequestMapping("/FirstGradeMath") 
+	public String displayStudentClass() {
+		return "FirstGradeMath";
+	}
+	
 	
 	@RequestMapping("/StudentPortal") 
 //	public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {

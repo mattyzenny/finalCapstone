@@ -38,7 +38,7 @@
 			<li><a href='#'><span>Courses</span></a></li>
 			<li><a href='#'><span>Math</span></a>
 				<ul>
-					<li><a href='#'><span>1st Grade Math</span></a>
+					<li><a href="/capstone/FirstGradeMath"><span>1st Grade Math</span></a>
 						<ul>
 							<li><a href='#'><span>Homework</span></a></li>
 							<li><a href='#'><span>Curriculum</span></a></li>
@@ -70,19 +70,7 @@
 		<p>Course Category: Math</p>
 		<p>Teacher Mr. Steve Carmichael</p>
 		<p>Duration: 1 week</p>
-		<p>First grade math continues to build math skills through various
-			question formats, multiple exercise techniques, and learning games.
-			Colorful, print-based lessons focus on continuing fundamental
-			concepts taught in kindergarten. Fun, hands-on activities include
-			connecting dot-to-dots, drawing colors and shapes, and matching
-			items.Topics in this online academy course include addition and
-			subtraction of double digits to 18, counting, word problems, place
-			value, shapes, fractions, time, measurement, money, bar graphs, word
-			numbers to 100, greater than and less than, and skip counting.
-			Students in this online academy course use common manipulatives like
-			a clock, ruler, or coins to learn concepts.</p>
 
-	</div>
 
 
 </body>
