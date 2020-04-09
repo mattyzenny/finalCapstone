@@ -41,7 +41,7 @@ public class CourseJDBC implements CourseDAO {
 	@Override
 	public List<Course> getAllCoursesByCategory() {
 		List<Course> courseByCategory = new ArrayList<>();
-		String sqlSelectCourseByCategory = "SELECT name FROM course" + " JOIN category ON category.id = course.category_id" 
+		String sqlSelectCourseByCategory = "SELECT course.name FROM course" + " JOIN category ON category.id = course.category_id" 
 		+ " ORDER BY category_id";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectCourseByCategory);
 		while(results.next()) {

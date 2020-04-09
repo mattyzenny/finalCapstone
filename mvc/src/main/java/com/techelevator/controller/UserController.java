@@ -69,8 +69,8 @@ public class UserController {
 //		map.addAttribute("course", studentCourseList);
 //		return "studentPortal";
 	public String displayStudentPortal(ModelMap map) {
-		List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
-		map.put("curriculum", curriculumList);
+		List<Course> courseList = courseDao.getAllCoursesByCategory();
+		map.put("course", courseList);
 		return "studentPortal";
 	}
 	
