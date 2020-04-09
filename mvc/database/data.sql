@@ -162,8 +162,6 @@ VALUES (1, 1);
 INSERT INTO grades (grade, homework_id, app_user_id)
 VALUES (100, 1, 1);
 
-BEGIN TRANSACTION;
-
 INSERT INTO attachments (link, attachments_description, syllabus_id)
 VALUES ('https://www.mathpyramid.com/worksheets/summertime-math.pdf', 'week 1 math addition homework', 1);
 COMMIT;
