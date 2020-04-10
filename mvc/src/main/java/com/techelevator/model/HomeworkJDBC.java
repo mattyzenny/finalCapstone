@@ -23,14 +23,11 @@ public class HomeworkJDBC implements HomeworkDAO {
 
 	@Override
 	public Homework getAllHomeworkByTeacherId(int teacherId) {
-		SqlRowSet result = jdbcTemplate
-				.queryForRowSet(
-						"SELECT * FROM homework" + " JOIN curriculum ON homework.course_id = curriculum.course_id"
+		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM homework" + " JOIN curriculum ON homework.course_id = curriculum.course_id"
 								+ " JOIN homework_submission ON curriculum.id = homework_submission.curriculum_id"
 								+ " JOIN student ON homework_submission.student_id = student.id"
 								+ " JOIN app_user ON student.appuser_id = app_user.id"
-								+ " JOIN teacher ON app_user.id = teacher.appuser_id" + " WHERE teacher.id = ?",
-						teacherId);
+								+ " JOIN teacher ON app_user.id = teacher.appuser_id" + " WHERE teacher.id = ?", teacherId);
 		if (result.next()) {
 			return mapRowSetToHomework(result);
 		}
@@ -46,6 +43,18 @@ public class HomeworkJDBC implements HomeworkDAO {
 								+ " JOIN student ON homework_submission.student_id = student.id"
 								+ " JOIN app_user ON student.appuser_id = app_user.id" + " WHERE student.id = ?",
 						studentId);
+		if (result.next()) {
+			return mapRowSetToHomework(result);
+		}
+		return null;
+	}
+	
+	public Homework getHomeworkByCurriculumId(int curriculumId) {
+		SqlRowSet result = jdbcTemplate
+				.queryForRowSet(
+						"SELECT * FROM homework" + " JOIN curriculum ON homework.course_id = curriculum.course_id"
+								+ " JOIN homework_submission ON curriculum.id = homework_submission.curriculum_id"
+								+ " WHERE curriculum.id = ?", curriculumId);
 		if (result.next()) {
 			return mapRowSetToHomework(result);
 		}
