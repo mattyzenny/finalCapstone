@@ -1,5 +1,7 @@
 package com.techelevator.model;
 
+import java.sql.Connection;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,17 +52,6 @@ public class CourseJDBC implements CourseDAO {
 	}
 		return null;
 	}
-//
-//	private Course mapRowSetToCourse(SqlRowSet results) {
-//		Course course = new Course();
-//		course.setCourseName(results.getString("name"));
-//		course.setCourseDescription(results.getString("description"));
-//		course.setCourseDuration(results.getString("duration"));
-//		course.setCategoryId(results.getInt("categoryId"));
-//		return course;
-//	}
-
-
 
 	@Override
 	public List<Course> getAllCourses() {
@@ -73,6 +64,8 @@ public class CourseJDBC implements CourseDAO {
 		}
 		return allCourses;
 	}
+	
+	
 	private Course mapRowSetToCourse(SqlRowSet results) {
 		Course course = new Course();
 		course.setCategoryId(results.getInt("id"));
@@ -84,4 +77,21 @@ public class CourseJDBC implements CourseDAO {
 		return course;
 	}
 
+	
+	public void createCourse(Course course) { 
+		    String query="INSERT INTO course Values('"+course.getCourseName()+"','"+course.getCourseDescription()+"','"+course.getCourseDuration()+"','"+course.getCategoryId()+"')"; 
+		    jdbcTemplate.update(query);  
+		}  
+ 
+//	@Override
+//	public Course createCourse(int courseId, String courseName, String courseDescription, String courseDuration, int categoryId) {
+//		Course addCourse =  new Course();
+//		String sqlInsertCourse = "INSERT INTO course (id, name, description, duration, category_id)" + " Values (?,?,?,?,?)";
+//		jdbcTemplate.update(sqlInsertCourse, addCourse.getCategoryId(), addCourse.getCourseName(), addCourse.getCourseDescription(),
+//				addCourse.getCourseDuration(), addCourse.getCategoryId());
+//		return null;
+//	}
+
+
 }
+

@@ -102,6 +102,15 @@ public class HomeworkJDBC implements HomeworkDAO {
 		}
 		return progressPercentage;
 	}
+	
+	public void createHomework(Homework homework) { 
+	    String query="INSERT INTO homework Values('"+homework.getHomeworkName()+"','"+homework.getDueDate()+"','"+homework.isComplete()+"','"+homework.getQuestionId()+"','"+homework.getAnswerId()+"','"+homework.getCourseId()+"')";
+	    jdbcTemplate.update(query);  
+	}
+	
+	public void updateHomeworkByStudentSubmission(Homework homework) {
+		
+	}
 
 	private Homework mapRowSetToHomework(SqlRowSet results) {
 		Homework homework = new Homework();

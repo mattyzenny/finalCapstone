@@ -43,6 +43,11 @@ public class CurriculumJDBC implements CurriculumDAO {
 		}
 		return null;
 	}
+	
+	public void createCurriculum(Curriculum curriculum) { 
+	    String query="INSERT INTO curriculum Values('"+curriculum.getCurriculumName()+"','"+curriculum.getCourseId()+"')"; 
+	    jdbcTemplate.update(query);  
+	}
 
 	
 	private Curriculum mapRowSetToCurriculum(SqlRowSet results) {

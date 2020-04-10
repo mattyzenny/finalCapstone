@@ -8,6 +8,7 @@ public class Course {
 	private String courseDuration;
 	private int categoryId;
 	private int studentId;
+	private int curriculumId;
 	
 	
 	public int getStudentId() {
@@ -45,6 +46,12 @@ public class Course {
 	}
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
+	}
+	public int getCurriculumId() {
+		return curriculumId;
+	}
+	public void setCurriculumId(int curriculumId) {
+		this.curriculumId = curriculumId;
 	}
 
 }

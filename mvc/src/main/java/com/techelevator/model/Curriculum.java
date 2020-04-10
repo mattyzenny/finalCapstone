@@ -8,6 +8,7 @@ public class Curriculum {
 	private int curriculumId;
 	private int teacherId;
 	private String curriculumCategory;
+	private int courseId;
 	
 	
 	public int getCurriculumId() {
@@ -56,5 +57,13 @@ public class Curriculum {
 	public void setCurriculumDuration(int curriculumDuration) {
 		this.curriculumDuration = curriculumDuration;
 
+	}
+
+	public int getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
 	}
 }

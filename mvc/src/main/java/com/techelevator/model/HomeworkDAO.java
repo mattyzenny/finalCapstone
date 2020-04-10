@@ -10,4 +10,6 @@ public interface HomeworkDAO {
 	public Homework getCompletedHomework(boolean complete, int appuserId);
 	public Homework getIncompleteHomework(boolean complete, int appuserId);
 	public int getProgressPercentageByHomeworkId(int homeworkId, boolean complete);
+	public void createHomework(Homework homework);
+
 }
