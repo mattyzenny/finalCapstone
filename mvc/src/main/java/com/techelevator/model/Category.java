@@ -1,10 +1,13 @@
 package com.techelevator.model;
 
+import java.util.List;
+
 public class Category {
 	
 	private int id;
 	private String name;
 	private int appUserId;
+	private List <Course> courseList;
 	
 	
 	
@@ -25,6 +28,12 @@ public class Category {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public List<Course> getCourseList() {
+		return courseList;
+	}
+	public void setCourseList(List<Course> courseList) {
+		this.courseList = courseList;
 	}
 	
 	

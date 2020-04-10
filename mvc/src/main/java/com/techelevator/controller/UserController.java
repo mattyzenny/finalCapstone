@@ -20,6 +20,8 @@ import com.techelevator.model.Course;
 import com.techelevator.model.CourseDAO;
 import com.techelevator.model.Curriculum;
 import com.techelevator.model.CurriculumDAO;
+import com.techelevator.model.Grades;
+import com.techelevator.model.GradesDAO;
 import com.techelevator.model.Homework;
 import com.techelevator.model.HomeworkDAO;
 import com.techelevator.model.User;
@@ -42,6 +44,8 @@ public class UserController {
 	@Autowired
 	HomeworkDAO homeworkDao;
 	
+	@Autowired 
+	GradesDAO gradesDao; 
 	
 	
 	@Autowired
@@ -108,6 +112,15 @@ public class UserController {
 	    map.put("homework",  homeworkList);
 	    map.put("curriculum", curriculumList);
 	return "studentPortal";
+	}
+	
+	@RequestMapping("/Grades")
+	public String showGrades(ModelMap map) {
+	List<Grades> gradeList = gradesDao.getAllGrades();
+	map.put("grades", gradeList);
+
+	    return "grades";
+
 	}
 	
 	

@@ -20,6 +20,7 @@ public class CategoryJDBC implements CategoryDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
+	
 	@Override
 	public List<Category> getAllCategories() {
 		List<Category> allCategories = new ArrayList<>();
@@ -59,6 +60,13 @@ public class CategoryJDBC implements CategoryDAO {
 		category.setId(results.getInt("id"));
 		category.setName(results.getString("name"));
 		return category;
+	}
+
+
+	@Override
+	public List<Category> getAllCategoriesWithCourses() {
+		
+		return null;
 	}
 
 }

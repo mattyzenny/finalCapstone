@@ -1,9 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <header>
 	<c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 </header>
-
 <body>
 
 	<%-- <c:forEach var="course" items="${courses }">
@@ -12,34 +12,43 @@
 		<c:out value="${course.courseDuration }"/>
 	</c:forEach> --%>
 
-
-	<ul>
-		<c:forEach var="category" items="${categories}">
-			<li><a href="/capstone/FirstGradeMath"> <c:out
-						value="${category.name}" /></a></li>
-			<li>
-			
-			<c:forEach var="course" items="${courses }">
-			<a href><c:out value="${course.courseName }" /></a>
+	<div class="sidenav">
+		<ul>
+			<c:forEach var="category" items="${categories}">
+				<li><c:out value="${category.name}" />
+				<ul>
+			<c:forEach var="course" items="${category.courses}">
+				<li><c:out value="${course.courseName }" /></li>
 			</c:forEach>
-			</li>
-			
-			
+		</ul>
+				</li>
+				
+				<li>
+				
+				
+			</c:forEach>
+		</ul>
+		
+	</div>
+
+	<div class "main">	
 			<ul>
 				<c:forEach var="curriculum" items="${curriculum }">
 					<li><c:out value="${curriculum.curriculumName}" /></li>
 				</c:forEach>
 			</ul>
 			
-		</c:forEach>
 		
-		<li>
+		
+		<ul>
 		<c:forEach var="homework" items="${homework }">	
 			<li><c:out value="${homework.homeworkName} Due Date: ${homework.dueDate }"/></li>
 			<input type="checkbox" id="hwComplete" name="${homework.homeworkName }" value="Complete?">
 			
 			</c:forEach>
 	</ul>
+	</div>
+	
 
 <%-- 	<h1>${course.courseName}</h1>
 	<p>${course.courseDescription}</p> --%>
@@ -124,4 +133,5 @@
  --%>
 
 </body>
+</head>
 </html>
