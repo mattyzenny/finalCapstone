@@ -6,7 +6,7 @@ public interface CourseDAO {
 
 	
 	public List<Course> getAllCoursesByStudentId(int studentId);
-	public List<Course> getAllCoursesByCategory();
+	public List<Course> getAllCoursesByCategory(int categoryId);
 	public List<Course> getAllCourses();
 	public void createCourse(Course course);
 	

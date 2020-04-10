@@ -36,7 +36,7 @@ public class CurriculumJDBC implements CurriculumDAO {
 
 	@Override
 	public Curriculum getCurriculumByName(String name) {
-		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM course WHERE name = ?", name);
+		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM curriculum WHERE name = ?", name);
 		if(result.next()) {
 			return mapRowSetToCurriculum(result);
 			
@@ -52,8 +52,6 @@ public class CurriculumJDBC implements CurriculumDAO {
 	
 	private Curriculum mapRowSetToCurriculum(SqlRowSet results) {
 		Curriculum curriculum = new Curriculum();
-		curriculum.setCurriculumDescription(results.getString("description"));
-		curriculum.setCurriculumDuration(results.getInt("duration"));
 		curriculum.setCurriculumName(results.getString("name"));
 		return curriculum;
 	}

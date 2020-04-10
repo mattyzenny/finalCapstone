@@ -5,6 +5,7 @@ import java.util.List;
 
 public interface HomeworkDAO {
 
+	public List<Homework> getAllHomework();
 	public Homework getAllHomeworkByTeacherId(int teacherId);
 	public Homework getHomeworkByStudentId(int studentId);
 	public Homework getCompletedHomework(boolean complete, int appuserId);

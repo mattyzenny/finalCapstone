@@ -14,10 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techelevator.model.Category;
+import com.techelevator.model.CategoryDAO;
 import com.techelevator.model.Course;
 import com.techelevator.model.CourseDAO;
 import com.techelevator.model.Curriculum;
 import com.techelevator.model.CurriculumDAO;
+import com.techelevator.model.Homework;
+import com.techelevator.model.HomeworkDAO;
 import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
 
@@ -31,6 +35,14 @@ public class UserController {
 
 	@Autowired
 	CourseDAO courseDao;
+	
+	@Autowired
+	CategoryDAO categoryDao;
+	
+	@Autowired
+	HomeworkDAO homeworkDao;
+	
+	
 	
 	@Autowired
 	public UserController(UserDAO userDAO) {
@@ -64,14 +76,37 @@ public class UserController {
 	
 	
 	@RequestMapping("/StudentPortal") 
-//	public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {
+//1	public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {
 //		List<Course> studentCourseList = courseDao.getAllCoursesByStudentId(studentId);
 //		map.addAttribute("course", studentCourseList);
 //		return "studentPortal";
-	public String displayStudentPortal(ModelMap map) {
-		List<Course> courseList = courseDao.getAllCourses();
-		map.put("courses", courseList);
 
+	
+//2	public String displayStudentPortal(ModelMap map) {
+//		List<Course> courseList = courseDao.getAllCourses();
+//		map.put("courses", courseList);
+//
+//	return "studentPortal";
+//	}
+	
+	// public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {
+	// List<Course> studentCourseList = courseDao.getAllCoursesByStudentId(studentId);
+	// map.addAttribute("course", studentCourseList);
+	// return "studentPortal";
+
+	public String displayStudentPortal(ModelMap map) {
+
+	    List<Category> categoryList = categoryDao.getAllCategories();
+	    List<Course> courseList = courseDao.getAllCourses();
+	    List<Homework> homeworkList = homeworkDao.getAllHomework();
+	    List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
+	//  Category categoryById = categoryDao.getCategoryById(1);
+	    
+	//  map.put("categoryId",categoryById);
+	    map.put("categories", categoryList);
+	    map.put("courses", courseList);
+	    map.put("homework",  homeworkList);
+	    map.put("curriculum", curriculumList);
 	return "studentPortal";
 	}
 	

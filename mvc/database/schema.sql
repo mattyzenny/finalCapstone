@@ -71,7 +71,7 @@ CREATE TABLE course (
 
 CREATE TABLE curriculum (
   id SERIAL PRIMARY KEY,
-  name varchar(32),
+  name char(32),
   course_id integer,
 
   constraint fk_course foreign key (course_id) references course (id)
@@ -89,7 +89,7 @@ constraint fk_course foreign key (course_id) references course (id)
 
 CREATE TABLE homework (
 id SERIAL PRIMARY KEY,
-name varchar(100),
+name char(100),
 due_date date,
 complete boolean,
 question_id integer,

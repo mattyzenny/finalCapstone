@@ -112,6 +112,18 @@ public class HomeworkJDBC implements HomeworkDAO {
 		
 	}
 
+	@Override
+	public List<Homework> getAllHomework() {
+		List<Homework> allHomework = new ArrayList<>();
+		String sqlSelectAllHomework = "SELECT * FROM homework ORDER BY name ";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllHomework);
+		while (results.next()) {
+			Homework homework = mapRowSetToHomework(results);
+			allHomework.add(homework);
+		}
+		return allHomework;
+	}
+	
 	private Homework mapRowSetToHomework(SqlRowSet results) {
 		Homework homework = new Homework();
 		homework.setHomeworkId(results.getInt("id"));
@@ -121,8 +133,9 @@ public class HomeworkJDBC implements HomeworkDAO {
 		homework.setQuestionId(results.getInt("question_id"));
 		homework.setAnswerId(results.getInt("answer_id"));
 		homework.setCourseId(results.getInt("course_id"));
-		homework.setTeacherId(results.getInt("teacher_id"));
 		return homework;
 	}
+
+	
 
 }
