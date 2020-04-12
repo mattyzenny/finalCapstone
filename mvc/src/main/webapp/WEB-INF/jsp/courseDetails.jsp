@@ -18,7 +18,7 @@
 		</div>
 
 		<h2>${course.courseName}</h2>
-		<p>Course Category: Math</p>
+		<p>${category.name }</p>
 		<p>Teacher Mr. Steve Carmichael</p>
 		<p>Duration: ${course.courseDuration} week(s)</p>
 		<p>${course.courseDescription}</p>

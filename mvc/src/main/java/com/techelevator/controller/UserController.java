@@ -67,35 +67,16 @@ public class UserController {
 		}
 		return "register";
 		}
+	
 	@RequestMapping("/courseDetails") 
 	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id) {
 		modelHolder.addAttribute("course", courseDao.getCourseById(id));
-		
-		
-		
+
 		return "courseDetails";
 	}
 	
 	
 	@RequestMapping("/StudentPortal") 
-//1	public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {
-//		List<Course> studentCourseList = courseDao.getAllCoursesByStudentId(studentId);
-//		map.addAttribute("course", studentCourseList);
-//		return "studentPortal";
-
-	
-//2	public String displayStudentPortal(ModelMap map) {
-//		List<Course> courseList = courseDao.getAllCourses();
-//		map.put("courses", courseList);
-//
-//	return "studentPortal";
-//	}
-	
-	// public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {
-	// List<Course> studentCourseList = courseDao.getAllCoursesByStudentId(studentId);
-	// map.addAttribute("course", studentCourseList);
-	// return "studentPortal";
-
 	public String displayStudentPortal(ModelMap map) {
 
 	    List<Category> categoryList = categoryDao.getAllCategories();

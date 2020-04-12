@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <header>
 	<c:import url="/WEB-INF/jsp/common/header.jsp" />
 
@@ -22,9 +23,7 @@
 						<c:url var="courseDetailsURL" value="/courseDetails">
 							<c:param name="id">${course.courseId}</c:param>
 						</c:url>
-						<li><a href="${courseDetailsURL}">${course.courseName }</a>
-
-						</li>
+						<li><a href="${courseDetailsURL}">${course.courseName }</a></li>
 					</c:forEach>
 				</ul></li>
 		</c:forEach>
@@ -135,3 +134,4 @@
  --%>
 
 </body>
+</html>

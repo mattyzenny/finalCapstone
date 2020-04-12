@@ -37,7 +37,9 @@ public class CourseJDBC implements CourseDAO {
 			List<Curriculum> allCurriculaByCourse = new ArrayList<Curriculum>();
 			while (curriculumResults.next()) {
 				Curriculum curriculum = mapRowSetToCurriculum(curriculumResults);
+				allCurriculaByCourse.add(curriculum);
 			}
+			course.setCurriculumListByCourse(allCurriculaByCourse);
 			allCourses.add(course);
 		}
 		return allCourses;
@@ -75,7 +77,9 @@ public class CourseJDBC implements CourseDAO {
 	
 	private Curriculum mapRowSetToCurriculum(SqlRowSet curriculumResults) {
 		Curriculum curriculum = new Curriculum();
-		curriculum.set
+		curriculum.setCurriculumId(curriculumResults.getInt("id"));
+		curriculum.setCurriculumName(curriculumResults.getString("name"));
+		curriculum.setCourseId(curriculumResults.getInt("course_id"));
 		return null;
 	}
 

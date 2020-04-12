@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Course {
 
-	
 	private int courseId;
 	private String courseName;
 	private String courseDescription;
@@ -16,6 +15,7 @@ public class Course {
 	private int teacherId;
 	private List<Curriculum> curriculumListByCourse;
 
+	
 	
 	public int getStudentId() {
 		return studentId;
