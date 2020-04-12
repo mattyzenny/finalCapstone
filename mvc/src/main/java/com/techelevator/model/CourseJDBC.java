@@ -82,7 +82,6 @@ public class CourseJDBC implements CourseDAO {
 	    jdbcTemplate.update(query);  
 	}
 
-
 	
 	
 	private Course mapRowSetToCourse(SqlRowSet results) {
@@ -110,8 +109,6 @@ public class CourseJDBC implements CourseDAO {
 		homework.setHomeworkName(results.getString("name"));
 		homework.setDueDate(results.getDate("due_date"));
 		homework.setComplete(results.getBoolean("complete"));
-		homework.setQuestionId(results.getInt("question_id"));
-		homework.setAnswerId(results.getInt("answer_id"));
 		homework.setCourseId(results.getInt("curriculum_id"));
 		return homework;
 	}

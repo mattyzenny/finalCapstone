@@ -90,27 +90,14 @@ constraint fk_course foreign key (course_id) references course (id)
 CREATE TABLE homework (
 id SERIAL PRIMARY KEY,
 name char(100),
+appuser_id int,
 due_date date,
 complete boolean,
-question_id integer,
-answer_id integer,
 curriculum_id integer,
 
-constraint fk_curriculum foreign key (curriculum_id) references curriculum (id)
+constraint fk_curriculum foreign key (curriculum_id) references curriculum (id),
+constraint fk_app_user foreign key (appuser_id) references app_user(id)
 );
-
-
-CREATE TABLE homework_submission (
-id SERIAL PRIMARY KEY,
-student_id integer,
-curriculum_id integer,
-
-constraint fk_student foreign key (student_id) references student (id),
-constraint fk_curriculum foreign key (curriculum_id) references curriculum (id)
-);
-
-
-
 
 CREATE TABLE syllabus (
 id SERIAL PRIMARY KEY,

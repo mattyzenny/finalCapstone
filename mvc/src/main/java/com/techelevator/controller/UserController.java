@@ -60,13 +60,13 @@ public class UserController {
 		public String displayTeacherLogin() {
 			return "teacherLogin";
 		}
-	@RequestMapping(path="/Register", method=RequestMethod.GET) 
-		public String displayNewUserForm(ModelMap modelHolder) {
-		if (!modelHolder.containsAttribute("user")) {
-			modelHolder.addAttribute("user", new User());
-		}
-		return "register";
-		}
+//	@RequestMapping(path="/Register", method=RequestMethod.GET) 
+//		public String displayNewUserForm(ModelMap modelHolder) {
+//		if (!modelHolder.containsAttribute("user")) {
+//			modelHolder.addAttribute("user", new User());
+//		}
+//		return "register";
+//		}
 	
 	@RequestMapping("/courseDetails") 
 	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id) {
@@ -96,13 +96,13 @@ public class UserController {
 	
 	
 
-//	@RequestMapping(path="/users/new", method=RequestMethod.GET)
-//	public String displayNewUserForm(ModelMap modelHolder) {
-//		if( ! modelHolder.containsAttribute("user")) {
-//			modelHolder.addAttribute("user", new User());
-//		}
-//		return "newUser";
-//	}
+	@RequestMapping(path="/users/new", method=RequestMethod.GET)
+	public String displayNewUserForm(ModelMap modelHolder) {
+		if( ! modelHolder.containsAttribute("user")) {
+			modelHolder.addAttribute("user", new User());
+		}
+		return "newUser";
+	}
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)
 	public String createUser(@Valid @ModelAttribute User user, BindingResult result, RedirectAttributes flash) {

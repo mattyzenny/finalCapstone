@@ -133,17 +133,14 @@ VALUES ('Week2: Subtraction', 1);
 INSERT INTO curriculum (name, course_id)
 VALUES('Week3: Negative Numbers', 1);
 
-INSERT INTO homework (name, due_date, complete, question_id, answer_id, curriculum_id)
-VALUES ('MadMath', '10/10/19', true, 1, 1, 1);
+INSERT INTO homework (name, appuser_id, due_date, complete, curriculum_id)
+VALUES ('MadMath', 1, '10/10/19', true, 1);
 
 INSERT INTO syllabus (curriculum_id, instruction, attachments, homework_id)
 VALUES (1, 'This is the first lesson in a series of lesson on addition. It will begin with this lesson teaching addition vocabulary and moving forward with lessons on part-part-whole, counting on, Commutative Property, etc. Students will use these terms while studying and learning addition. There are multiple strategies I want my students to use to add numbers, such as drawing pictures or using their fingers. No matter which strategy is used, our students need the same common vocabulary to know what the different parts of the problem are called and to describe what they are doing to complete a task. Another important concept is for my students to develop an understanding of the equals sign and how and why we use it. This lesson incorporates labeling the different parts of an addition equation and a discussing the meanings of the different parts, including the equals sign','https://www.mathpyramid.com/worksheets/summertime-math.pdf',1);
 
 INSERT INTO instruction (title, content, syllabus_id)
 VALUES ('ADDITION CAN BE FUN!!!', 'https://www.mathpyramid.com/worksheets/summertime-math.pdf' , 1);
-
-INSERT INTO homework_submission (student_id, curriculum_id)
-VALUES (1, 1);
 
 INSERT INTO grades (grade, homework_id, app_user_id)
 VALUES (100, 1, 1);

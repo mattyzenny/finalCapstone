@@ -9,9 +9,8 @@
 
  <div class="nav-links">
             <a href="/capstone/"><button>Home</button></a>
-            <a href="/capstone/StudentLogin"><button>Student Login</button></a>
-            <a href="/capstone/TeacherLogin"><button>Teacher Login</button></a>
-            <a href="/capstone/Register"><button>Register</button></a>
+            <a href="/capstone/login"><button>Login</button></a>
+            <a href="/capstone/users/new"><button>Register</button></a>
             <a href="/capstone/Sign-out"><button>Sign-Out</button></a>
             </div>
             

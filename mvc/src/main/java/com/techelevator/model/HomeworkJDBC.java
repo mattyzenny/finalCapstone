@@ -62,32 +62,32 @@ public class HomeworkJDBC implements HomeworkDAO {
 	}
 
 	@Override
-	public Homework getCompletedHomework(boolean complete, int appuserId) {
-		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM homework"
-				+ "JOIN curriculum ON homework.course_id = curriculum.course_id"
-				+ "JOIN homework_submission ON curriculum.id = homework_submission.curriculum_id"
-				+ "JOIN student ON homework_submission.student_id = student.id"
-				+ "JOIN app_user ON student.appuser_id = app_user.id" + "WHERE complete = true AND appuser_id = ?",
-				appuserId);
-		if (result.next()) {
-			return mapRowSetToHomework(result);
+	public List<Homework> getHomeworkStatus(int appuserId) {
+		String sqlRequestHomeworkByAppUserId = "SELECT * FROM homework WHERE appuser_id =?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlRequestHomeworkByAppUserId, appuserId);
+		List<Homework> homeworkStatus = new ArrayList<Homework>();
+		while (result.next()) {
+			Homework homeworkResults = mapRowSetToHomework(result);
+			homeworkStatus.add(homeworkResults);
+			
 		}
-		return null;
+		return homeworkStatus;
 	}
-
-	@Override
-	public Homework getIncompleteHomework(boolean complete, int appuserId) {
-		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM homework"
-				+ "JOIN curriculum ON homework.course_id = curriculum.course_id"
-				+ "JOIN homework_submission ON curriculum.id = homework_submission.curriculum_id"
-				+ "JOIN student ON homework_submission.student_id = student.id"
-				+ "JOIN app_user ON student.appuser_id = app_user.id" + "WHERE complete = false AND appuser_id = ?",
-				appuserId);
-		if (result.next()) {
-			return mapRowSetToHomework(result);
-		}
-		return null;
-	}
+//
+//	@Override
+//	public Homework getIncompleteHomework(boolean complete, int appuserId) {
+//		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM homework"
+//				+ "JOIN curriculum ON homework.course_id = curriculum.course_id"
+//				+ "JOIN homework_submission ON curriculum.id = homework_submission.curriculum_id"
+//				+ "JOIN student ON homework_submission.student_id = student.id"
+//				+ "JOIN app_user ON student.appuser_id = app_user.id" + "WHERE complete = false AND appuser_id = ?",
+//				appuserId);
+//		if (result.next()) {
+//			return mapRowSetToHomework(result);
+//		}
+//		return null;
+//	}
+	
 	
 	@Override
 	public int getProgressPercentageByHomeworkId(int homeworkId, boolean complete) {
