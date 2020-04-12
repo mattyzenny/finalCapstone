@@ -22,8 +22,27 @@
 		<p>Teacher Mr. Steve Carmichael</p>
 		<p>Duration: ${course.courseDuration} week(s)</p>
 		<p>${course.courseDescription}</p>
-
+		
+		<p>
 	</div>
+	
+	
+	<h2>Curriculum</h2>
+	<c:forEach var="curriculum" items="${course.curriculumListByCourse}">
+	<c:out value="${curriculum.curriculumName }"></c:out>
+		<c:forEach var="homework" items="${curriculum.homeworkListByCurriculum }">
+			<c:out value="${homework.homeworkName }"></c:out>
+		</c:forEach>
+	</c:forEach>
+
+
+				<%-- <li><c:out
+						value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
+				<input type="checkbox" id="hwComplete"
+					name="${homework.homeworkName }" value="Complete?">
+
+			</c:forEach> --%>
+	</ul>
 
 
 

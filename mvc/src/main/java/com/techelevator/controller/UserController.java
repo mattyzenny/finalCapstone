@@ -70,6 +70,7 @@ public class UserController {
 	
 	@RequestMapping("/courseDetails") 
 	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id) {
+
 		modelHolder.addAttribute("course", courseDao.getCourseById(id));
 
 		return "courseDetails";

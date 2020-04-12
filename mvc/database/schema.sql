@@ -94,9 +94,9 @@ due_date date,
 complete boolean,
 question_id integer,
 answer_id integer,
-course_id integer,
+curriculum_id integer,
 
-constraint fk_homework foreign key (course_id) references curriculum(id)
+constraint fk_homework foreign key (curriculum_id) references curriculum (id)
 );
 
 

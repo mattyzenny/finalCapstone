@@ -25,33 +25,52 @@ public class CourseJDBC implements CourseDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
-	@Override
-	public List<Course> getAllCourses() {
-		List<Course> allCourses = new ArrayList<>();
-		String sqlSelectAllCourses = "SELECT * FROM course";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllCourses);
-		while (results.next()) {
-			Course course = mapRowSetToCourse(results);
-			String sqlSelectCurriculumByCourse = "SELECT * FROM course WHERE course_id = ?";
-			SqlRowSet curriculumResults = jdbcTemplate.queryForRowSet(sqlSelectCurriculumByCourse, course.getCourseId());
-			List<Curriculum> allCurriculaByCourse = new ArrayList<Curriculum>();
-			while (curriculumResults.next()) {
-				Curriculum curriculum = mapRowSetToCurriculum(curriculumResults);
-				allCurriculaByCourse.add(curriculum);
-			}
-			course.setCurriculumListByCourse(allCurriculaByCourse);
-			allCourses.add(course);
-		}
-		return allCourses;
-	}
+//	@Override
+//	public List<Course> getAllCourses() {
+//		List<Course> allCourses = new ArrayList<>();
+//		String sqlSelectAllCourses = "SELECT * FROM course";
+//		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllCourses);
+//		while (results.next()) {
+//			Course course = mapRowSetToCourse(results);
+//			String sqlSelectCurriculumByCourse = "SELECT * FROM curriculum WHERE course_id = ?";
+//			SqlRowSet curriculumResults = jdbcTemplate.queryForRowSet(sqlSelectCurriculumByCourse, course.getCourseId());
+//			List<Curriculum> allCurriculaByCourse = new ArrayList<Curriculum>();
+//			while (curriculumResults.next()) {
+//				Curriculum curriculum = mapRowSetToCurriculum(curriculumResults);
+//				allCurriculaByCourse.add(curriculum);
+//			}
+//			course.setCurriculumListByCourse(allCurriculaByCourse);
+//			allCourses.add(course);
+//		}
+//		return allCourses;
+//	}
 	
 	@Override
 	public Course getCourseById(int id) {
 	String sqlQuery = "SELECT * FROM course WHERE id = ?";
 	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlQuery, id);
+	Course course = new Course();
 	if (results.next()) {
-	return mapRowSetToCourse(results);
-	//loop through courses to get modules and homework similar to categoryJDBC
+		course = mapRowSetToCourse(results);
+		//loop through courses to get modules and homework similar to categoryJDBC
+		String sqlSelectCurriculumByCourse = "SELECT * FROM curriculum WHERE course_id = ?";
+		SqlRowSet curriculumResults = jdbcTemplate.queryForRowSet(sqlSelectCurriculumByCourse, course.getCourseId());
+		List<Curriculum> allCurriculaByCourse = new ArrayList<Curriculum>();
+		while (curriculumResults.next()) {
+			Curriculum curriculum = mapRowSetToCurriculum(curriculumResults);
+			//use the same method for homework in curriculum 
+			String sqlSelectHomeworkByCurriculum = "SELECT * FROM homeworkr WHERE curriculum_id = ?";
+			SqlRowSet homeworkResults = jdbcTemplate.queryForRowSet(sqlSelectHomeworkByCurriculum, curriculum.getCurriculumId());
+			List<Homework> allHomeworkByCurriculum = new ArrayList<Homework>();
+			while (homeworkResults.next()) {
+				Homework homework = mapRowSetToHomework(homeworkResults);
+				allHomeworkByCurriculum.add(homework);
+			}
+			curriculum.setHomeworkList(allHomeworkByCurriculum);
+			allCurriculaByCourse.add(curriculum);
+		}
+		course.setCurriculumListByCourse(allCurriculaByCourse);
+		return course;
 	}
 	return null;
 	}
@@ -81,8 +100,20 @@ public class CourseJDBC implements CourseDAO {
 		Curriculum curriculum = new Curriculum();
 		curriculum.setCurriculumId(curriculumResults.getInt("id"));
 		curriculum.setCurriculumName(curriculumResults.getString("name"));
-		curriculum.setCourseId(curriculumResults.getInt("course_id"));
-		return null;
+//		curriculum.setCourseId(curriculumResults.getInt("course_id"));
+		return curriculum;
+	}
+	
+	private Homework mapRowSetToHomework(SqlRowSet results) {
+		Homework homework = new Homework();
+		homework.setHomeworkId(results.getInt("id"));
+		homework.setHomeworkName(results.getString("name"));
+		homework.setDueDate(results.getDate("due_date"));
+		homework.setComplete(results.getBoolean("complete"));
+		homework.setQuestionId(results.getInt("question_id"));
+		homework.setAnswerId(results.getInt("answer_id"));
+		homework.setCourseId(results.getInt("course_id"));
+		return homework;
 	}
 
 
