@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <header>
 	<c:import url="/WEB-INF/jsp/common/header.jsp" />
 
@@ -21,15 +22,10 @@
 						<c:url var="courseDetailsURL" value="/courseDetails">
 							<c:param name="id">${course.courseId}</c:param>
 						</c:url>
-
 						<li><a href="${courseDetailsURL}">${course.courseName }</a></li>
 					</c:forEach>
 				</ul></li>
 		</c:forEach>
-
-
-
-
 
 		<li><c:forEach var="homework" items="${homework }">
 				<li><c:out
@@ -47,8 +43,22 @@
 	<%-- <p>${homework.dueDate}</p> --%>
 
 
+	<c:set var="courseList" value="Course List" />
+
+	<c:url var="formAction" value="/studentPortal" />
+	<form method="GET" action="${formAction }">
+
+		<div class="formInputGroup">
+			<label for="course"> Enter a course :</label> <input type="text"
+				name="course" id="id" />
+		</div>
+
+		<input class="formSubmitButton" id="submit" value="Search" />
 
 
+
+
+	</form>
 	<%-- <c:set var="courseName" value="${course.courseName }"/>
 <c:url var="courseDetailHREF" value ="/StudentPortal">
 <c:param name="courseName">${course.courseName }</c:param>  --%>

@@ -8,5 +8,6 @@ public interface CategoryDAO {
 	public Category getCategoryById(int id);
 	public Category getCategoriesByAppUserId(int appUserId);
 	public int getNextCategoryId();
+	
 
 }

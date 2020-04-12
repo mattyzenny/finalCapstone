@@ -1,5 +1,8 @@
 package com.techelevator.model;
 
+import java.util.List;
+
+
 public class Course {
 
 	private int courseId;
@@ -10,6 +13,8 @@ public class Course {
 	private int studentId;
 	private int teacherId;
 	private int curriculumId;
+	private List<Curriculum> curriculumListByCourse;
+
 	
 //	private List<Curriculum> curriculumListByCourse;
 	
@@ -55,5 +60,18 @@ public class Course {
 	public void setCurriculumId(int curriculumId) {
 		this.curriculumId = curriculumId;
 	}
+	public int getTeacherId() {
+		return teacherId;
+	}
+	public void setTeacherId(int teacherId) {
+		this.teacherId = teacherId;
+	}
+	public List<Curriculum> getCurriculumListByCourse() {
+		return curriculumListByCourse;
+	}
+	public void setCurriculumListByCourse(List<Curriculum> curriculumListByCourse) {
+		this.curriculumListByCourse = curriculumListByCourse;
+	}
+
 
 }

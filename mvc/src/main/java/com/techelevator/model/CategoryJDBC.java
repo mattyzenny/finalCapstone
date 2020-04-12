@@ -39,6 +39,14 @@ public class CategoryJDBC implements CategoryDAO {
 		}
 		return allCategories;
 	}
+	// ===================================================================================================
+	// Take catId from category ^, use catId to make second request from DB to get
+	// list of courses
+	// create SQL query to call getCoursesByCatID
+	// innerLoop while(result.next())
+	// loop through courses and add to course list
+	// outside while loop, add course list to cat object (category.add...)
+	// ===================================================================================================
 
 	@Override
 	public Category getCategoryById(int id) {
