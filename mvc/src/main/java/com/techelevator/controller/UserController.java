@@ -42,8 +42,6 @@ public class UserController {
 	@Autowired
 	HomeworkDAO homeworkDao;
 	
-	
-	
 	@Autowired
 	public UserController(UserDAO userDAO) {
 		this.userDAO = userDAO;
@@ -69,9 +67,13 @@ public class UserController {
 		}
 		return "register";
 		}
-	@RequestMapping("/FirstGradeMath") 
-	public String displayStudentClass() {
-		return "FirstGradeMath";
+	@RequestMapping("/courseDetails") 
+	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id) {
+		modelHolder.addAttribute("course", courseDao.getCourseById(id));
+		
+		
+		
+		return "courseDetails";
 	}
 	
 	
@@ -97,16 +99,15 @@ public class UserController {
 	public String displayStudentPortal(ModelMap map) {
 
 	    List<Category> categoryList = categoryDao.getAllCategories();
-	    List<Course> courseList = courseDao.getAllCourses();
-	    List<Homework> homeworkList = homeworkDao.getAllHomework();
-	    List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
+	 //   List<Category> courseList = categoryDao.getAllCategories();
+	 //   List<Homework> homeworkList = homeworkDao.getAllHomework();
+	 //   List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
 	//  Category categoryById = categoryDao.getCategoryById(1);
 	    
 	//  map.put("categoryId",categoryById);
 	    map.put("categories", categoryList);
-	    map.put("courses", courseList);
-	    map.put("homework",  homeworkList);
-	    map.put("curriculum", curriculumList);
+	//    map.put("courses", courseList);
+	//    map.put("homework",  homeworkList);
 	return "studentPortal";
 	}
 	

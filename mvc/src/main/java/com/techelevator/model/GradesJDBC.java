@@ -23,7 +23,7 @@ public class GradesJDBC implements GradesDAO {
 	@Override
 	public List<Grades> getAllGrades() {
 		List<Grades> allGrades = new ArrayList<>();
-		String sqlSelectAllGrades = "SELECT * FROM grades ORDER BY name ";
+		String sqlSelectAllGrades = "SELECT * FROM grades";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllGrades);
 		while (results.next()) {
 			Grades grades = mapRowSetToGrades(results);
