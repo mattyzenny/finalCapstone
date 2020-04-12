@@ -30,7 +30,7 @@
 	<h2>Curriculum</h2>
 	<c:forEach var="curriculum" items="${course.curriculumListByCourse}">
 	<c:out value="${curriculum.curriculumName }"></c:out>
-		<c:forEach var="homework" items="${curriculum.homeworkListByCurriculum }">
+		<c:forEach var="homework" items="${curriculum.homeworkList }">
 			<c:out value="${homework.homeworkName }"></c:out>
 		</c:forEach>
 	</c:forEach>

@@ -96,7 +96,7 @@ question_id integer,
 answer_id integer,
 curriculum_id integer,
 
-constraint fk_homework foreign key (curriculum_id) references curriculum (id)
+constraint fk_curriculum foreign key (curriculum_id) references curriculum (id)
 );
 
 

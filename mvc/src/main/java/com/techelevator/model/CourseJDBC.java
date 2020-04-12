@@ -50,7 +50,7 @@ public class CourseJDBC implements CourseDAO {
 	String sqlQuery = "SELECT * FROM course WHERE id = ?";
 	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlQuery, id);
 	Course course = new Course();
-	if (results.next()) {
+	while (results.next()) {
 		course = mapRowSetToCourse(results);
 		//loop through courses to get modules and homework similar to categoryJDBC
 		String sqlSelectCurriculumByCourse = "SELECT * FROM curriculum WHERE course_id = ?";
@@ -59,7 +59,7 @@ public class CourseJDBC implements CourseDAO {
 		while (curriculumResults.next()) {
 			Curriculum curriculum = mapRowSetToCurriculum(curriculumResults);
 			//use the same method for homework in curriculum 
-			String sqlSelectHomeworkByCurriculum = "SELECT * FROM homeworkr WHERE curriculum_id = ?";
+			String sqlSelectHomeworkByCurriculum = "SELECT * FROM homework WHERE curriculum_id = ?";
 			SqlRowSet homeworkResults = jdbcTemplate.queryForRowSet(sqlSelectHomeworkByCurriculum, curriculum.getCurriculumId());
 			List<Homework> allHomeworkByCurriculum = new ArrayList<Homework>();
 			while (homeworkResults.next()) {
@@ -112,7 +112,7 @@ public class CourseJDBC implements CourseDAO {
 		homework.setComplete(results.getBoolean("complete"));
 		homework.setQuestionId(results.getInt("question_id"));
 		homework.setAnswerId(results.getInt("answer_id"));
-		homework.setCourseId(results.getInt("course_id"));
+		homework.setCourseId(results.getInt("curriculum_id"));
 		return homework;
 	}
 

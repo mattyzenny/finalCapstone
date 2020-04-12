@@ -133,7 +133,7 @@ VALUES ('Week2: Subtraction', 1);
 INSERT INTO curriculum (name, course_id)
 VALUES('Week3: Negative Numbers', 1);
 
-INSERT INTO homework (name, due_date, complete, question_id, answer_id, course_id)
+INSERT INTO homework (name, due_date, complete, question_id, answer_id, curriculum_id)
 VALUES ('MadMath', '10/10/19', true, 1, 1, 1);
 
 INSERT INTO syllabus (curriculum_id, instruction, attachments, homework_id)
