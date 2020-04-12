@@ -69,44 +69,34 @@ public class UserController {
 		}
 		return "register";
 		}
-	@RequestMapping("/FirstGradeMath") 
-	public String displayStudentClass() {
-		return "FirstGradeMath";
+	
+	@RequestMapping("/courseDetails")
+	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id) {
+	modelHolder.addAttribute("course", courseDao.getCourseById(id));
+
+	    return "courseDetails";
 	}
 	
 	
 	@RequestMapping("/StudentPortal") 
-//1	public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {
-//		List<Course> studentCourseList = courseDao.getAllCoursesByStudentId(studentId);
-//		map.addAttribute("course", studentCourseList);
-//		return "studentPortal";
 
-	
-//2	public String displayStudentPortal(ModelMap map) {
-//		List<Course> courseList = courseDao.getAllCourses();
-//		map.put("courses", courseList);
-//
-//	return "studentPortal";
-//	}
-	
-	// public String displayStudentPortal(@RequestParam int studentId, ModelMap map) {
-	// List<Course> studentCourseList = courseDao.getAllCoursesByStudentId(studentId);
-	// map.addAttribute("course", studentCourseList);
-	// return "studentPortal";
 
 	public String displayStudentPortal(ModelMap map) {
 
 	    List<Category> categoryList = categoryDao.getAllCategories();
-	    List<Course> courseList = courseDao.getAllCourses();
-	    List<Homework> homeworkList = homeworkDao.getAllHomework();
-	    List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
+	   
+//	    List<Course> courseList = courseDao.getAllCourses();
+//	    List<Homework> homeworkList = homeworkDao.getAllHomework();
+//	    List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
 	//  Category categoryById = categoryDao.getCategoryById(1);
 	    
 	//  map.put("categoryId",categoryById);
 	    map.put("categories", categoryList);
-	    map.put("courses", courseList);
-	    map.put("homework",  homeworkList);
-	    map.put("curriculum", curriculumList);
+//	    map.put("course", categoryList);
+//	    map.put("courses", courseList);
+//	    map.put("homework",  homeworkList);
+//	    map.put("curriculum", curriculumList);
+	   
 	return "studentPortal";
 	}
 	

@@ -12,17 +12,6 @@ BEGIN;
 -- SELECT name FROM course
 -- JOIN category ON course.category_id = category.id;
 
-UPDATE course
-SET category_id = 1 
-WHERE course.name LIKE '%Math%';
-
-UPDATE course
-SET category_id = 5 
-WHERE course.name LIKE '%Language Arts%';
-
-UPDATE course
-SET category_id = 4 
-WHERE course.name LIKE '%Science%';
 
 INSERT INTO category (name)
 VALUES ('Math');
@@ -31,7 +20,7 @@ INSERT INTO category (name)
 VALUES ('Science');
 
 INSERT INTO category (name)
-VALUES ('Language Arts');
+VALUES ('English');
 
 INSERT INTO category (name)
 VALUES ('Social Studies');
@@ -41,9 +30,6 @@ VALUES ('Foriegn Languages');
 
 INSERT INTO category (name)
 VALUES ('Art');
-
-INSERT INTO category (name)
-VALUES ('Health & Activity');
 
 INSERT INTO category (name)
 VALUES ('Music');
@@ -96,7 +82,7 @@ time, measurement, money, bar graphs, word numbers to 100, greater than and less
 like a clock, ruler, or coins to learn concepts.', '1', null);
 
 INSERT INTO course (name, description, duration, category_id)
-VALUES ('1st Grade Language Arts', 'The {Project Name} curriculum constitutes a solid first grade language arts program 
+VALUES ('1st Grade English', 'The {Project Name} curriculum constitutes a solid first grade language arts program 
 correlated to state standards, which many homeschool parents use it as their entire curriculum. Non-homeschoolers utilize 
 the lessons for extra practice, an online first grade tutorial, or summer enrichment. First grade language arts contains 
 Language Arts and Language Arts Extensions. The language arts section contains 13 chapters and hundreds of learning activities 
@@ -122,7 +108,7 @@ operation signs, and word problems. Skip counting, recognizing ordinal numbers, 
 progress and student mastery.', '1', null);
 
 INSERT INTO course (name, description, duration, category_id)
-VALUES ('2nd Grade Language Arts', 'Second grade language arts continues to build phonics, reading, and grammar. Colorful, illustrated lessons in this online academy course focus 
+VALUES ('2nd Grade English', 'Second grade language arts continues to build phonics, reading, and grammar. Colorful, illustrated lessons in this online academy course focus 
 on building essential skills in reading, writing, listening, speaking, spelling, vocabulary, and penmanship. Print-based lessons include word activities, writing practice, syllables 
 and consonant blends, and stories for reading comprehension. Topics studied include nouns and verbs, vowel sounds, plurals, prefixes and suffixes, cursive writing, rhyming words, 
 simple sentences, punctuation, digraphs, and diphthongs. In both Horizons and LIFEPAC, writing in cursive is introduced, and guidelines to help students learn correct writing formations 
@@ -164,4 +150,35 @@ VALUES (100, 1, 1);
 
 INSERT INTO attachments (link, attachments_description, syllabus_id)
 VALUES ('https://www.mathpyramid.com/worksheets/summertime-math.pdf', 'week 1 math addition homework', 1);
+
+UPDATE course
+SET category_id = 1 
+WHERE course.name LIKE '%Math%';
+
+UPDATE course
+SET category_id = 3 
+WHERE course.name LIKE '%English%';
+
+UPDATE course
+SET category_id = 2 
+WHERE course.name LIKE '%Science%';
+
+UPDATE course
+SET category_id = 4
+WHERE course.name LIKE '%Social Studies%';
+
+UPDATE course
+SET category_id = 5 
+WHERE course.name LIKE '%Spanish%' 
+	OR course.name LIKE '%French' 
+	OR course.name LIKE '%German%';
+
+UPDATE course
+SET category_id = 6 
+WHERE course.name LIKE '%Art%';
+
+UPDATE course
+SET category_id = 7 
+WHERE course.name LIKE '%Music%';
+
 COMMIT;

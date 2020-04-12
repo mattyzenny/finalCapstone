@@ -15,38 +15,37 @@
 
 	<ul>
 		<c:forEach var="category" items="${categories}">
-			<li><a href="/capstone/FirstGradeMath"> <c:out
-						value="${category.name}" /></a></li>
-			<li>
-			
-			<c:forEach var="course" items="${courses }">
-			<a href><c:out value="${course.courseName }" /></a>
-			</c:forEach>
-			</li>
-			
-			
-			<ul>
-				<c:forEach var="curriculum" items="${curriculum }">
-					<li><c:out value="${curriculum.curriculumName}" /></li>
-				</c:forEach>
-			</ul>
-			
+			<li><a href="course.courseName ">${category.name}</a>
+				<ul>
+					<c:forEach var="course" items="${category.courseListByCategory }">
+						<c:url var="courseDetailsURL" value="/courseDetails">
+							<c:param name="id">${course.courseId}</c:param>
+						</c:url>
+
+						<li><a href="${courseDetailsURL}">${course.courseName }</a></li>
+					</c:forEach>
+				</ul></li>
 		</c:forEach>
-		
-		<li>
-		<c:forEach var="homework" items="${homework }">	
-			<li><c:out value="${homework.homeworkName} Due Date: ${homework.dueDate }"/></li>
-			<input type="checkbox" id="hwComplete" name="${homework.homeworkName }" value="Complete?">
-			
+
+
+
+
+
+		<li><c:forEach var="homework" items="${homework }">
+				<li><c:out
+						value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
+				<input type="checkbox" id="hwComplete"
+					name="${homework.homeworkName }" value="Complete?">
+
 			</c:forEach>
 	</ul>
 
-<%-- 	<h1>${course.courseName}</h1>
+	<%-- 	<h1>${course.courseName}</h1>
 	<p>${course.courseDescription}</p> --%>
 	<%-- <h4>${curriculum.curriculumName}</h4> --%>
 	<%-- <p>${homework.homeworkName}</p> --%>
 	<%-- <p>${homework.dueDate}</p> --%>
-	
+
 
 
 

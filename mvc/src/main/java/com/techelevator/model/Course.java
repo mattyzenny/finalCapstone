@@ -8,8 +8,10 @@ public class Course {
 	private String courseDuration;
 	private int categoryId;
 	private int studentId;
+	private int teacherId;
 	private int curriculumId;
 	
+//	private List<Curriculum> curriculumListByCourse;
 	
 	public int getStudentId() {
 		return studentId;

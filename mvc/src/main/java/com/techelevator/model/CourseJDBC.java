@@ -22,36 +22,36 @@ public class CourseJDBC implements CourseDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
-	@Override
-	public List<Course> getAllCoursesByStudentId(int studentId) {
-
-		List<Course> coursesById = new ArrayList<>();
-		String sqlSelectCourseById = "SELECT course.name FROM course" + 
-				" JOIN app_user_course ON course.id = app_user_course.id" + 
-				" JOIN app_user ON app_user.id = app_user_course.app_user_id\n" + 
-				" JOIN student ON app_user.id = student.appuser_id\n" + 
-				" ORDER BY student.id";
-
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectCourseById);
-		while (results.next()) {
-			Course course = mapRowSetToCourse(results);
-			coursesById.add(course);
-		}
-		return null;
-	}
-
-	@Override
-	public List<Course> getAllCoursesByCategory(int categoryId) {
-		List<Course> courseByCategory = new ArrayList<>();
-		String sqlSelectCourseByCategory = "SELECT course.name FROM course" + " JOIN category ON category.id = course.category_id" 
-		+ " ORDER BY category_id";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectCourseByCategory);
-		while(results.next()) {
-		Course course = mapRowSetToCourse(results);
-		courseByCategory.add(course);
-	}
-		return null;
-	}
+//	@Override
+//	public List<Course> getAllCoursesByStudentId(int studentId) {
+//
+//		List<Course> coursesById = new ArrayList<>();
+//		String sqlSelectCourseById = "SELECT course.name FROM course" + 
+//				" JOIN app_user_course ON course.id = app_user_course.id" + 
+//				" JOIN app_user ON app_user.id = app_user_course.app_user_id\n" + 
+//				" JOIN student ON app_user.id = student.appuser_id\n" + 
+//				" ORDER BY student.id";
+//
+//		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectCourseById);
+//		while (results.next()) {
+//			Course course = mapRowSetToCourse(results);
+//			coursesById.add(course);
+//		}
+//		return null;
+//	}
+//
+//	@Override
+//	public List<Course> getAllCoursesByCategory(int categoryId) {
+//		List<Course> courseByCategory = new ArrayList<>();
+//		String sqlSelectCourseByCategory = "SELECT course.name FROM course" + " JOIN category ON category.id = course.category_id" 
+//		+ " ORDER BY category_id";
+//		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectCourseByCategory);
+//		while(results.next()) {
+//		Course course = mapRowSetToCourse(results);
+//		courseByCategory.add(course);
+//	}
+//		return null;
+//	}
 
 	@Override
 	public List<Course> getAllCourses() {
@@ -63,6 +63,17 @@ public class CourseJDBC implements CourseDAO {
 			allCourses.add(course);
 		}
 		return allCourses;
+	}
+	
+	@Override
+	public Course getCourseById(int id) {
+	String sqlQuery = "SELECT * FROM course WHERE id = ?";
+	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlQuery, id);
+	if (results.next()) {
+	return mapRowSetToCourse(results);
+	//loop through courses to get modules and homework similar to categoryJDBC
+	}
+	return null;
 	}
 	
 	
