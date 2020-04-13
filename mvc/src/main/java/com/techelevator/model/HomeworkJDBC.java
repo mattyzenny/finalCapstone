@@ -65,9 +65,9 @@ public class HomeworkJDBC implements HomeworkDAO {
 	}
 
 	@Override
-	public List<Homework> getHomeworkStatus(int appuserId) {
-		String sqlRequestHomeworkByAppUserId = "SELECT * FROM homework WHERE appuser_id = ?";
-		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlRequestHomeworkByAppUserId, appuserId);
+	public List<Homework> getHomeworkStatus(int id) {
+		String sqlRequestHomeworkByAppUserId = "SELECT * FROM homework WHERE id = ?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlRequestHomeworkByAppUserId, id);
 		List<Homework> homeworkStatus = new ArrayList<Homework>();
 		while (result.next()) {
 			Homework homeworkResults = mapRowSetToHomework(result);
@@ -76,6 +76,15 @@ public class HomeworkJDBC implements HomeworkDAO {
 		}
 		return homeworkStatus;
 	}
+	
+	@Override
+	public void updateHomeworkByCourseId(int courseId, boolean complete) {
+		jdbcTemplate.update("UPDATE homework SET complete = ?" +
+				" FROM homework h" + 
+				" JOIN curriculum ON curriculum.id = h.curriculum_id" +
+				" JOIN course ON course.id = curriculum.course_id " +
+				" WHERE course.id = ?", complete, courseId);
+		}
 	//
 	// @Override
 	// public Homework getIncompleteHomework(boolean complete, int appuserId) {
@@ -137,14 +146,7 @@ public class HomeworkJDBC implements HomeworkDAO {
 				appuserId);
 	}
 
-	@Override
-	public void updateHomeworkByCourseId(int courseId) {
-		jdbcTemplate.update("UPDATE homework SET complete = true" +
-				" FROM homework h" + 
-				" JOIN curriculum ON curriculum.id = h.curriculum_id" +
-				" JOIN course ON course.id = curriculum.course_id " +
-				" WHERE course.id = ?", courseId);
-		}
+	
 
 	private Homework mapRowSetToHomework(SqlRowSet results) {
 		Homework homework = new Homework();
@@ -157,7 +159,5 @@ public class HomeworkJDBC implements HomeworkDAO {
 		homework.setCourseId(results.getInt("course_id"));
 		return homework;
 	}
-
-	
 
 }

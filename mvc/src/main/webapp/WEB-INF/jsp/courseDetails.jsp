@@ -35,20 +35,25 @@
 	<c:out value="${curriculum.curriculumName }"></c:out><br>
 		<c:forEach var="homework" items="${curriculum.homeworkList }">
 			
+			
 			<form method="POST" action="${courseDetailsURL}">
-			<button id="hwComplete" type="submit">Complete</button>
-			<c:url var="courseDetailsURL" value="/courseDetails">
-			<c:param name="id">${course.courseId}</c:param></c:url>
+			<c:set var="buttonStatus" value="Complete"/>
+			<c:if test="${homework.complete == true}"><c:set var="buttonStatus" value="Incomplete"/></c:if>
+			<button id="hwComplete" type="submit">${buttonStatus}</button>
+			<c:url var="courseDetailsURL" value="/courseDetails"></c:url>
+			<input type="hidden" name="id" value="${course.courseId}"/>
+			<input type="hidden" name="complete" value="${homework.complete}"/>
 			</form>
 			
 			<c:out value="${homework.homeworkName }"></c:out>
 			
-			<form method="POST" action="${courseDetailsURL}">
+			<%-- <form method="POST" action="${courseDetailsURL}">
 			<button id="hwReopen" type="submit">Re-open</button><br>
 			<c:url var="courseDetailsURL" value="/courseDetails">
 			<c:param name="id">${course.courseId}</c:param></c:url>
-			</form>
+			</form> --%>
 			
+		
 		</c:forEach>
 	</c:forEach>
 
