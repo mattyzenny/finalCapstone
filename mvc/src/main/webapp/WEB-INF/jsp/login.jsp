@@ -30,7 +30,8 @@
 	<div class="col-sm-4">
 		<c:url var="formAction" value="/login" />
 		<form method="POST" action="${formAction}">
-		<input type="hidden" name="destination" value="${param.destination}"/>
+		<!--  <input type="hidden" name="destination" value="${param.destination}"/>  -->
+		<input type="hidden" name="destination" value="/StudentPortal"/>
 		<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}"/>
 			<div class="form-group">
 				<label for="userName">User Name: </label>

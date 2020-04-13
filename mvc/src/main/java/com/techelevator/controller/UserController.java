@@ -52,21 +52,6 @@ public class UserController {
 		return "home";
 	}
 	
-	@RequestMapping("/StudentLogin")
-	public String displayStudentLogin() {
-		return "studentLogin";
-	}
-	@RequestMapping("/TeacherLogin") 
-		public String displayTeacherLogin() {
-			return "teacherLogin";
-		}
-//	@RequestMapping(path="/Register", method=RequestMethod.GET) 
-//		public String displayNewUserForm(ModelMap modelHolder) {
-//		if (!modelHolder.containsAttribute("user")) {
-//			modelHolder.addAttribute("user", new User());
-//		}
-//		return "register";
-//		}
 	
 	@RequestMapping("/courseDetails") 
 	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id) {

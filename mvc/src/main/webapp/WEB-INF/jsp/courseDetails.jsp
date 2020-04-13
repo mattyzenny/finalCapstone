@@ -5,8 +5,8 @@
 </header>
 
 <body>
-<div class="main">
-		<h3>Welcome John Smith!</h3>
+<div class="center">
+		<h3>Curriculum Page</h3>
 
 		<div class="container">
  <a class="CourseImage"> <img id="CourseImage"
@@ -18,16 +18,16 @@
 <!-- 			<img src="/img/Art.jpg" alt="Avatar" class="image"/> -->
 			<div class="overlay">
 
-				<div class="text">Student picture</div>
-			</div>
-		</div>
+		
 
 		<h2>${course.courseName}</h2>
 		<p>${category.name }</p>
-		<p>Teacher Mr. Steve Carmichael</p>
+		
 		<p>Duration: ${course.courseDuration} week(s)</p>
 		<p>${course.courseDescription}</p>
-</div>
+		
+		<p>
+	
 	
 	
 	<h2>Curriculum</h2>
@@ -49,7 +49,7 @@
 			</c:forEach> --%>
 	</ul>
 
-
+</div>
 
 
 </body>

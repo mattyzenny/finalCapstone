@@ -7,11 +7,15 @@
 <head>
 <link href="<c:url value="/css/site.css"/>" rel="stylesheet" type="text/css"/>
 
- <div class="nav-links">
+<div class="header">
+<a href="#default" class="logo">Columbus Primary School</a>
+
+ <div class="header-right">
             <a href="/capstone/"><button>Home</button></a>
             <a href="/capstone/login"><button>Login</button></a>
             <a href="/capstone/users/new"><button>Register</button></a>
             <a href="/capstone/Sign-out"><button>Sign-Out</button></a>
+            </div>
             </div>
             
 </head>

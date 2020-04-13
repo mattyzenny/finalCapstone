@@ -1,20 +1,39 @@
 package com.techelevator.model;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 public class User {
+   
+	@NotBlank(message="Username is required")
 	private String userName;
 	
-	@Size(min=10, message="Password too short, must be at least 10")
+	@Size(min=6, message="Password too short, must be at least 6")
 	@Pattern.List({
 		@Pattern(regexp=".*[a-z].*", message="Must have a lower case"),
 		@Pattern(regexp=".*[A-Z].*", message="Must have a capital")
 	})
+	
+	@NotBlank(message="Password is required")
 	private String password;
+	
+	
 	private String role;
 	
 	private String confirmPassword;
+	
+	private boolean passwordMatching;
+    @AssertTrue(message = "Passwords must match")
+    public boolean isPasswordMatching() {
+        if (password != null) {
+            return password.equals(confirmPassword);
+        }
+        return true;
+    }
+    
 	public String getUserName() {
 		return userName;
 	}
