@@ -9,12 +9,9 @@
 		<h3>Welcome John Smith!</h3>
 
 		<div class="container">
-
+			
 			<img src="/img/steve_car.jpeg" alt="Avatar" class="image">
-			<div class="overlay">
-
-				<div class="text">Student picture</div>
-			</div>
+			
 		</div>
 
 		<h2>${course.courseName}</h2>
@@ -22,16 +19,14 @@
 		<p>Teacher Mr. Steve Carmichael</p>
 		<p>Duration: ${course.courseDuration} week(s)</p>
 		<p>${course.courseDescription}</p>
-		
-		<p>
-	</div>
+</div>
 	
 	
 	<h2>Curriculum</h2>
 	<c:forEach var="curriculum" items="${course.curriculumListByCourse}">
-	<c:out value="${curriculum.curriculumName }"></c:out>
+	<c:out value="${curriculum.curriculumName }"></c:out><br>
 		<c:forEach var="homework" items="${curriculum.homeworkList }">
-			<c:out value="${homework.homeworkName }"></c:out>
+			<c:out value="${homework.homeworkName }"></c:out><br>
 			<input type="checkbox" id="hwComplete"
 					name="${homework.homeworkName }" value="Complete?"></>
 		</c:forEach>

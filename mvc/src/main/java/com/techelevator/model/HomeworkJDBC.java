@@ -63,7 +63,7 @@ public class HomeworkJDBC implements HomeworkDAO {
 
 	@Override
 	public List<Homework> getHomeworkStatus(int appuserId) {
-		String sqlRequestHomeworkByAppUserId = "SELECT * FROM homework WHERE appuser_id =?";
+		String sqlRequestHomeworkByAppUserId = "SELECT * FROM homework WHERE appuser_id = ?";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlRequestHomeworkByAppUserId, appuserId);
 		List<Homework> homeworkStatus = new ArrayList<Homework>();
 		while (result.next()) {
