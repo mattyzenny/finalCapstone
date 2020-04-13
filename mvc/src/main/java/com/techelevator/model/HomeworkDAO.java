@@ -11,5 +11,6 @@ public interface HomeworkDAO {
 	public List<Homework> getHomeworkStatus(int appuserId);
 	public int getProgressPercentageByHomeworkId(int homeworkId, boolean complete);
 	public void createHomework(Homework homework);
+	public Homework updateHomeworkByUserId(int appuserId);
 
 }
