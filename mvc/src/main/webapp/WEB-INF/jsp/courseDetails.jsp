@@ -32,6 +32,8 @@
 	<c:out value="${curriculum.curriculumName }"></c:out>
 		<c:forEach var="homework" items="${curriculum.homeworkList }">
 			<c:out value="${homework.homeworkName }"></c:out>
+			<input type="checkbox" id="hwComplete"
+					name="${homework.homeworkName }" value="Complete?"></>
 		</c:forEach>
 	</c:forEach>
 

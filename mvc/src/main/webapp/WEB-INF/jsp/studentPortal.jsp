@@ -16,7 +16,8 @@
 
 	<ul>
 		<c:forEach var="category" items="${categories}">
-			<li><a href="course.courseName ">${category.name}</a>
+			<%--change category to <h2> or another non-link tag --%>
+			<li><c:out value ="${category.name}"/>
 				<ul>
 					<c:forEach var="course" items="${category.courseListByCategory }">
 						<c:url var="courseDetailsURL" value="/courseDetails">
