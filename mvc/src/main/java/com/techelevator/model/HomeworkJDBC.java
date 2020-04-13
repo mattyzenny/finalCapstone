@@ -136,6 +136,23 @@ public class HomeworkJDBC implements HomeworkDAO {
 		return homework;
 	}
 
+	@Override
+	public Homework updateHomeworkByUserId(int appuserId) {
+		
+		
+//		
+//		SqlRowSet result = jdbcTemplate.queryForRowSet("SELECT * FROM homework" + " JOIN curriculum ON homework.course_id = curriculum.course_id"
+//				+ " JOIN homework_submission ON curriculum.id = homework_submission.curriculum_id"
+//				+ " JOIN student ON homework_submission.student_id = student.id"
+//				+ " JOIN app_user ON student.appuser_id = app_user.id"
+//				+ " JOIN teacher ON app_user.id = teacher.appuser_id" + " WHERE teacher.id = ?", teacherId);
+//if (result.next()) {
+//return mapRowSetToHomework(result);
+//}
+return null;
+}
+
+//	BEGIN TRANSACTION;  UPDATE homework  SET complete = TRUE WHERE appuser_id = 1; COMMIT; ROLLBACK; UPDATE homework SET complete = FALSE; JOIN homework homework.curriculum_id = curriculum.id, JOIN course curriculum.course_id = course.id WHERE course.id = 1;
 	
 
 }
