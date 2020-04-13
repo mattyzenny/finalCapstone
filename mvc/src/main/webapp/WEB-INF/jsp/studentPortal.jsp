@@ -19,7 +19,8 @@
 <div class="sidenav">
 	<ul>
 		<c:forEach var="category" items="${categories}">
-			<li><a href="course.courseName ">${category.name}</a>
+			<%--change category to <h2> or another non-link tag --%>
+			<li><c:out value ="${category.name}"/>
 				<ul>
 					<c:forEach var="course" items="${category.courseListByCategory }">
 						<c:url var="courseDetailsURL" value="/courseDetails">
@@ -41,14 +42,16 @@
 	</ul>
 	</div>
 
-	<%-- 	<h1>${course.courseName}</h1>
+	<%-- PLACE THIS IN TEACHER PORTAL(FORM TO CREATE NEW COURSE
+	
+		<h1>${course.courseName}</h1>
 	<p>${course.courseDescription}</p> --%>
 	<%-- <h4>${curriculum.curriculumName}</h4> --%>
 	<%-- <p>${homework.homeworkName}</p> --%>
 	<%-- <p>${homework.dueDate}</p> --%>
 
 
-<%-- 	<c:set var="courseList" value="Course List" />
+	<%-- <c:set var="courseList" value="Course List" />
 
 	<c:url var="formAction" value="/studentPortal" />
 	<form method="GET" action="${formAction }">
@@ -63,7 +66,9 @@
 
 
 
-	</form>
+	</form> PLACE THIS IN TEACHER PORTAL(FORM TO CREATE NEW COURSE--%>
+	
+	
 	<%-- <c:set var="courseName" value="${course.courseName }"/>
 <c:url var="courseDetailHREF" value ="/StudentPortal">
 <c:param name="courseName">${course.courseName }</c:param>  --%>

@@ -8,9 +8,15 @@
 <div class="center">
 		<h3>Curriculum Page</h3>
 
-		
-<img src="img/placeholder.png" alt="Avatar" class="image">
-			
+		<div class="container">
+ <a class="CourseImage"> <img id="CourseImage"
+				src="<c:url value= "/img/${course.courseId }.jpg"/>" /> 
+				
+				
+
+
+<!-- 			<img src="/img/Art.jpg" alt="Avatar" class="image"/> -->
+			<div class="overlay">
 
 		
 
