@@ -9,9 +9,17 @@
 		<h3>Welcome John Smith!</h3>
 
 		<div class="container">
-			
-			<img src="/img/steve_car.jpeg" alt="Avatar" class="image">
-			
+ <a class="CourseImage"> <img id="CourseImage"
+				src="<c:url value= "/img/${course.courseId }.jpg"/>" /> 
+				
+				
+
+
+<!-- 			<img src="/img/Art.jpg" alt="Avatar" class="image"/> -->
+			<div class="overlay">
+
+				<div class="text">Student picture</div>
+			</div>
 		</div>
 
 		<h2>${course.courseName}</h2>
