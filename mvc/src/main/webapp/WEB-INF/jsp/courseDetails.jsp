@@ -34,9 +34,21 @@
 	<c:forEach var="curriculum" items="${course.curriculumListByCourse}">
 	<c:out value="${curriculum.curriculumName }"></c:out><br>
 		<c:forEach var="homework" items="${curriculum.homeworkList }">
-			<c:out value="${homework.homeworkName }"></c:out><br>
-			<input type="checkbox" id="hwComplete"
-					name="${homework.homeworkName }" value="Complete?"></>
+			
+			<form method="POST" action="${courseDetailsURL}">
+			<button id="hwComplete" type="submit">Complete</button>
+			<c:url var="courseDetailsURL" value="/courseDetails">
+			<c:param name="id">${course.courseId}</c:param></c:url>
+			</form>
+			
+			<c:out value="${homework.homeworkName }"></c:out>
+			
+			<form method="POST" action="${courseDetailsURL}">
+			<button id="hwReopen" type="submit">Re-open</button><br>
+			<c:url var="courseDetailsURL" value="/courseDetails">
+			<c:param name="id">${course.courseId}</c:param></c:url>
+			</form>
+			
 		</c:forEach>
 	</c:forEach>
 

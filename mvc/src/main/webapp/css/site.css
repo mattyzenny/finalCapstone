@@ -15,6 +15,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.error {
+	font-color: red;
+	font-weight: bold;
+}
+
 .header {
   overflow: hidden;
   background-color: #FFFFFF;

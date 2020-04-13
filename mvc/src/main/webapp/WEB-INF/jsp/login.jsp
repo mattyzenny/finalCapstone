@@ -36,13 +36,18 @@
 			<div class="form-group">
 				<label for="userName">User Name: </label>
 				<input type="text" id="userName" name="userName" placeHolder="User Name" class="form-control" />
+				<form:errors path="username" cssClass="error"/>
 			</div>
 			<div class="form-group">
 				<label for="password">Password: </label>
 				<input type="password" id="password" name="password" placeHolder="Password" class="form-control" />
+				<form:errors path="password" cssClass="error"/>
 			</div>
 			<button type="submit" class="btn-primary">Login</button>
 		</form>
+		
+		
+		
 	</div>
 	<div class="col-sm-4"></div>
 </div>

@@ -69,6 +69,7 @@
 	</form> <%--  PLACE THIS IN TEACHER PORTAL(FORM TO CREATE NEW COURSE--%>
 	
 	
+	
 	<%-- <c:set var="courseName" value="${course.courseName }"/>
 <c:url var="courseDetailHREF" value ="/StudentPortal">
 <c:param name="courseName">${course.courseName }</c:param>  --%>
