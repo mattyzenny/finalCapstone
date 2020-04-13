@@ -1,4 +1,7 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <header>
 	<c:import url="/WEB-INF/jsp/common/header.jsp" />
@@ -13,7 +16,7 @@
 		<c:out value="${course.courseDuration }"/>
 	</c:forEach> --%>
 
-
+<div class="sidenav">
 	<ul>
 		<c:forEach var="category" items="${categories}">
 			<li><a href="course.courseName ">${category.name}</a>
@@ -26,6 +29,7 @@
 					</c:forEach>
 				</ul></li>
 		</c:forEach>
+		
 
 		<li><c:forEach var="homework" items="${homework }">
 				<li><c:out
@@ -35,6 +39,7 @@
 
 			</c:forEach>
 	</ul>
+	</div>
 
 	<%-- 	<h1>${course.courseName}</h1>
 	<p>${course.courseDescription}</p> --%>
@@ -43,7 +48,7 @@
 	<%-- <p>${homework.dueDate}</p> --%>
 
 
-	<c:set var="courseList" value="Course List" />
+<%-- 	<c:set var="courseList" value="Course List" />
 
 	<c:url var="formAction" value="/studentPortal" />
 	<form method="GET" action="${formAction }">
@@ -53,7 +58,7 @@
 				name="course" id="id" />
 		</div>
 
-		<input class="formSubmitButton" id="submit" value="Search" />
+		<input class="formSubmitButton" id="submit" value="Search" /> --%>
 
 
 
@@ -93,7 +98,7 @@
         </ul>
     </nav> -->
 
-<!-- 	<div class='cssmenu'>
+<%-- 	<div class='cssmenu'>
 		<ul>
 			<li><a href='#'><span>Courses</span></a></li>
 			<li><a href='#'><span>Math</span></a>
@@ -109,28 +114,26 @@
 		<li><a href='#'><span>Science</span></a></li>
 		<li><a href='#'><span>Language Art</span></a></li>
 		</ul>
-	</div>
+	</div> --%>
 
 
 
 
-	<div class="main">
-		<h3>Welcome John Smith!</h3>
+	<div class="center">
+		<h2>Welcome To Your Student Portal</h2>
 
-		<div class="container">
+		
 
-			<img src="/img/steve_car.jpeg" alt="Avatar" class="image">
-			<div class="overlay">
+			<img src="img/placeholder.png" alt="Avatar" class="image">
+			
 
-				<div class="text">Student picture</div>
-			</div>
-		</div>
 
-		<h2>1st Grade Math</h2>
-		<p>Course Category: Math</p>
-		<p>Teacher Mr. Steve Carmichael</p>
-		<p>Duration: 1 week</p> 
- --%>
+		<h3>On This Student Portal You Can Do The following!</h3>
+		<p>Find List of Registered Courses</p>
+		<p>View Curriculum</p>
+		<p>Submit Homework</p> 
+		<p> Check Your Grades<p>
+</div>
 
 </body>
 </html>
