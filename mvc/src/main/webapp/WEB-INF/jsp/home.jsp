@@ -5,6 +5,9 @@
             </header>
          
           
-        
+<div class=home>HomePage
  
- <div class=home>HomePage</div>
+ 
+ <img src="img/home_img_banner.jpg" alt="Avatar" class="image">
+ 
+ </div>
