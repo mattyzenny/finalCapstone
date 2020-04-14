@@ -39,13 +39,12 @@
 			<form method="POST" action="${courseDetailsURL}">
 			<c:set var="buttonStatus" value="Complete"/>
 			<c:if test="${homework.complete == true}"><c:set var="buttonStatus" value="Incomplete"/></c:if>
+			<c:out value="${homework.homeworkName }"></c:out>
 			<button id="hwComplete" type="submit">${buttonStatus}</button>
 			<c:url var="courseDetailsURL" value="/courseDetails"></c:url>
 			<input type="hidden" name="id" value="${course.courseId}"/>
 			<input type="hidden" name="complete" value="${homework.complete}"/>
 			</form>
-			
-			<c:out value="${homework.homeworkName }"></c:out>
 			
 			<%-- <form method="POST" action="${courseDetailsURL}">
 			<button id="hwReopen" type="submit">Re-open</button><br>
