@@ -94,6 +94,15 @@ ul {
 
 
 .sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #0074D9;
+ 
+    
+}
+
+.sidenav a {
 	padding: 10px 24px;
 	text-decoration: none;
 	font-size: 18px;
@@ -106,6 +115,15 @@ ul {
 	 	  
 }
 
+<<<<<<< HEAD
+=======
+
+.center {
+	text-align: center;	
+}
+
+
+>>>>>>> 757bd6df3cb477f0f432b36dda7048393b42fbc1
 .sidenav a:hover {
 	color: #f1f1f1;
 }
@@ -114,7 +132,10 @@ ul {
 	text-align: center;
 }
 
+<<<<<<< HEAD
 
 
 	
 }
+=======
+>>>>>>> 757bd6df3cb477f0f432b36dda7048393b42fbc1
