@@ -9,8 +9,11 @@
 </header>
 
 
+
 <div class="sidenav">
 	<ul>
+	<c:url var="formAction" value="/StudentPortal" />
+		<form method="POST" action="${formAction}">
 		<c:forEach var="category" items="${categories}">
 			<%--change category to <h2> or another non-link tag --%>
 			<li><c:out value ="${category.name}"/>
@@ -24,7 +27,9 @@
 				</ul></li>
 		</c:forEach>
 		
-
+		
+		
+		
 		<c:forEach var="homework" items="${homework}">
 				<li><c:out
 						value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
@@ -32,9 +37,10 @@
 					name="${homework.homeworkName }" value="Complete?">
 
 			</c:forEach>
+		</form>
 	</ul>
 	</div>
-
+	
 	<%-- PLACE THIS IN TEACHER PORTAL(FORM TO CREATE NEW COURSE
 	
 		<h1>${course.courseName}</h1>

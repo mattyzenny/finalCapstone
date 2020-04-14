@@ -10,7 +10,7 @@ body {
 
 #myImage {
 	height: 50%;
-	width: 100%;
+	width: auto;
 }
 
 .error {
@@ -60,6 +60,7 @@ body {
 		display: block;
 		text-align: left;
 	}
+	
 	.header-right {
 		float: none;
 	}
@@ -69,6 +70,7 @@ body {
 body {
 	background-color: #001f3f;
 }
+
 
 html {
 	font-size: 20px;

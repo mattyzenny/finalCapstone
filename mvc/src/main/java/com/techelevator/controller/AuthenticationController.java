@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.techelevator.model.CategoryDAO;
 import com.techelevator.model.UserDAO;
 
 @Controller
 public class AuthenticationController {
 
 	private UserDAO userDAO;
+	private CategoryDAO categoryDao;
 
 	@Autowired
 	public AuthenticationController(UserDAO userDAO) {
@@ -43,6 +45,8 @@ public class AuthenticationController {
 			return "redirect:/login";
 		}
 	}
+	
+	
 
 	@RequestMapping(path="/logout", method=RequestMethod.POST)
 	public String logout(ModelMap model, HttpSession session) {

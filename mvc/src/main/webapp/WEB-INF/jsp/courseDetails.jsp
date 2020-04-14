@@ -11,13 +11,10 @@
 		<div class="container">
 			<div class="Image">
 				<a class="image"> <img id="myImage"
-					src="<c:url value= "/img/${course.courseId }.jpg" />" />
+					src="<c:url value= "/img/${course.courseId}.jpg" />" />
 				</a>
 			</div>
-
-
-
-
+			
 				<h2>${course.courseName}</h2>
 				<p>${category.name }</p>
 
@@ -31,7 +28,7 @@
 					<br>
 					<c:forEach var="homework" items="${curriculum.homeworkList }">
 					</c:forEach>
-				</c:forEach>
+</c:forEach>
 
 <!-- 			<img src="/img/Art.jpg" alt="Avatar" class="image"/> -->
 			<div class="overlay">

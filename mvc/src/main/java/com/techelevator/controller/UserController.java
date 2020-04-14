@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.techelevator.model.Category;
 import com.techelevator.model.CategoryDAO;
-import com.techelevator.model.Course;
 import com.techelevator.model.CourseDAO;
-import com.techelevator.model.Curriculum;
 import com.techelevator.model.CurriculumDAO;
-import com.techelevator.model.Homework;
 import com.techelevator.model.HomeworkDAO;
 import com.techelevator.model.User;
 import com.techelevator.model.UserDAO;
@@ -67,23 +64,12 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping("/StudentPortal") 
-	public String displayStudentPortal(ModelMap map) {
-
-	    List<Category> categoryList = categoryDao.getAllCategories();
-	 //   List<Category> courseList = categoryDao.getAllCategories();
-	 //   List<Homework> homeworkList = homeworkDao.getAllHomework();
-	 //   List<Curriculum> curriculumList = curriculumDao.getAllCurriculum();
-	//  Category categoryById = categoryDao.getCategoryById(1);
-	    
-	//  map.put("categoryId",categoryById);
-	    map.put("categories", categoryList);
-	//    map.put("courses", courseList);
-	//    map.put("homework",  homeworkList);
-	return "studentPortal";
+	@RequestMapping(path="/StudentPortal", method=RequestMethod.GET) 
+	public String displayStudentPortal(ModelMap map, HttpSession session) {
+		User user = (User) session.getAttribute("currentUser");
+		map.addAttribute("course", categoryDao.getAllCategories(user.getId()));
+		return "studentPortal";
 	}
-	
-	
 	
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)

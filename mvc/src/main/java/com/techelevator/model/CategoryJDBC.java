@@ -21,24 +21,47 @@ public class CategoryJDBC implements CategoryDAO {
 	}
 
 	@Override
-	public List<Category> getAllCategories() {
+	public List<Category> getAllCategories(int userId) {
 		List<Category> allCategories = new ArrayList<>();
-		String sqlSelectAllCategories = "SELECT * FROM category ORDER BY name ";
+		String sqlSelectAllCategories = "SELECT * FROM category ORDER BY name";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllCategories);
-		while (results.next()) {
-			Category category = mapRowSetToCategory(results);
-			String sqlSelectCoursesByCategory = "SELECT * FROM course WHERE category_id = ?";
-			SqlRowSet courseResults = jdbcTemplate.queryForRowSet(sqlSelectCoursesByCategory, category.getId());
-			List<Course> allCoursesByCategory = new ArrayList<Course>();
-			while (courseResults.next()) {
-				Course course = mapRowSetToCourse(courseResults);
-				allCoursesByCategory.add(course);
+		
+		String sqlSelectFromUserTable = "SELECT * FROM app_user WHERE id = ?";
+		SqlRowSet appUserResults = jdbcTemplate.queryForRowSet(sqlSelectFromUserTable, userId);
+			if (appUserResults.next()) { 
+		
+				User user = mapRowSetToUser(appUserResults);
+		
+				String sqlGetUserId = "SELECT * from app_user WHERE user_name = ?";
+				SqlRowSet usernameResults = jdbcTemplate.queryForRowSet(sqlGetUserId, user.getUserName());
+				
+				User usernameCategories = null;
+				
+				if (usernameResults.next()) {
+					usernameCategories = mapRowSetToUser(usernameResults);
+				}
+				
+				while (results.next()) {
+					Category category = mapRowSetToCategory(results);
+//					String sqlSelectCoursesByCategory = "SELECT * FROM course" + 
+//					" JOIN app_user_course ON app_user_course.course_id = course.id" + 
+//					" JOIN app_user ON app_user_course.app_user_id = app_user.id" + 
+//					" WHERE course.category_id = ? AND app_user.id= ?;";
+					String sqlSelectCoursesByCategory = "SELECT * FROM app_user_course" +
+							" WHERE app_user_course.app_user_id = ? AND app_user_course.course_id = ?";
+					SqlRowSet courseResults = jdbcTemplate.queryForRowSet(sqlSelectCoursesByCategory, category.getId(), usernameCategories.getId());
+					List<Course> allCoursesByCategory = new ArrayList<Course>();
+					while (courseResults.next()) {
+							Course course = mapRowSetToCourse(courseResults);
+							allCoursesByCategory.add(course);
+					}
+					category.setCourseListByCategory(allCoursesByCategory);
+					allCategories.add(category);
+				}
 			}
-			category.setCourseListByCategory(allCoursesByCategory);
-			allCategories.add(category);
-		}
-		return allCategories;
+			return allCategories;
 	}
+
 	// ===================================================================================================
 	// Take catId from category ^, use catId to make second request from DB to get
 	// list of courses
@@ -90,11 +113,20 @@ public class CategoryJDBC implements CategoryDAO {
 	private Course mapRowSetToCourse(SqlRowSet results) {
 		Course course = new Course();
 		course.setCourseId(results.getInt("id"));
-		course.setCourseName(results.getString("name"));
-		course.setCourseDescription(results.getString("description"));
-		course.setCourseDuration(results.getString("duration"));
-		course.setCategoryId(results.getInt("category_id"));
+		course.setAppUserId(results.getInt("app_user_id"));
+		course.setCourseId(results.getInt("course_id"));
+//		course.setCourseDuration(results.getString("duration"));
+//		course.setCategoryId(results.getInt("category_id"));
 		return course;
+	}
+
+	private User mapRowSetToUser(SqlRowSet results) {
+		User user = new User();
+		user.setId(results.getInt("id"));
+		user.setUserName(results.getString("user_name"));
+		user.setPassword(results.getString("password"));
+		user.setConfirmPassword(results.getString("password"));
+		return user;
 	}
 
 }

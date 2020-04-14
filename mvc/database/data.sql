@@ -26,7 +26,7 @@ INSERT INTO category (name)
 VALUES ('Social Studies');
 
 INSERT INTO category (name)
-VALUES ('Foriegn Languages');
+VALUES ('Foreign Languages');
 
 INSERT INTO category (name)
 VALUES ('Art');
@@ -123,6 +123,15 @@ about force and motion through the properties of magnetism.', '1', null);
 
 INSERT INTO app_user_course (app_user_id, course_id)
 VALUES (1, 1);
+
+INSERT INTO app_user_course (app_user_id, course_id)
+VALUES (1, 4);
+
+INSERT INTO app_user_course (app_user_id, course_id)
+VALUES (1, 3);
+
+INSERT INTO app_user_course (app_user_id, course_id)
+VALUES (1, 5);
 
 INSERT INTO curriculum (name, course_id)
 VALUES('Week1: Addition', 1);
