@@ -99,7 +99,7 @@ public class UserController {
 		if(result.hasErrors()) {
 			flash.addFlashAttribute("user", user);
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "user", result);
-			return "redirect:/";
+			return "redirect:/users/new";
 		}
 		
 		userDAO.saveUser(user.getUserName(), user.getPassword());
