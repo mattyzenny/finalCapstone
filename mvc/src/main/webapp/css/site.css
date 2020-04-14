@@ -9,8 +9,15 @@ body {
 }
 
 #myImage {
+<<<<<<< HEAD
 	height: 50%;
 	width: auto;
+=======
+	height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+>>>>>>> ca99fa77a54073d547216851c867f67e2d1adf86
 }
 
 .error {
@@ -20,13 +27,13 @@ body {
 
 .header {
 	overflow: hidden;
-	background-color: #FFFFFF;
+	background-color: #7FDBFF;
 	padding: 20px 10px;
 }
 
 .header a {
 	float: left;
-	color: black;
+	color: #FFFFFF;
 	text-align: center;
 	padding: 12px;
 	text-decoration: none;
@@ -85,11 +92,11 @@ ul {
 
 .sidenav {
 	top: 0; 
-  left: 0;
+   left: 0;
     position: fixed;
     height: 25%;
     width: 24%;
-     padding-top: 70px;
+     padding-top: 90px;
 }
 
 
@@ -109,19 +116,21 @@ ul {
 	color: #FFFFFF;
 	display: block;
 	border-radius: 8px;
-	background-color: #008CBA;
+	background-color:  #7FDBFF;
 	text-align: center;
 	 margin-bottom: 10px; 
-	 
-	  
+	 	  
 }
 
+<<<<<<< HEAD
+=======
 
 .center {
 	text-align: center;	
 }
 
 
+>>>>>>> 757bd6df3cb477f0f432b36dda7048393b42fbc1
 .sidenav a:hover {
 	color: #f1f1f1;
 }
@@ -130,3 +139,10 @@ ul {
 	text-align: center;
 }
 
+<<<<<<< HEAD
+
+
+	
+}
+=======
+>>>>>>> 757bd6df3cb477f0f432b36dda7048393b42fbc1

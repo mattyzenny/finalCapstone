@@ -2,15 +2,11 @@
 <header>
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
-            </header>
+ </header>
          
           
-        
- <body>
- <!-- <div class=home>Welcome to Juliett Learning!</div> -->
+<div class=home>HomePage</div>
  
- <div class="homePage">
-				<img id="myImage" 
-					src="<c:url value= "/img/HomePageWelcomeQuote.png" />" />
-			</div>
-</body>
+ 
+ <a class="image"> <img id="myImage"
+				value="/img/HomePageWelcomeQuote.png" />
