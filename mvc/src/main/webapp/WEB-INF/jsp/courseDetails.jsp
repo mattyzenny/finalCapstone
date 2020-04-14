@@ -4,7 +4,7 @@
 
 </header>
 
-<body>
+
 	<div class="center">
 		<h3>Curriculum Page</h3>
 
@@ -62,7 +62,8 @@
 					name="${homework.homeworkName }" value="Complete?">
 
 			</c:forEach> --%>
-				</ul>
+				
 
 			</div>
-</body>
+			</div>
+

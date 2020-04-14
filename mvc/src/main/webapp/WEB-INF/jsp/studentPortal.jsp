@@ -8,13 +8,6 @@
 
 </header>
 
-<body>
-
-	<%-- <c:forEach var="course" items="${courses }">
-		<c:out value="${course.courseName }"/>
-		<c:out value="${course.courseDescription }"/>
-		<c:out value="${course.courseDuration }"/>
-	</c:forEach> --%>
 
 <div class="sidenav">
 	<ul>
@@ -32,7 +25,7 @@
 		</c:forEach>
 		
 
-		<li><c:forEach var="homework" items="${homework }">
+		<c:forEach var="homework" items="${homework}">
 				<li><c:out
 						value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
 				<input type="checkbox" id="hwComplete"
@@ -77,53 +70,6 @@
 	<%-- </c:url> --%>
 
 
-	<%-- 			<c:forEach var="X" items="${map.put(controllername)} -->
-     <nav id="menu">
-        <ul class="parent-menu">
-            <li><a href="#">1st Grade Math</a>
-                <ul>
-                    <li><a href="#">View Curriculum</a></li>
-                    <li><a href="#">Homework</a></li>
-                    <li><a href="#">Quizes</a></li>
-                    <li><a href="#">Student Progress</a></li>
-                </ul>
-            <li><a href="#">1st Grade Science</a>
-                <ul>
-                    <li><a href="#">View Curriculum</a></li>
-                    <li><a href="#">Homework</a></li>
-                    <li><a href="#">Quizes</a></li>
-                    <li><a href="#">Student Progress</a></li>
-                </ul>
-            <li><a href="#">1st Grade Language Arts</a>
-                <ul>
-                    <li><a href="#">View Curriculum</a></li>
-                    <li><a href="#">Homework</a></li>
-                    <li><a href="#">Quizes</a></li>
-                    <li><a href="#">Student Progress</a></li>
-                </ul></li>
-        </ul>
-    </nav> -->
-
-<%-- 	<div class='cssmenu'>
-		<ul>
-			<li><a href='#'><span>Courses</span></a></li>
-			<li><a href='#'><span>Math</span></a>
-				<ul>
-					<li><a href="/capstone/FirstGradeMath"><span>1st Grade Math</span></a>
-						<ul>
-							<li><a href='#'><span>Homework</span></a></li>
-							<li><a href='#'><span>Curriculum</span></a></li>
-							<li><a href='#'><span>Grades</span></a></li>
-						</ul></li></li>
-		</ul>
-		</li>
-		<li><a href='#'><span>Science</span></a></li>
-		<li><a href='#'><span>Language Art</span></a></li>
-		</ul>
-	</div> --%>
-
-
-
 
 	<div class="center">
 		<h2>Welcome To Your Student Portal</h2>
@@ -141,5 +87,3 @@
 		<p> Check Your Grades<p>
 </div>
 
-</body>
-</html>
