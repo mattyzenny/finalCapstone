@@ -22,13 +22,13 @@ body {
 
 .header {
 	overflow: hidden;
-	background-color: #FFFFFF;
+	background-color: #7FDBFF;
 	padding: 20px 10px;
 }
 
 .header a {
 	float: left;
-	color: black;
+	color: #FFFFFF;
 	text-align: center;
 	padding: 12px;
 	text-decoration: none;
@@ -89,7 +89,7 @@ ul {
     position: fixed;
     height: 25%;
     width: 24%;
-     padding-top: 70px;
+     padding-top: 90px;
 }
 
 
@@ -100,7 +100,7 @@ ul {
 	color: #FFFFFF;
 	display: block;
 	border-radius: 8px;
-	background-color: #008CBA;
+	background-color:  #7FDBFF;
 	text-align: center;
 	 margin-bottom: 10px; 
 	 	  
