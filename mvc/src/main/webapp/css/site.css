@@ -63,7 +63,7 @@ progress[value]::-webkit-progress-value::after {
   background-color: white;
 }
 
-/* :root { -
+ :root { -
 	-blue: #00adee; -
 	-grey: #505355;
 }
@@ -126,7 +126,7 @@ body {
 	float: right;
 } */
 
-/* @media screen and (max-width: 500px) {
+ @media screen and (max-width: 500px) {
 	.header a {
 		float: none;
 		display: block;
@@ -136,10 +136,10 @@ body {
 	.header-right {
 		float: none;
 	}
-} */
+} 
 
 
-/* body {
+ body {
 	background-color: #001f3f;
 }
 
@@ -147,9 +147,9 @@ body {
 html {
 	font-size: 20px;
 	color: #FFFFFF;
-} */
+} 
 
-/* ul {
+ ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
@@ -201,9 +201,3 @@ html {
 .center {
 	text-align: center;
 }
-<<<<<<< HEAD
- */
-=======
-
-
->>>>>>> 487a948e656c6a9e180e045129878f07c022f857
