@@ -22,54 +22,53 @@ public class CategoryJDBC implements CategoryDAO {
 
 	@Override
 	public List<Category> getAllCategories(int userId) {
-		//new list of all categories
+		// new list of all categories
 		List<Category> allCategories = new ArrayList<>();
 		String sqlSelectAllCategories = "SELECT * FROM category ORDER BY name";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllCategories);
-		
-		//Select row by id from app_user table
-		String sqlSelectFromUserTable = "SELECT * FROM app_user WHERE id = ?";
-		SqlRowSet appUserResults = jdbcTemplate.queryForRowSet(sqlSelectFromUserTable, userId);
-		
-			if (appUserResults.next()) { 
-		
-				User user = mapRowSetToUser(appUserResults);
-		
-				//Select row by user_name from app_user table (session refers to username and not id)
-				String sqlGetUserId = "SELECT * from app_user WHERE user_name = ?";
-				SqlRowSet usernameResults = jdbcTemplate.queryForRowSet(sqlGetUserId, user.getUserName());
-				
-				//new User object for results of previous sql query
-				User usernameCategories = null;
-				
-				//if new row in app_user, get all info from table by user_name and add to usernameCategories object
-				if (usernameResults.next()) {
-					usernameCategories = mapRowSetToUser(usernameResults);
-				}
-				
-				
-				
-				while (results.next()) {
-					Category category = mapRowSetToCategory(results);
-					String sqlSelectCoursesByCategory = "SELECT * FROM course" + 
-					" JOIN app_user_course ON app_user_course.course_id = course.id" + 
-					" JOIN app_user ON app_user_course.app_user_id = app_user.id" + 
-					" WHERE course.category_id = ? AND app_user.id= ?;";
-//					String sqlSelectCoursesByCategory = "SELECT * FROM app_user_course" +
-//							" WHERE app_user_course.app_user_id = ? AND app_user_course.course_id = ?";
-					SqlRowSet courseResults = jdbcTemplate.queryForRowSet(sqlSelectCoursesByCategory, category.getId(), usernameCategories.getId());
-					List<Course> allCoursesByCategory = new ArrayList<Course>();
-					while (courseResults.next()) {
-							Course course = mapRowSetToCourse(courseResults);
-							allCoursesByCategory.add(course);
-					}
-					category.setCourseListByCategory(allCoursesByCategory);
-					allCategories.add(category);
-				}
+
+		while (results.next()) {
+			Category category = mapRowSetToCategory(results);
+			String sqlSelectCoursesByCategory = "SELECT * FROM course"
+					+ " JOIN app_user_course ON app_user_course.course_id = course.id"
+					+ " JOIN app_user ON app_user_course.app_user_id = app_user.id"
+					+ " WHERE course.category_id = ? AND app_user.id= ?;";
+			SqlRowSet courseResults = jdbcTemplate.queryForRowSet(sqlSelectCoursesByCategory, category.getId(), userId);
+			List<Course> allCoursesByCategory = new ArrayList<Course>();
+			while (courseResults.next()) {
+				Course course = mapRowSetToCourse(courseResults);
+				allCoursesByCategory.add(course);
 			}
-			return allCategories;
+			category.setCourseListByCategory(allCoursesByCategory);
+			allCategories.add(category);
+		}
+		return allCategories;
 	}
 
+	// Select row by id from app_user table
+	// String sqlSelectFromUserTable = "SELECT * FROM app_user WHERE id = ?";
+	// SqlRowSet appUserResults =
+	// jdbcTemplate.queryForRowSet(sqlSelectFromUserTable, userId);
+
+	// if (appUserResults.next()) {
+	//
+	// User user = mapRowSetToUser(appUserResults);
+	//
+	// Select row by user_name from app_user table (session refers to username and
+	// not id)
+	// String sqlGetUserId = "SELECT * from app_user WHERE user_name = ?";
+	// SqlRowSet usernameResults = jdbcTemplate.queryForRowSet(sqlGetUserId,
+	// user.getUserName());
+
+	// //new User object for results of previous sql query
+	// User usernameCategories = null;
+	//
+	// //if new row in app_user, get all info from table by user_name and add to
+	// usernameCategories object
+	// if (usernameResults.next()) {
+	// usernameCategories = mapRowSetToUser(usernameResults);
+	// }
+	//
 	// ===================================================================================================
 	// Take catId from category ^, use catId to make second request from DB to get
 	// list of courses
@@ -123,8 +122,10 @@ public class CategoryJDBC implements CategoryDAO {
 		course.setCourseId(results.getInt("id"));
 		course.setAppUserId(results.getInt("app_user_id"));
 		course.setCourseId(results.getInt("course_id"));
-//		course.setCourseDuration(results.getString("duration"));
-//		course.setCategoryId(results.getInt("category_id"));
+		course.setCourseDescription(results.getString("description"));
+		course.setCourseName(results.getString("name"));
+		course.setCourseDuration(results.getString("duration"));
+		course.setCategoryId(results.getInt("category_id"));
 		return course;
 	}
 

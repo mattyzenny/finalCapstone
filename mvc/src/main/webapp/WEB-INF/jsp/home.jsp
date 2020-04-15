@@ -9,4 +9,4 @@
  
  
  <a class="image"> <img id="myImage"
-				value="/img/HomePageWelcomeQuote.png" />
+				value="/img/HomePageWelcomeQuote.jpg" />
