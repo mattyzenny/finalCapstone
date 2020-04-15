@@ -67,7 +67,7 @@ public class UserController {
 	@RequestMapping(path="/StudentPortal", method=RequestMethod.GET) 
 	public String displayStudentPortal(ModelMap map, HttpSession session) {
 		User user = (User) session.getAttribute("currentUser");
-		map.addAttribute("course", categoryDao.getAllCategories(user.getId()));
+		map.addAttribute("categories", categoryDao.getAllCategories(user.getId()));
 		return "studentPortal";
 	}
 	

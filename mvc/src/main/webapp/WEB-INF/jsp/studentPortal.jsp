@@ -15,7 +15,6 @@
 	<c:url var="formAction" value="/StudentPortal" />
 		<form method="POST" action="${formAction}">
 		<c:forEach var="category" items="${categories}">
-			<%--change category to <h2> or another non-link tag --%>
 			<li><c:out value="${category.name}" />
 				<ul>
 					<c:forEach var="course" items="${category.courseListByCategory }">
@@ -26,13 +25,11 @@
 					</c:forEach>
 				</ul></li>
 		</c:forEach>
-
+		</form>
 
 		<c:forEach var="homework" items="${homework}">
-			<li><c:out
-					value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
-			<input type="checkbox" id="hwComplete"
-				name="${homework.homeworkName }" value="Complete?">
+			<li><c:out value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
+			<input type="checkbox" id="hwComplete" name="${homework.homeworkName }" value="Complete?">
 
 		</c:forEach>
 	</ul>
@@ -41,10 +38,10 @@
 <%-- PLACE THIS IN TEACHER PORTAL(FORM TO CREATE NEW COURSE
 	
 		<h1>${course.courseName}</h1>
-	<p>${course.courseDescription}</p> --%>
-<%-- <h4>${curriculum.curriculumName}</h4> --%>
-<%-- <p>${homework.homeworkName}</p> --%>
-<%-- <p>${homework.dueDate}</p> --%>
+	<p>${course.courseDescription}</p> 
+ <h4>${curriculum.curriculumName}</h4> 
+ <p>${homework.homeworkName}</p> 
+ <p>${homework.dueDate}</p> --%>
 
 
 <%-- <c:set var="courseList" value="Course List" />
@@ -62,7 +59,7 @@
 
 
 
-</form>
+
 <%--  PLACE THIS IN TEACHER PORTAL(FORM TO CREATE NEW COURSE--%>
 
 
@@ -85,7 +82,7 @@
 
 
 	
-	<h3>On This Student Portal You Can Do The following!</h3>
+	<h3>After clicking on your class link, you can: </h3>
 	<p>Find List of Registered Courses</p>
 	<p>View Curriculum</p>
 	<p>Submit Homework</p>

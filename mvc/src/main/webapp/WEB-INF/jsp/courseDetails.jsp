@@ -15,8 +15,11 @@
 			</a>
 		</div>
 
+	</div>
 
 
+	<h2>${course.courseName}</h2>
+	<p>${category.name }</p>
 
 		<h2>${course.courseName}</h2>
 		<p>${category.name }</p>
@@ -50,10 +53,6 @@
 
 			</c:forEach>
 		</c:forEach>
-
-
-
-
 
 	</div>
 </div>

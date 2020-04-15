@@ -4,15 +4,6 @@
 
 BEGIN;
 
--- SELECT name FROM course
--- JOIN app_user_course ON course.id = app_user_course.id
--- JOIN app_user ON app_user.id = app_user_course.app_user_id
--- JOIN student ON app_user.id = student.appuser_id;
-
--- SELECT name FROM course
--- JOIN category ON course.category_id = category.id;
-
-
 INSERT INTO category (name)
 VALUES ('Math');
 
@@ -39,12 +30,6 @@ VALUES ('johnsmith', '123', 'student', '123abc');
 
 INSERT INTO app_user (user_name, password, role, salt)
 VALUES ('steveC', 'techgeek', 'teacher', 'techgeekabc');
-
-INSERT INTO student(appuser_id, first_name, last_name)
-VALUES (1, 'john', 'smith');
-
-INSERT INTO teacher (first_name, last_name, appuser_id)
-VALUES ('steve', 'carmichael', 2);
 
 --INSERT INTO teacher(first_name, last_name)
 --VALUES ('Steve', 'Carmichael');
@@ -82,7 +67,7 @@ time, measurement, money, bar graphs, word numbers to 100, greater than and less
 like a clock, ruler, or coins to learn concepts.', '1', null);
 
 INSERT INTO course (name, description, duration, category_id)
-VALUES ('1st Grade English', 'The {Project Name} curriculum constitutes a solid first grade language arts program 
+VALUES ('1st Grade English', 'The first grade English curriculum constitutes a solid first grade language arts program 
 correlated to state standards, which many homeschool parents use it as their entire curriculum. Non-homeschoolers utilize 
 the lessons for extra practice, an online first grade tutorial, or summer enrichment. First grade language arts contains 
 Language Arts and Language Arts Extensions. The language arts section contains 13 chapters and hundreds of learning activities 
@@ -121,6 +106,15 @@ conduct a simple scientific investigation. In Life Science, students will show k
 environments. In the Weather unit, students will understand different weather elements and how weather can be observed and measured using tools. From the Magnets unit, students will learn 
 about force and motion through the properties of magnetism.', '1', null);
 
+INSERT INTO course (name, description, duration, category_id)
+VALUES ('English', 'In third-grade literature, students explore the overarching themes of courage and friendship by reading a variety of culturally relevant and diverse texts. Over the course 
+of the year, students will explore what it means to be a true friend, how friendships evolve and strengthen through conflict, and the ways in which friendships can influence our actions. 
+Students will also grapple with what it means to show courage, what types of situations call for courage, and how an act of courage can affect others. It is our hope that this course, in 
+connection with others, will help students develop empathy and respect for people whose background, actions, and beliefs may be different from their own.', '8', null);
+
+INSERT INTO course (name, description, duration, category_id)
+VALUES ('3rd Grade Science', 'Our 3rd grade science curriculum will guide students through four units of weather and climate, life cycles, forces of motion, and the environments around us (and the living things in them).', '8', null);
+
 INSERT INTO app_user_course (app_user_id, course_id)
 VALUES (1, 1);
 
@@ -128,10 +122,10 @@ INSERT INTO app_user_course (app_user_id, course_id)
 VALUES (1, 4);
 
 INSERT INTO app_user_course (app_user_id, course_id)
-VALUES (1, 3);
+VALUES (2, 6);
 
 INSERT INTO app_user_course (app_user_id, course_id)
-VALUES (1, 5);
+VALUES (2, 5);
 
 INSERT INTO curriculum (name, course_id)
 VALUES('Week1: Addition', 1);
@@ -152,7 +146,7 @@ INSERT INTO instruction (title, content, syllabus_id)
 VALUES ('ADDITION CAN BE FUN!!!', 'https://www.mathpyramid.com/worksheets/summertime-math.pdf' , 1);
 
 INSERT INTO grades (grade, homework_id, app_user_id)
-VALUES (100, 1, 1);
+VALUES (100, 1, 3);
 
 INSERT INTO attachments (link, attachments_description, syllabus_id)
 VALUES ('https://www.mathpyramid.com/worksheets/summertime-math.pdf', 'week 1 math addition homework', 1);

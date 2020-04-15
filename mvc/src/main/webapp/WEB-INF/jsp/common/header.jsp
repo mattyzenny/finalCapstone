@@ -8,21 +8,70 @@
 <link href="<c:url value="/css/site.css"/>" rel="stylesheet" type="text/css"/>
 
 
+<!-- 
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<div class="container">
+  <h2>Collapsible List Group</h2>
+  <p>Click on the collapsible panel to open and close it.</p>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1">Welcome to Your Student Login</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <ul class="list-group">
+          <li class="list-group-item"><a href="/capstone/">Home</a></li>
+          <li class="list-group-item"><a href="/capstone/login">Login</a></li>
+          <li class="list-group-item"><a href="/capstone/users/new">Register</a></li>
+          <li class="list-group-item"><a href="/capstone/users/new"><a href="/capstone/Sign-out">Sign-Out</a></a></li>
+          
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+
+ <div class="header"> -->
+
 
 <div class="header">
+
 <a href="#default" class="logo">Columbus Primary School</a>
 
  <div class="header-right">
+<<<<<<< HEAD
             <a href="/capstone/">Home</a>
             <a href="/capstone/login">Login</a>
             <a href="/capstone/users/new">Register</a>
             <a href="/capstone/Sign-out">Sign-Out</a>
 			<a href="/capstone/user">UserTest</a>
+=======
+            <a href="/capstone/"><button>Home</button></a>
+            <a href="/capstone/login"><button>Login</button></a>
+            <a href="/capstone/users/new"><button>Register</button></a>
+            <a href="/capstone/logout"><button>Sign-Out</button></a>
+			<a href="/capstone/user"><button>UserTest</button></a>
+>>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
             </div>
             </div>
             
 </head>
 </html>
+
+<html>
 
 <%-- 
 <title>Critter</title>

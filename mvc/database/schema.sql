@@ -15,7 +15,6 @@ BEGIN Transaction;
  DROP TABLE IF EXISTS attachments;
  DROP TABLE IF EXISTS grades;
  DROP TABLE IF EXISTS syllabus;
- DROP TABLE IF EXISTS homework_submission;
  DROP TABLE IF EXISTS homework;
  DROP TABLE IF EXISTS app_user_course;
  DROP TABLE IF EXISTS curriculum;
