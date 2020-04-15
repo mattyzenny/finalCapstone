@@ -51,11 +51,19 @@
 <a href="#default" class="logo">Columbus Primary School</a>
 
  <div class="header-right">
+<<<<<<< HEAD
+            <a href="/capstone/">Home</a>
+            <a href="/capstone/login">Login</a>
+            <a href="/capstone/users/new">Register</a>
+            <a href="/capstone/Sign-out">Sign-Out</a>
+			<a href="/capstone/user">UserTest</a>
+=======
             <a href="/capstone/"><button>Home</button></a>
             <a href="/capstone/login"><button>Login</button></a>
             <a href="/capstone/users/new"><button>Register</button></a>
-            <a href="/capstone/Sign-out"><button>Sign-Out</button></a>
+            <a href="/capstone/logout"><button>Sign-Out</button></a>
 			<a href="/capstone/user"><button>UserTest</button></a>
+>>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
             </div>
             </div>
             

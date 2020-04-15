@@ -90,7 +90,6 @@ progress[value]::-webkit-progress-value::after {
 }
 
 body {
-	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
 /* 
@@ -113,8 +112,8 @@ body {
 
 .header {
 	overflow: hidden;
-	background-color: #7FDBFF;
-	padding: 20px 10px;
+	background-color: #0074D9;
+	padding: 0px;
 }
 
 .header a {
@@ -153,7 +152,6 @@ body {
 		display: block;
 		text-align: left;
 	}
-	
 	.header-right {
 		float: none;
 	}
@@ -163,7 +161,6 @@ body {
  body {
 	background-color: #001f3f;
 }
-
 
 html {
 	font-size: 20px;
@@ -177,22 +174,19 @@ html {
 }
 
 .sidenav {
-	top: 0; 
-   left: 0;
-    position: fixed;
-    height: 25%;
-    width: 24%;
-     padding-top: 90px;
+	top: 0;
+	left: 0;
+	position: fixed;
+	height: 25%;
+	width: 24%;
+	padding-top: 90px;
 }
 
-
 .sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #0074D9;
- 
-    
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #0074D9;
 }
 
 .sidenav a {
@@ -202,17 +196,15 @@ html {
 	color: #FFFFFF;
 	display: block;
 	border-radius: 8px;
-	background-color:  #7FDBFF;
+	background-color: #7FDBFF;
 	text-align: center;
-	 margin-bottom: 10px; 
-	 	  
+	margin-bottom: 10px;
 }
 
 
 .center {
-	text-align: center;	
+	text-align: center;
 }
-
 
 
 .sidenav a:hover {
@@ -222,4 +214,78 @@ html {
 .center {
 	text-align: center;
 }
- */
+
+
+.homeImage {
+	height: 80%;
+	width: 50%;
+	padding-left: 40px;
+	margin-bottom: 20%;
+}
+
+.home {
+	padding-left: 450px;
+}
+
+#container {
+	background-color: #001f3f;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#content {
+	
+}
+
+#nav {
+	width: 380px;
+	float: left;
+}
+
+#main {
+	width: 1000px;
+	float: right;
+	
+}
+
+#footer {
+	clear: both;
+	background-color: #001f3f;
+}
+
+#nav .selected {
+	font-weight: bold;
+}
+
+#nav a {
+	text-decoration: none;
+	color: fff;
+}
+
+#nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#nav h1, h2, h3 {
+	margin: 0;
+}
+
+.homestyle {
+	background-color: #001f3f;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.resize {
+	width: 150px;
+	height: auto;
+}
+
+.resize2 {
+	width: 400px;
+	height: auto;
+}
+
