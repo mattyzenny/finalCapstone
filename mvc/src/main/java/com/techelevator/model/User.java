@@ -8,6 +8,8 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class User {
    
+	private int id;
+	
 	@NotBlank(message="Username is required")
 	private String userName;
 	
@@ -63,5 +65,13 @@ public class User {
 	}
 	public void setConfirmPassword(String confirmPassword) {
 		this.confirmPassword = confirmPassword;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

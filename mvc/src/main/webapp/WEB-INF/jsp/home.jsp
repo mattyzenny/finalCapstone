@@ -2,9 +2,11 @@
 <header>
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
-            </header>
+ </header>
          
           
-        
+<div class=home>HomePage</div>
  
- <div class=home>HomePage</div>
+ 
+ <a class="image"> <img id="myImage"
+				value="/img/HomePageWelcomeQuote.jpg" />

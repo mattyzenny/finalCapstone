@@ -74,8 +74,15 @@ body {
 }
 
 #myImage {
+
 	height: 50%;
-	width: 100%;
+	width: auto;
+
+	height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;
+
 }
 
 .error {
@@ -85,13 +92,13 @@ body {
 
 .header {
 	overflow: hidden;
-	background-color: #FFFFFF;
+	background-color: #7FDBFF;
 	padding: 20px 10px;
 }
 
 .header a {
 	float: left;
-	color: black;
+	color: #FFFFFF;
 	text-align: center;
 	padding: 12px;
 	text-decoration: none;
@@ -125,6 +132,7 @@ body {
 		display: block;
 		text-align: left;
 	}
+	
 	.header-right {
 		float: none;
 	}
@@ -134,6 +142,7 @@ body {
 /* body {
 	background-color: #001f3f;
 }
+
 
 html {
 	font-size: 20px;
@@ -148,11 +157,11 @@ html {
 
 .sidenav {
 	top: 0; 
-  left: 0;
+   left: 0;
     position: fixed;
     height: 25%;
     width: 24%;
-     padding-top: 70px;
+     padding-top: 90px;
 }
 
 
@@ -172,17 +181,17 @@ html {
 	color: #FFFFFF;
 	display: block;
 	border-radius: 8px;
-	background-color: #008CBA;
+	background-color:  #7FDBFF;
 	text-align: center;
 	 margin-bottom: 10px; 
-	 
-	  
+	 	  
 }
 
 
 .center {
 	text-align: center;	
 }
+
 
 
 .sidenav a:hover {
@@ -192,4 +201,9 @@ html {
 .center {
 	text-align: center;
 }
+<<<<<<< HEAD
  */
+=======
+
+
+>>>>>>> 487a948e656c6a9e180e045129878f07c022f857

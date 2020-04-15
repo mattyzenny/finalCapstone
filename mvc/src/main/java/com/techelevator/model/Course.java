@@ -10,19 +10,18 @@ public class Course {
 	private String courseDescription;
 	private String courseDuration;
 	private int categoryId;
-	private int studentId;
-	private int teacherId;
+	private int appUserId;
 	private int curriculumId;
 	private List<Curriculum> curriculumListByCourse;
 
 	
 //	private List<Curriculum> curriculumListByCourse;
 	
-	public int getStudentId() {
-		return studentId;
+	public int getAppUserId() {
+		return appUserId;
 	}
-	public void setStudentId(int studentId) {
-		this.studentId = studentId;
+	public void setAppUserId(int appUserId) {
+		this.appUserId = appUserId;
 	}
 	public int getCourseId() {
 		return courseId;
@@ -59,12 +58,6 @@ public class Course {
 	}
 	public void setCurriculumId(int curriculumId) {
 		this.curriculumId = curriculumId;
-	}
-	public int getTeacherId() {
-		return teacherId;
-	}
-	public void setTeacherId(int teacherId) {
-		this.teacherId = teacherId;
 	}
 	public List<Curriculum> getCurriculumListByCourse() {
 		return curriculumListByCourse;

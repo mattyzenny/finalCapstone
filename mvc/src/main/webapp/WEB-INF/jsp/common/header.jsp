@@ -8,6 +8,7 @@
 <link href="<c:url value="/css/site.css"/>" rel="stylesheet" type="text/css"/>
 
 
+<<<<<<< HEAD
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,6 +45,10 @@
 
 
 <!-- <div class="header">
+=======
+
+<div class="header">
+>>>>>>> 487a948e656c6a9e180e045129878f07c022f857
 <a href="#default" class="logo">Columbus Primary School</a>
 
  <div class="header-right">
@@ -51,6 +56,7 @@
             <a href="/capstone/login"><button>Login</button></a>
             <a href="/capstone/users/new"><button>Register</button></a>
             <a href="/capstone/Sign-out"><button>Sign-Out</button></a>
+			<a href="/capstone/user"><button>UserTest</button></a>
             </div>
             </div>
             
