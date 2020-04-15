@@ -7,7 +7,43 @@
 <head>
 <link href="<c:url value="/css/site.css"/>" rel="stylesheet" type="text/css"/>
 
-<div class="header">
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<div class="container">
+  <!-- <h2>Collapsible List Group</h2>
+  <p>Click on the collapsible panel to open and close it.</p> -->
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#collapse1">Welcome to Your Student Login</a>
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <ul class="list-group">
+          <li class="list-group-item"><a href="/capstone/">Home</a></li>
+          <li class="list-group-item"><a href="/capstone/login">Login</a></li>
+          <li class="list-group-item"><a href="/capstone/users/new">Register</a></li>
+          <li class="list-group-item"><a href="/capstone/users/new"><a href="/capstone/Sign-out">Sign-Out</a></a></li>
+          
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+
+<!-- <div class="header">
 <a href="#default" class="logo">Columbus Primary School</a>
 
  <div class="header-right">
@@ -21,6 +57,34 @@
 </head>
 </html>
 
+<html> -->
+<!-- <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="header">
+  <h2></h2>
+  <p>Student Selections</p>
+  <div class="dropdownHeader">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li class="dropdown-header">Please Select</li>
+      <li><a href="/capstone/">Home</a></li>
+      <li><a href="/capstone/login">Login</a></li>
+      <li><a href="/capstone/users/new">Register</a></li>
+      <li><a href="/capstone/Sign-out">Sign-Out</a></li>
+      <li class="divider"></li>
+    
+  </div>
+</div>
+
+</body>
+</html> -->
 <%-- 
 <title>Critter</title>
 <c:url var="bootstrapCss" value="/css/bootstrap.min.css" />
