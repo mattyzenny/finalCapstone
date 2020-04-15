@@ -55,7 +55,7 @@
             <a href="/capstone/"><button>Home</button></a>
             <a href="/capstone/login"><button>Login</button></a>
             <a href="/capstone/users/new"><button>Register</button></a>
-            <a href="/capstone/Sign-out"><button>Sign-Out</button></a>
+            <a href="/capstone/logout"><button>Sign-Out</button></a>
 			<a href="/capstone/user"><button>UserTest</button></a>
             </div>
             </div>

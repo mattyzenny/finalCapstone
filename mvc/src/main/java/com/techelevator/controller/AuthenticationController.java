@@ -47,8 +47,8 @@ public class AuthenticationController {
 	}
 	
 	
-
-	@RequestMapping(path="/logout", method=RequestMethod.POST)
+//	@RequestMapping(path="/logout", method=RequestMethod.POST)
+	@RequestMapping("/logout")
 	public String logout(ModelMap model, HttpSession session) {
 		model.remove("currentUser");
 		session.invalidate();

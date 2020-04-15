@@ -4,8 +4,6 @@
 
 BEGIN;
 
-
-
 INSERT INTO category (name)
 VALUES ('Math');
 
@@ -124,10 +122,10 @@ INSERT INTO app_user_course (app_user_id, course_id)
 VALUES (1, 4);
 
 INSERT INTO app_user_course (app_user_id, course_id)
-VALUES (1, 3);
+VALUES (2, 6);
 
 INSERT INTO app_user_course (app_user_id, course_id)
-VALUES (1, 5);
+VALUES (2, 5);
 
 INSERT INTO curriculum (name, course_id)
 VALUES('Week1: Addition', 1);
