@@ -1,4 +1,4 @@
-Description: Bring Science Alive! Exploring Science Practices examines the functions of internal and external plant and animal structures in growth, reproduction, and information processing. Students explore the roles of weathering, erosion, and deposition in shaping Earth’s surface. They analyze patterns in wave motion, and how energy is transferred by sound, light, heat, and electric currents.
+Description: 4th Grade Science examines the functions of internal and external plant and animal structures in growth, reproduction, and information processing. Students explore the roles of weathering, erosion, and deposition in shaping Earth’s surface. They analyze patterns in wave motion, and how energy is transferred by sound, light, heat, and electric currents.
 
 Unit 1 – Plant and Animal Structures
 1. What Plant Structures Are Used for Support and Growth? | Systems and System Models | Engaging in Argument from Evidence | Reading Further: It’s Not Stealing, Really
