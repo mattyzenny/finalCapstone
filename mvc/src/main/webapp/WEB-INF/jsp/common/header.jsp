@@ -8,7 +8,7 @@
 <link href="<c:url value="/css/site.css"/>" rel="stylesheet" type="text/css"/>
 
 
-<!-- 
+
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,8 +19,7 @@
 
 
 <div class="container">
-  <h2>Collapsible List Group</h2>
-  <p>Click on the collapsible panel to open and close it.</p>
+ 
   <div class="panel-group">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -44,29 +43,37 @@
     
 
 
- <div class="header"> -->
 
 
-<div class="header">
+
+ <!-- <div class="header">
 
 <a href="#default" class="logo">Columbus Primary School</a>
 
  <div class="header-right">
+<<<<<<< HEAD
+            <a href="/capstone/">Home</a>
+            <a href="/capstone/login">Login</a>
+            <a href="/capstone/users/new">Register</a>
+            <a href="/capstone/Sign-out">Sign-Out</a>
+			<a href="/capstone/user">UserTest</a>
+=======
             <a href="/capstone/"><button>Home</button></a>
             <a href="/capstone/login"><button>Login</button></a>
             <a href="/capstone/users/new"><button>Register</button></a>
             <a href="/capstone/logout"><button>Sign-Out</button></a>
 			<a href="/capstone/user"><button>UserTest</button></a>
+>>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
             </div>
             </div>
             
 </head>
 </html>
 
-<html>
+<html> -->
 
-<%-- 
-<title>Critter</title>
+
+<%-- <title>Critter</title>
 <c:url var="bootstrapCss" value="/css/bootstrap.min.css" />
 <c:url var="siteCss" value="/css/site.css" />
 
@@ -85,9 +92,9 @@
 <script src="${jqvAddMethJs}"></script>
 <script src="${jqTimeagoJs}"></script>
 <script src="${popperJs}"></script>
-<script src="${bootstrapJs}"></script>
+<script src="${bootstrapJs}"></script> --%>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function() {
 		$("time.timeago").timeago();
 
@@ -99,7 +106,7 @@
 		$("nav a[href='" + pathname + "']").parent().addClass("active");
 
 	});
-</script>
+</script> -->
 
 </head>
 <body>
@@ -158,4 +165,4 @@
 	<c:if test="${not empty currentUser}">
 		<p id="currentUser">Current User: ${currentUser}</p>
 	</c:if>
-	<div class="container"> --%>
+	<div class="container"> 

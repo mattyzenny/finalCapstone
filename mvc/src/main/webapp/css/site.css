@@ -35,7 +35,7 @@ progress[value]::-webkit-progress-value {
     background-size: 35px 20px, 100% 100%, 100% 100%;
     -webkit-animation: animate-stripes 5s linear infinite;
         animation: animate-stripes 5s linear infinite;
-}
+} 
 
 @-webkit-keyframes animate-stripes {
    100% { background-position: -100px 0px; }
@@ -44,6 +44,7 @@ progress[value]::-webkit-progress-value {
 @keyframes animate-stripes {
    100% { background-position: -100px 0px; }
 }
+
 
 progress[value]::-webkit-progress-value::before {
   content: '80%';
@@ -63,16 +64,35 @@ progress[value]::-webkit-progress-value::after {
   background-color: white;
 }
 
+.progress-bar {
+  background-color: whiteSmoke;
+  border-radius: 2px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25) inset;
+
+  width: 250px;
+  height: 20px;
+  
+  position: relative;
+  display: block;
+}
+  
+.progress-bar > span {
+  background-color: blue;
+  border-radius: 2px;
+
+  display: block;
+  text-indent: -9999px;
+}
+
  :root { -
 	-blue: #00adee; -
 	-grey: #505355;
 }
 
 body {
-	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
 }
-
+/* 
 #myImage {
 
 	height: 50%;
@@ -92,8 +112,8 @@ body {
 
 .header {
 	overflow: hidden;
-	background-color: #7FDBFF;
-	padding: 20px 10px;
+	background-color: #0074D9;
+	padding: 0px;
 }
 
 .header a {
@@ -132,7 +152,6 @@ body {
 		display: block;
 		text-align: left;
 	}
-	
 	.header-right {
 		float: none;
 	}
@@ -142,7 +161,6 @@ body {
  body {
 	background-color: #001f3f;
 }
-
 
 html {
 	font-size: 20px;
@@ -156,22 +174,19 @@ html {
 }
 
 .sidenav {
-	top: 0; 
-   left: 0;
-    position: fixed;
-    height: 25%;
-    width: 24%;
-     padding-top: 90px;
+	top: 0;
+	left: 0;
+	position: fixed;
+	height: 25%;
+	width: 24%;
+	padding-top: 90px;
 }
 
-
 .sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #0074D9;
- 
-    
+	padding: 6px 8px 6px 16px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #0074D9;
 }
 
 .sidenav a {
@@ -181,17 +196,15 @@ html {
 	color: #FFFFFF;
 	display: block;
 	border-radius: 8px;
-	background-color:  #7FDBFF;
+	background-color: #7FDBFF;
 	text-align: center;
-	 margin-bottom: 10px; 
-	 	  
+	margin-bottom: 10px;
 }
 
 
 .center {
-	text-align: center;	
+	text-align: center;
 }
-
 
 
 .sidenav a:hover {
@@ -201,3 +214,78 @@ html {
 .center {
 	text-align: center;
 }
+
+
+.homeImage {
+	height: 80%;
+	width: 50%;
+	padding-left: 40px;
+	margin-bottom: 20%;
+}
+
+.home {
+	padding-left: 450px;
+}
+
+#container {
+	background-color: #001f3f;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#content {
+	
+}
+
+#nav {
+	width: 380px;
+	float: left;
+}
+
+#main {
+	width: 1000px;
+	float: right;
+	
+}
+
+#footer {
+	clear: both;
+	background-color: #001f3f;
+}
+
+#nav .selected {
+	font-weight: bold;
+}
+
+#nav a {
+	text-decoration: none;
+	color: fff;
+}
+
+#nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#nav h1, h2, h3 {
+	margin: 0;
+}
+
+.homestyle {
+	background-color: #001f3f;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.resize {
+	width: 150px;
+	height: auto;
+}
+
+.resize2 {
+	width: 400px;
+	height: auto;
+}
+
