@@ -65,7 +65,6 @@ public class UserController {
 		return "redirect:/courseDetails?id=" + id;
 	}
 	
-	
 	@RequestMapping(path="/StudentPortal", method=RequestMethod.GET) 
 	public String displayStudentPortal(ModelMap map, HttpSession session) {
 		User user = (User) session.getAttribute("currentUser");

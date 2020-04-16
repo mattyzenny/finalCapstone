@@ -3,12 +3,16 @@
 	<c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 </header>
+<div class = "homestyle">
+   
+   <div id ="container">
 
-<div class="sidenav">
+  
+   <div id ="content">
+	<div class="sidenav">
 	<ul>
-	
 	<c:url var="formAction" value="/StudentPortal" />
-	 <form method="POST" action="${formAction}">	
+		<form method="POST" action="${formAction}">
 		<c:forEach var="category" items="${categories}">
 			<li><c:out value="${category.name}" />
 				<ul>
@@ -32,16 +36,17 @@
 
 
 <div class="center">
-	<h3>Curriculum Page</h3>
 
-	<div class="container">
-		<div class="Image">
+		
 			<a class="image"> <img id="myImage"
 				src="<c:url value= "/img/${course.courseId }.jpg" />" />
 			</a>
 		</div>
 
-	</div>
+	
+	
+
+	
 
 
 	<h2>${course.courseName}</h2>

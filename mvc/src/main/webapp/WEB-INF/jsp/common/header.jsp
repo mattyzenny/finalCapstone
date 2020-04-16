@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <!DOCTYPE html>
@@ -53,7 +53,7 @@
             <a href="/capstone/">Home</a>
             <a href="/capstone/login">Login</a>
             <a href="/capstone/users/new">Register</a>
-            <a href="/capstone/logout">Sign-Out</a>
+            <a href="/capstone/Sign-out">Sign-Out</a>
             </div>
             </div>
             
