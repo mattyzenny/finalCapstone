@@ -1,7 +1,12 @@
 #myImage {
 	height: 50%;
 	width: 50%;
+	grid-area: myImage;
+	margin: 20px;
+	margin-left: 0px;
 }
+
+
 #homePageImgId {
 	width: 100%;
 	size: 100%;
@@ -120,6 +125,7 @@ progress[value]::-webkit-progress-value::after {
 body {
 	margin: 0;
 	font-family: Arial, Helvetica, sans-serif;
+	background-image: 
 }
 
 #myImage {
@@ -146,10 +152,11 @@ body {
 }
 
 .header a {
+	margin-top: 1px;
 	float: left;
 	color: #FFFFFF;
 	text-align: center;
-	padding: 12px;
+	padding: 8px;
 	text-decoration: none;
 	font-size: 18px;
 	line-height: 25px;
@@ -205,25 +212,47 @@ html {
 }
 
 .sidenav {
+	grid-area: sidenav;
+	margin-left: 20px;
 	top: 0; 
    left: 0;
-    position: fixed;
+    /* position: fixed; */
     height: 25%;
     width: 24%;
      padding-top: 90px;
 }
 
-
-.sidenav a {
+.categoryName {
+	margin-bottom: 10px;
+	letter-spacing: 3px;
+	word-spacing: 5px;
+	font-weight: bold;
+	color: #001f3f;
+}
+  .courseName {
+ 	font-color: white;
+ 	margin-top: 20px;
+ 	margin-bottom: 20px;
+	 color: white;
+	border-radius: 25px;
+	}  
+/*  .courseName:hover {
+	color: purple;
+}  */
+.courseList {
+	color: #0074D9;
+	font-size: 20px;
+}
+ .sidenav a {
+ margin-bottom: 5px;
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 18px;
   color: #0074D9;
- 
-    
-}
 
-.sidenav a {
+} 
+
+/* .sidenav a {
 	padding: 10px 24px;
 	text-decoration: none;
 	font-size: 18px;
@@ -234,14 +263,16 @@ html {
 	text-align: center;
 	 margin-bottom: 10px; 
 	 	  
-}
+} */
 
 
 .center {
 	text-align: center;	
 }
-
-
+.center h2,h3,p{
+	color: #001f3f;
+	font-weight: bold;
+}
 
 .sidenav a:hover {
 	color: #f1f1f1;
@@ -258,6 +289,7 @@ html {
 	height: auto;
 	z-index: 1;
 }
+
 .container1 {
  	margin-top: 20px;
 	}
@@ -292,6 +324,7 @@ html {
 .container:hover .middle {
   opacity: 1;
 }
+
 .homeQuote {
 	height: auto;
 	width: 100%;
@@ -300,4 +333,88 @@ html {
   color: #7FDBFF;
   font-size: 1vw;
   padding: 16px 32px;
+}
+
+ .homestyle {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row; 
+ } 
+/* 
+.gridContaner {
+  display: grid;
+  position: relative;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  grid-template-areas:
+    ". sidenav myImage homeworkTable"
+    ". .  mainContent homeworkTable"
+    ". homeworkTable homeworkTable homeworkTable"
+    ". homeworkTable homeworkTable homeworkTable";
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  
+} */
+
+
+.mainContent {
+	margin-right: 8%;
+	max-width: 73%;
+}
+
+.courseDetails {
+	display: flex;
+	width: 100%;
+}
+
+
+.courseDetails > .sidenav {
+}
+
+.mainContent h2, .mainContent p {
+	color: white;
+	
+}
+
+.dueDate {
+	width: 15%;
+	padding: 5px;
+}
+
+.hwName {
+	width: 70%;
+	padding: 10px;
+}
+
+.courseContent {
+	display: flex;
+}
+
+.courseDescription p {
+	font-size: .8rem;
+	
+}
+
+.homeworkTable {
+	margin-top: 25px;
+	
+}
+
+.curName {
+	margin-top: 25px;
+}
+
+.buttonComplete {
+	background-color: #4CAF50; /* Green */
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+	
+}
+
+.buttonGray {
+	background-color: #DDDDDD;
 }

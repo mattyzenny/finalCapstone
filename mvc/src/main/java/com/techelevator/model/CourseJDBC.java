@@ -59,7 +59,7 @@ public class CourseJDBC implements CourseDAO {
 		while (curriculumResults.next()) {
 			Curriculum curriculum = mapRowSetToCurriculum(curriculumResults);
 			//use the same method for homework in curriculum 
-			String sqlSelectHomeworkByCurriculum = "SELECT * FROM homework WHERE curriculum_id = ?";
+			String sqlSelectHomeworkByCurriculum = "SELECT * FROM homework WHERE curriculum_id = ? ORDER BY id";
 			SqlRowSet homeworkResults = jdbcTemplate.queryForRowSet(sqlSelectHomeworkByCurriculum, curriculum.getCurriculumId());
 			List<Homework> allHomeworkByCurriculum = new ArrayList<Homework>();
 			while (homeworkResults.next()) {

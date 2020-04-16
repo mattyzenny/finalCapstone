@@ -2,6 +2,7 @@ package com.techelevator.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -55,14 +56,18 @@ public class UserController {
 		User user = (User) session.getAttribute("currentUser");
 		modelHolder.addAttribute("course", courseDao.getCourseById(id));
 		modelHolder.addAttribute("categories", categoryDao.getAllCategories(user.getId()));
+		
 		return "courseDetails";
 	}
 	
-	@RequestMapping(path="/courseDetails", method=RequestMethod.POST) 
-	public String updateHomeworkStatus(ModelMap modelHolder, @RequestParam int id, @RequestParam boolean complete) {
-		System.out.println(complete);
-		homeworkDao.updateHomeworkByCourseId(id, !complete);
-		return "redirect:/courseDetails?id=" + id;
+	@RequestMapping(path="/updateHomework")
+	public String updateHomeworkStatus(ModelMap modelHolder, HttpServletRequest request, @RequestParam boolean hwComplete) {
+		String homeworkId = request.getParameter("homeworkId");
+		Integer i = new Integer(homeworkId);
+		String courseId = request.getParameter("courseId");
+		Integer j = new Integer(courseId);
+		homeworkDao.updateHomeworkByHomeworkId(i.intValue(), !hwComplete);
+		return "redirect:/courseDetails?id=" + j.intValue();
 	}
 	
 	@RequestMapping(path="/StudentPortal", method=RequestMethod.GET) 

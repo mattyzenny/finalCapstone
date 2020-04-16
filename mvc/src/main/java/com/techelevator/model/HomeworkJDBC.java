@@ -78,13 +78,14 @@ public class HomeworkJDBC implements HomeworkDAO {
 	
 	
 	@Override
-	public void updateHomeworkByCourseId(int courseId, boolean complete) {
-		jdbcTemplate.update("UPDATE homework SET complete = ?" +
-				" FROM homework h" + 
-				" JOIN curriculum ON curriculum.id = h.curriculum_id" +
-				" JOIN course ON course.id = curriculum.course_id " +
-				" WHERE course.id = ?", complete, courseId);
+	public void updateHomeworkByHomeworkId(int homeworkId, boolean complete) {
+		jdbcTemplate.update("UPDATE homework SET complete = ? WHERE id = ?", complete, homeworkId);
+
 		}
+	
+	
+	
+	
 	//
 	// @Override
 	// public Homework getIncompleteHomework(boolean complete, int appuserId) {
