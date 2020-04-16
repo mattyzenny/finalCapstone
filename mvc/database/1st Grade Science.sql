@@ -4,11 +4,11 @@ INSERT INTO course (name, description, duration, category_id)
 VALUES('1st Grade Science', '1st Grade Science invites students to discover relationships between plant and animal parts and their functions. They investigate how light and sound travel and make predictions based patterns in the apparent movement of the sun, moon, and stars.', '9 weeks', null);
 
 INSERT INTO curriculum (name, course_id)
-VALUES ('Unit 1 – Plant and Animal Parts', null);
+VALUES ('Unit 1: Plant and Animal Parts', null);
 INSERT INTO curriculum (name, course_id)
-VALUES ('Unit 2 – Light and Sound', null);
+VALUES ('Unit 2: Light and Sound', null);
 INSERT INTO curriculum (name, course_id)
-VALUES ('Unit 3 – Sky Patterns', null);
+VALUES ('Unit 3: Sky Patterns', null);
 
 INSERT INTO homework (appuser_id, due_date, complete, curriculum_id, name)
 VALUES(1, 4/17/2020, false, 15, 'How Are Plants and Animals Like Others of the Same Kind? | Patterns | Constructing Explanations and Designing Solutions | Reading Further: Munchy, Crunchy Apples');

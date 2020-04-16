@@ -45,7 +45,6 @@ VALUES('1st Grade Social Studies', '1st Grade Social Studies explores the relati
 INSERT INTO course (name, description, duration, category_id)
 VALUES('1st Grade Science', '1st Grade Science invites students to discover relationships between plant and animal parts and their functions. They investigate how light and sound travel and make predictions based patterns in the apparent movement of the sun, moon, and stars.', '9', null);
 
-
 INSERT INTO curriculum (name, course_id)--1stMath1
 VALUES ('Unit 1: Operations and Algebraic Thinking', 1);
 INSERT INTO curriculum (name, course_id)--1stMath2
@@ -62,25 +61,25 @@ VALUES ('Unit 1: Consonants and Vowels, Syllables, Rhyming, Blending and Segment
 INSERT INTO curriculum (name, course_id)--1stEnglish7
 VALUES ('Unit 2: Consonant blends and digraphs & Short and Long Vowels ', 2);
 INSERT INTO curriculum (name, course_id)--1stEnglish8
-VALUES ('Silent e, Vowel teams, R-controlled Vowels', 2);
+VALUES ('Unit 3: Silent e, Vowel teams, R-controlled Vowels', 2);
 INSERT INTO curriculum(name, course_id)--1stEnglish9
-VALUES ('Two-syllable words', 2);
+VALUES ('Unit 4: Two-syllable words', 2);
 
 INSERT INTO curriculum (name, course_id)--1stSS10
 VALUES ('Unit 1: Social Studies Alive! Me and My World', 3);
 INSERT INTO curriculum (name, course_id)--1stSS11
 VALUES ('Unit 2: Social Studies Alive! My School and Family', 3);
 INSERT INTO curriculum (name, course_id)--1stSS12
-VALUES ('Social Studies Alive! My Community', 3);
+VALUES ('Unit 3: Social Studies Alive! My Community', 3);
 INSERT INTO curriculum(name, course_id)--SS13
-VALUES ('Social Studies Alive! Our Community and Beyond', 3);
+VALUES ('Unit 4: Social Studies Alive! Our Community and Beyond', 3);
 
 INSERT INTO curriculum (name, course_id)--1stScience14
-VALUES ('Unit 1 – Plant and Animal Parts', 4);
+VALUES ('Unit 1: Plant and Animal Parts', 4);
 INSERT INTO curriculum (name, course_id)--1stScience15
-VALUES ('Unit 2 – Light and Sound', 4);
+VALUES ('Unit 2: Light and Sound', 4);
 INSERT INTO curriculum (name, course_id)--1stScience16
-VALUES ('Unit 3 – Sky Patterns', 4);
+VALUES ('Unit 3: Sky Patterns', 4);
 
 
 
@@ -385,9 +384,10 @@ INSERT INTO app_user_course (app_user_id, course_id)
 VALUES (1, 4);
 
 INSERT INTO app_user_course (app_user_id, course_id)
-VALUES (2, 3);
+VALUES (1, 3);
 
 INSERT INTO app_user_course (app_user_id, course_id)
-VALUES (2, 2);
+VALUES (1, 2);
+
 
 COMMIT;

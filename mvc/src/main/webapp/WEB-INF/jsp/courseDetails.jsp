@@ -25,27 +25,10 @@
 	</div>
 
 
-
-
-
-
-	<!-- <div id="content">  -->
-
-
-	<!-- <div class="center"> -->
-
-	<%-- <div class="gridContaner">
-		<a class="image"> <img id="myImage"
-			src="<c:url value= "/img/${course.courseId }.jpg" />" />
-		</a> --%>
-
-
-
-
 	<div class="mainContent">
 		<div class="courseContent">
 			<a class="image"> <img id="myImage"
-				src="<c:url value= "/img/${course.courseId }.jpg" />" />
+				src="<c:url value= "/img/${course.courseId}.jpg" />" />
 			</a>
 
 			<div class="courseDescription">

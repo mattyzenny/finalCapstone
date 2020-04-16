@@ -407,14 +407,19 @@ html {
 	background-color: #4CAF50; /* Green */
 	border: none;
 	color: white;
-	padding: 15px 32px;
+	padding: 5px 5px;
 	text-align: center;
 	text-decoration: none;
 	display: block;
 	font-size: 16px;
+	border-radius: 10%;
+	border-radius: 5px;
 	
 }
 
+
 .buttonGray {
 	background-color: #DDDDDD;
+	border-radius: 5px;
+	color: black;
 }
