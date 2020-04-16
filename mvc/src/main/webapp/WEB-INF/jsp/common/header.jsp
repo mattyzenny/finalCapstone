@@ -1,30 +1,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 
 <!DOCTYPE html>
-<html>
-<head>
+<html> 
+
 <link href="<c:url value="/css/site.css"/>" rel="stylesheet" type="text/css"/>
 
 
-
-<html>
+ 
+<!-- <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,  initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 
-<div class="container">
- 
+<div class="container1">
   <div class="panel-group">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" href="#collapse1">Welcome to Your Student Login</a>
+          <a data-toggle="collapse" href="#collapse1">Welcome To Our Community</a>
         </h4>
       </div>
       <div id="collapse1" class="panel-collapse collapse">
@@ -43,37 +42,28 @@
     
 
 
+ <div class="header">  -->
 
 
+<div class="header">
 
- <!-- <div class="header">
-
-<a href="#default" class="logo">Columbus Primary School</a>
+<a href="/capstone/" class="logo">Global Community of Education</a>
 
  <div class="header-right">
-<<<<<<< HEAD
             <a href="/capstone/">Home</a>
             <a href="/capstone/login">Login</a>
             <a href="/capstone/users/new">Register</a>
-            <a href="/capstone/Sign-out">Sign-Out</a>
-			<a href="/capstone/user">UserTest</a>
-=======
-            <a href="/capstone/"><button>Home</button></a>
-            <a href="/capstone/login"><button>Login</button></a>
-            <a href="/capstone/users/new"><button>Register</button></a>
-            <a href="/capstone/logout"><button>Sign-Out</button></a>
-			<a href="/capstone/user"><button>UserTest</button></a>
->>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
+            <a href="/capstone/logout">Sign-Out</a>
             </div>
             </div>
             
 </head>
 </html>
 
-<html> -->
+<html> 
 
-
-<%-- <title>Critter</title>
+<%-- 
+<title>Critter</title>
 <c:url var="bootstrapCss" value="/css/bootstrap.min.css" />
 <c:url var="siteCss" value="/css/site.css" />
 
@@ -92,9 +82,9 @@
 <script src="${jqvAddMethJs}"></script>
 <script src="${jqTimeagoJs}"></script>
 <script src="${popperJs}"></script>
-<script src="${bootstrapJs}"></script> --%>
+<script src="${bootstrapJs}"></script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 	$(document).ready(function() {
 		$("time.timeago").timeago();
 
@@ -106,7 +96,7 @@
 		$("nav a[href='" + pathname + "']").parent().addClass("active");
 
 	});
-</script> -->
+</script>
 
 </head>
 <body>
@@ -165,4 +155,4 @@
 	<c:if test="${not empty currentUser}">
 		<p id="currentUser">Current User: ${currentUser}</p>
 	</c:if>
-	<div class="container"> 
+	<div class="container"> --%>

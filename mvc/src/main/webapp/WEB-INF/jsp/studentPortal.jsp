@@ -26,7 +26,8 @@
 				</ul></li>
 		</c:forEach>
 		</form>
-
+</div>
+<div class=homework>
 		<c:forEach var="homework" items="${homework}">
 			<li><c:out value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
 			<input type="checkbox" id="hwComplete" name="${homework.homeworkName }" value="Complete?">
@@ -35,40 +36,7 @@
 	</ul>
 </div>
 
-<%-- PLACE THIS IN TEACHER PORTAL(FORM TO CREATE NEW COURSE
-	
-		<h1>${course.courseName}</h1>
-	<p>${course.courseDescription}</p> 
- <h4>${curriculum.curriculumName}</h4> 
- <p>${homework.homeworkName}</p> 
- <p>${homework.dueDate}</p> --%>
 
-
-<%-- <c:set var="courseList" value="Course List" />
-
-	<c:url var="formAction" value="/studentPortal" />
-	<form method="GET" action="${formAction }">
-
-		<div class="formInputGroup">
-			<label for="course"> Enter a course :</label> <input type="text"
-				name="course" id="id" />
-		</div>
-
-		<input class="formSubmitButton" id="submit" value="Search" /> --%>
-
-
-
-
-
-<%--  PLACE THIS IN TEACHER PORTAL(FORM TO CREATE NEW COURSE--%>
-
-
-
-<%-- <c:set var="courseName" value="${course.courseName }"/>
-<c:url var="courseDetailHREF" value ="/StudentPortal">
-<c:param name="courseName">${course.courseName }</c:param>  --%>
-
-<%-- </c:url> --%>
 
 
 

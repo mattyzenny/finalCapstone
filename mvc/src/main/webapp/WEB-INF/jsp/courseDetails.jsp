@@ -4,6 +4,32 @@
 
 </header>
 
+<div class="sidenav">
+	<ul>
+	
+	<c:url var="formAction" value="/StudentPortal" />
+	 <form method="POST" action="${formAction}">	
+		<c:forEach var="category" items="${categories}">
+			<li><c:out value="${category.name}" />
+				<ul>
+					<c:forEach var="course" items="${category.courseListByCategory }">
+						<c:url var="courseDetailsURL" value="/courseDetails">
+							<c:param name="id">${course.courseId}</c:param>
+						</c:url>
+						<li><a href="${courseDetailsURL}">${course.courseName }</a></li>
+					</c:forEach>
+				</ul></li>
+		</c:forEach>
+		</form>
+
+		<c:forEach var="homework" items="${homework}">
+			<li><c:out value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
+			<input type="checkbox" id="hwComplete" name="${homework.homeworkName }" value="Complete?">
+
+		</c:forEach>
+	</ul>
+</div>
+
 
 <div class="center">
 	<h3>Curriculum Page</h3>
@@ -17,9 +43,6 @@
 
 	</div>
 
-
-	<h2>${course.courseName}</h2>
-	<p>${category.name }</p>
 
 	<h2>${course.courseName}</h2>
 	<p>${category.name }</p>
@@ -54,52 +77,5 @@
 		</c:forEach>
 	</c:forEach>
 	
-		 <progress max="100" value="60"></progress>
-	 
 </div>
-<div class="w3-container">
-
-<h2>Dynamic Progress Bar with Labels</h2>
-<p>Left-aligned label:</p>
-
-<div class="w3-light-grey">
-<div id="myBar" class="w3-container w3-green" style="width:20%">20%</div>
-</div>
-<br>
-<button class="w3-button w3-green" onclick="move()">Click Me</button> 
-</div>
-
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
-<div class="w3-container">
-
-<h2>Dynamic Progress Bar with Labels</h2>
-<p>Left-aligned label:</p>
-
-<div class="w3-light-grey">
-<div id="myBar" class="w3-container w3-green" style="width:20%">20%</div>
-</div>
-<br>
-<button class="w3-button w3-green" onclick="move()">Click Me</button> 
-</div>
-
-<script>
-function move() {
-  var elem = document.getElementById("myBar");   
-  var width = 0;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++; 
-      elem.style.width = width + '%'; 
-      elem.innerHTML = width * 1  + '%';
-    }
-  }
-}
-</script>
-
 </body>
