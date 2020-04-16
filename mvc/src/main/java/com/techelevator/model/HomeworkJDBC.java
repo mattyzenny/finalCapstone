@@ -72,10 +72,10 @@ public class HomeworkJDBC implements HomeworkDAO {
 		while (result.next()) {
 			Homework homeworkResults = mapRowSetToHomework(result);
 			homeworkStatus.add(homeworkResults);
-
 		}
 		return homeworkStatus;
 	}
+	
 	
 	@Override
 	public void updateHomeworkByCourseId(int courseId, boolean complete) {

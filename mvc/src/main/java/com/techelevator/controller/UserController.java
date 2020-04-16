@@ -50,6 +50,13 @@ public class UserController {
 	}
 	
 	
+	@RequestMapping(path="/courseDetails", method=RequestMethod.GET) 
+	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id, HttpSession session) {
+		User user = (User) session.getAttribute("currentUser");
+		modelHolder.addAttribute("course", courseDao.getCourseById(id));
+		modelHolder.addAttribute("categories", categoryDao.getAllCategories(user.getId()));
+		return "courseDetails";
+	}
 	
 	@RequestMapping(path="/courseDetails", method=RequestMethod.GET)
 	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id, HttpSession session) {
