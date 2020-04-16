@@ -35,3 +35,50 @@ Unit 4: Whole Number Division
 4. The properties of multiplication and division help us solve computation problems easily and provide reasoning for choices we make in problem solving.
 
 Unit 5: Addition and Subtraction of Fractions
+1. Add and subtract fractions with unlike denominators (including mixed numbers) by replacing given fractions with equivalent fractions in such a way as to produce an equivalent sum or difference of fractions with like denominators.
+2. Solve word problems involving addition and subtraction of fractions referring to the same whole, including cases of unlike denominators, e.g., by using visual fraction models or equations to represent the problem. Use benchmark fractions and number sense of fractions to estimate mentally and assess the reasonableness of answers.
+3. Make a line plot to display a data set of measurements in fractions of a unit (12, 14, 18). Use operations on fractions for this grade to solve problems involving information presented in line plots. For example, given different measurements of liquid in identical beakers, find the amount of liquid each beaker would contain if the total amount in all the beakers were redistributed equally.
+4. Carroll County Public Schools Video Support
+5. Keegan Adding Unlike Den
+6. Adding Fractions with Unlike Denominators
+
+Unit 6: Multiplying and Dividing Fractions
+1. Interpret a fraction as division of the numerator by the denominator (a/b = a ÷ b). Solve word problems involving division of whole numbers leading to answers in the form of fractions or mixed numbers, e.g., by using visual fraction models or equations to represent the problem.
+2. Apply and extend previous understandings of multiplication to multiply a fraction or whole number by a fraction.
+	a. Interpret the product (a/b) × q as a parts of a partition of q into b           equal parts; equivalently, as the result of a sequence of operations a × q ÷ b.  For example, use a visual fraction model to show (2/3) × 4 = 8/3, and create a story context for this equation. Do the same with (2/3) × (4/5) = 8/15. (In general, (a/b) × (c/d) = ac/bd.)
+	b. Find the area of a rectangle with fractional side lengths by tiling it with unit squares of the appropriate unit fraction side lengths, and show that the area is the same as would be found by multiplying the side lengths.  Multiply fractional side lengths to find areas of rectangles, and represent fraction products as rectangular areas.
+3. Solve real world problems involving multiplication of fractions and mixed numbers, e.g., by using visual fraction models or equations to represent the problem.
+4. Interpret multiplication as scaling (resizing), by:
+	a. Comparing the size of a product to the size of one factor on the basis of the size   of the other factor, without performing the indicated multiplication.
+	b. Explaining why multiplying a given number by a fraction greater than 1 results in a product greater than the given number (recognizing multiplication by whole numbers greater than 1as a familiar case); explaining why multiplying a given number by a fraction less than 1 results in a product smaller than the given number; and relating the principle of fraction equivalence a/b = (n×a)/(n×b) to the effect of multiplying a/b by 1.
+5. Apply and extend previous understandings of division to divide unit fractions by whole numbers and whole numbers by unit fractions.
+	a. Interpret division of a unit fraction by a non-zero whole number, and compute such quotients. For example, create a story context for (1/3) ÷ 4, and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that (1/3) ÷ 4 = 1/12 because (1/12) × 4 = 1/3.
+	b. Interpret division of a whole number by a unit fraction, and compute such quotients. For example, create a story context for 4 ÷ (1/5), and use a visual fraction model to show the quotient. Use the relationship between multiplication and division to explain that 4 ÷ (1/5) = 20 because 20 × (1/5)= 4.
+6. Make a line plot to display a data set of measurements in fractions of a unit (12, 14, 18). Use operations on fractions for this grade to solve problems involving information presented in line plots. For example, given different measurements of liquid in identical beakers, find the amount of liquid each beaker would contain if the total amount in all the beakers were redistributed equally.
+
+Unit 7: Multiplying and Dividing Decimals
+1. Multiply and divide decimals to hundredths, using concrete models or drawings and strategies based on place value, properties of operations, and/or the relationship between repeated addition and subtraction; relate the strategy to a written method and explain the reasoning used.
+	a. Multiply tenths by tenths or tenths by hundredths
+	b. Divide in problems involving tenths and hundredths
+
+Unit 8: Algebraic Thinking and Coordinate Planes
+1. Write simple expressions that record calculations with numbers, and interpret numerical expressions without evaluating them.
+2. Use a pair of perpendicular number lines, called axes, to define a coordinate system, with the intersection of the lines (the origin) arranged to coincide with the 0 on each line and a given point in the plane located by using an ordered pair of numbers, called its coordinates. Understand that the first number indicates how far to travel from the origin in the direction of one axis, and the second number indicates how far to travel in the direction of the second axis, with the convention that the names of the two axes and the coordinates correspond (e.g., x-axis and x-coordinate, y-axis and y-coordinate).
+3. Represent real world and mathematical problems by graphing points in the first quadrant of the coordinate plane, and interpret coordinate values of points in the context of the situation.
+4. Generate two numerical patterns using two given rules. Identify apparent relationships between corresponding terms. Form ordered pairs consisting of corresponding terms from the two patterns, and graph the ordered pairs on a coordinate plane. For example, given the rule “Add 3” and the starting number 0, and given the rule “Add 6” and the starting number 0, generate terms in the resulting sequences, and observe that the terms in one sequence are twice the corresponding terms in the other sequence. Explain informally why this is so.
+
+Unit 9: Fluently Divide Whole Numbers and Apply Knowledge of Concepts
+1. Find whole-number quotients of whole numbers with up to four-digit dividends and two-digit divisors, using strategies based on place value, the properties of operations, and/or the relationship between multiplication and division. Illustrate and explain the calculation by using equations, rectangular arrays, and/or area models. 
+2. Fluently divide multi-digit numbers using the standard algorithm 
+3. Apply all fifth grade concepts in order to complete math tasks
+
+Links: 
+Unit 1: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.1.pdf
+Unit 2: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.2.pdf
+Unit 3: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.3.pdf
+Unit 4: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.4.pdf
+Unit 5: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.5.pdf
+Unit 6: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.6.pdf
+Unit 7: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.7.pdf
+Unit 8: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.8.pdf
+Unit 9: https://www.carrollk12.org/curriculum/elementary/mathematics/fifthgrade/Documents/PL.5.9.pdf

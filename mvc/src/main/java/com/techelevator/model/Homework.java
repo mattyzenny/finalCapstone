@@ -83,13 +83,6 @@ public class Homework {
 		this.questionId = questionId;
 	}
 
-	public int getCourseId() {
-		return courseId;
-	}
-
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
-	}
 
 	public int getProgressPercentage() {
 		return progressPercentage;
@@ -97,5 +90,13 @@ public class Homework {
 
 	public void setProgressPercentage(int progressPercentage) {
 		this.progressPercentage = progressPercentage;
+	}
+
+	public int getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(int courseId) {
+		this.courseId = courseId;
 	}
 }
