@@ -50,17 +50,13 @@ public class UserController {
 	}
 	
 	
-	@RequestMapping(path="/courseDetails", method=RequestMethod.GET) 
-	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id) {
-		modelHolder.addAttribute("course", courseDao.getCourseById(id));
-		return "courseDetails";
-	}
 	
-	@RequestMapping(path="/courseDetails", method=RequestMethod.POST) 
-	public String updateHomeworkStatus(ModelMap modelHolder, @RequestParam int id, @RequestParam boolean complete) {
-		System.out.println(complete);
-		homeworkDao.updateHomeworkByCourseId(id, !complete);
-		return "redirect:/courseDetails?id=" + id;
+	@RequestMapping(path="/courseDetails", method=RequestMethod.GET)
+	public String displayStudentClass(ModelMap modelHolder, @RequestParam int id, HttpSession session) {
+	User user = (User) session.getAttribute("currentUser");
+	modelHolder.addAttribute("course", courseDao.getCourseById(id));
+	modelHolder.addAttribute("categories", categoryDao.getAllCategories(user.getId()));
+	return "courseDetails";
 	}
 	
 	

@@ -3,26 +3,54 @@
 	<c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 </header>
+<div class = "homestyle">
+   
+   <div id ="container">
 
+  
+   <div id ="content">
+	<div class="sidenav">
+	<ul>
+	<c:url var="formAction" value="/StudentPortal" />
+		<form method="POST" action="${formAction}">
+		<c:forEach var="category" items="${categories}">
+			<li><c:out value="${category.name}" />
+				<ul>
+					<c:forEach var="course" items="${category.courseListByCategory }">
+						<c:url var="courseDetailsURL" value="/courseDetails">
+							<c:param name="id">${course.courseId}</c:param>
+						</c:url>
+						<li><a href="${courseDetailsURL}">${course.courseName }</a></li>
+					</c:forEach>
+				</ul></li>
+		</c:forEach>
+		</form>
+
+		<c:forEach var="homework" items="${homework}">
+			<li><c:out value="${homework.homeworkName} Due Date: ${homework.dueDate }" /></li>
+			<input type="checkbox" id="hwComplete" name="${homework.homeworkName }" value="Complete?">
+
+		</c:forEach>
+	</ul>
+</div>
 
 <div class="center">
-	<h3>Curriculum Page</h3>
 
-	<div class="container">
-		<div class="Image">
+		
 			<a class="image"> <img id="myImage"
 				src="<c:url value= "/img/${course.courseId }.jpg" />" />
 			</a>
 		</div>
 
-	</div>
+	
+	
+
+	
 
 
 	<h2>${course.courseName}</h2>
 	<p>${category.name }</p>
 
-		<h2>${course.courseName}</h2>
-		<p>${category.name }</p>
 
 		<p>Duration: ${course.courseDuration} week(s)</p>
 		<p>${course.courseDescription}</p>
@@ -55,5 +83,9 @@
 		</c:forEach>
 
 	</div>
-</div>
+	</div>
+	</div>
+	</div>
+	
+
 

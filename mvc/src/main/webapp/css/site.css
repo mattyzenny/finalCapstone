@@ -3,68 +3,10 @@
 	width: 50%;
 }
 
- progress[value] {
-  -webkit-appearance: none; 
-     -moz-appearance: none; 
-          appearance: none;
- 
-  border: none;
-  width: 250px;
-  height: 20px;
-  
-} 
 
-progress[value]::-webkit-progress-bar {
-  background-color: #eee;
-  border-radius: 2px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-  
-}
 
-progress[value]::-webkit-progress-value {
-  background-image:
-	   -webkit-linear-gradient(-45deg, 
-	                           transparent 33%, rgba(0, 0, 0, .1) 33%, 
-	                           rgba(0,0, 0, .1) 66%, transparent 66%),
-	   -webkit-linear-gradient(top, 
-	                           rgba(255, 255, 255, .25), 
-	                           rgba(0, 0, 0, .25)),
-	   -webkit-linear-gradient(left, #09c, #f44);
-
-    border-radius: 2px; 
-    background-size: 35px 20px, 100% 100%, 100% 100%;
-    -webkit-animation: animate-stripes 5s linear infinite;
-        animation: animate-stripes 5s linear infinite;
-}
-
-@-webkit-keyframes animate-stripes {
-   100% { background-position: -100px 0px; }
-}
-
-@keyframes animate-stripes {
-   100% { background-position: -100px 0px; }
-}
-
-progress[value]::-webkit-progress-value::before {
-  content: '80%';
-  position: absolute;
-  right: 0;
-  top: -125%;
-}
-
-progress[value]::-webkit-progress-value::after {
-  content: '';
-  width: 6px;
-  height: 6px;
-  position: absolute;
-  border-radius: 100%;
-  right: 7px;
-  top: 7px;
-  background-color: white;
-}
-
- :root { -
-	-blue: #00adee; -
+ :root { 
+	-blue: #00adee; 
 	-grey: #505355;
 }
 
@@ -72,26 +14,8 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 
-#myImage {
-<<<<<<< HEAD
-	height: 50%;
-	width: auto;
-	height: auto;
-	width: auto;
-	max-width: 300px;
-	max-height: 300px;
-=======
 
-	height: 50%;
-	width: auto;
 
-	height: auto; 
-    width: auto; 
-    max-width: 300px; 
-    max-height: 300px;
-
->>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
-}
 
 .error {
 	font-color: red;
@@ -124,18 +48,15 @@ body {
 	background-color: #ddd;
 	color: black;
 }
-
+/* 
 .header a.active {
 	background-color: #01FF70;
 	color: white;
-}
-
-.header-right {
-	float: right;
 } */
 
- @media screen and (max-width: 500px) {
-	.header a {
+
+
+ .header a {
 		float: none;
 		display: block;
 		text-align: left;
@@ -143,14 +64,14 @@ body {
 	.header-right {
 		float: none;
 	}
-} 
+  
 
-<<<<<<< HEAD
-body {
-=======
+
+
+
 
  body {
->>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
+
 	background-color: #001f3f;
 }
 
@@ -193,19 +114,17 @@ html {
 	margin-bottom: 10px;
 }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
+
+
 .center {
 	text-align: center;
 }
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
+
+
 .sidenav a:hover {
 	color: #f1f1f1;
 }
@@ -213,7 +132,7 @@ html {
 .center {
 	text-align: center;
 }
-<<<<<<< HEAD
+
 
 .homeImage {
 	height: 80%;
@@ -287,5 +206,4 @@ html {
 	width: 400px;
 	height: auto;
 }
-=======
->>>>>>> 86f67636d8871923e45d0f4a08bd374a4216e18f
+
