@@ -12,12 +12,10 @@
  <style>
 body {
   background-image: url("img/backgroundImage.png");
-/*    position: absolute; */
     z-index: 1;  
   background-repeat: repeat-n;
     background-size: cover; 
-/*     background-size: 100%; 
- */	 }
+}
 </style>
 </head>
 <body >
@@ -36,8 +34,9 @@ body {
 							<c:param name="id">${course.courseId}</c:param>
 						</c:url>
 						<div>
-							<li class="courseName"><p class="courseList">Course:</p><a href="${courseDetailsURL}">
-										${course.courseName }</a></li>
+							<li class="courseName"><p class="courseList"></p>
+								<a href="${courseDetailsURL}">${course.courseName }</a>
+							</li>
 						</div>
 					</c:forEach>
 				</ul>
